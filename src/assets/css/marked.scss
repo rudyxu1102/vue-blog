@@ -1,0 +1,30 @@
+blockquote {
+  margin-top: 20px;
+  border-left: 3px solid darkturquoise;
+  padding: 0 10px;
+  background: rgba(204, 204, 204, 0.5);
+}
+ul, ol{
+  margin-top: 0;
+  padding-left: 20px;
+  line-height: 18px;
+}
+code {
+  color: rgb(147, 240, 216);
+  background: rgb(71, 73,73);
+  font-family: Consolas;
+  padding: 0 5px;
+  white-space: pre-wrap;
+  border-radius: 5px;
+}
+hr {
+  margin: 10px 0 0;
+}
+pre {
+  padding: 10px 10px;
+  background:  rgb(71, 73,73);
+  border-radius: 5px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+}
