@@ -1,18 +1,26 @@
 # vue-blog
 
-> 一个前端基于Vue.js，后端基于Node.js的博客内容管理器
+> 一个前端基于Vue.js，后端基于Node.js的博客内容管理器。
 
 ## 主要技术构成
-### 前端
-- vue.js
-- vue-router
-- vue-resource
-- vuex
+前端主要技术栈为vue.js、vue-router、 vue-resource、 vuex
+后端主要技术栈为node.js、 mongodb、 Express
 
-### 后端
-- node.js
-- mongodb
-- Express
+##博客功能
+### 前台页面
+- 搜索文章
+- 动态显示文章
+- 留言
+- 文章分类显示
+- canvas粒子效果
+
+### 后台管理页面
+- 发布文章
+- 存为草稿
+- 搜索文章
+- 修改账户
+- 权限验证
+- 登录验证
 
 ## Setup
 
