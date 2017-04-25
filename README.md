@@ -59,20 +59,18 @@ npm run dev
 ### 效果展示
 #### 前台效果
 ![主页](https://segmentfault.com/img/bVMKxp?w=1344&h=646)
+![博客文章](https://segmentfault.com/img/bVMKxx?w=1339&h=645)
+![文章](https://segmentfault.com/img/bVMKx9?w=1346&h=643)
 
-！[博客文章](https://segmentfault.com/img/bVMKxx?w=1339&h=645)
-
-！[文章](https://segmentfault.com/img/bVMKx9?w=1346&h=643)
-
-！[留言](https://segmentfault.com/img/bVMKyu?w=1339&h=642)
+![留言](https://segmentfault.com/img/bVMKyu?w=1339&h=642)
 
 #### 后台效果
 
-！[所有文章](https://segmentfault.com/img/bVMKxf?w=1361&h=638)
+![所有文章](https://segmentfault.com/img/bVMKxf?w=1361&h=638)
 
-！[搜索](https://segmentfault.com/img/bVMKyV?w=1356&h=645)
+![搜索](https://segmentfault.com/img/bVMKyV?w=1356&h=645)
 
-！[修改账户](https://segmentfault.com/img/bVMKyX?w=1359&h=641)
+![修改账户](https://segmentfault.com/img/bVMKyX?w=1359&h=641)
 
 
 ### 目录
