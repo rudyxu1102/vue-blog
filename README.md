@@ -24,13 +24,13 @@
 ```
 git clone https://github.com/FatDong1/VueBlog.git
 ```
-安装完数据库后，启动mongodb
-```
-mongodb --dbpath d:\data      // d:\data 为数据库文件夹位置，可自行设置
-```
 进入项目目录VueBlog后，安装依赖
 ```
 npm install
+```
+安装完数据库后，启动mongodb
+```
+mongodb --dbpath d:\data      // d:\data 为数据库文件夹位置，可自行设置
 ```
 运行服务器。（确保数据库mongodb已经启动）
 ```
@@ -40,7 +40,7 @@ npm run start             // 跑在本地的http://localhost:3030/
 ```
 npm run dev
 ```
-     
+
 ### 注意
 使用nodmailer插件来发送邮件通知，请将/server/app.js和/server/api/comment.js中的'xxxxx@qq.com'邮箱改为自己的邮箱，多次发送邮件会把发送者的邮箱列为黑名单，请提前将接收邮箱设置白名单。
 
