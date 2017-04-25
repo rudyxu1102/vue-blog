@@ -4,6 +4,7 @@
 
 ## 主要技术构成
 前端主要技术栈为vue.js、vue-router、 vue-resource、 vuex
+
 后端主要技术栈为node.js、 mongodb、 Express
 
 ## 博客功能
