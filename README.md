@@ -2,7 +2,8 @@
 
 > 一个前端基于Vue.js，后端基于Node.js的博客内容管理器
 
-## 技术构成
+## 主要技术构成
+---
 ### 前端
 - vue.js
 - vue-router
@@ -16,35 +17,34 @@
 
 ## Setup
 
-### 运行环境
+运行环境
 - node.js
 - mongoDB
-### 克隆远程库
+克隆远程库
 ```
 git clone https://github.com/FatDong1/VueBlog.git
 ```
-### 安装完数据库后，启动mongodb
+安装完数据库后，启动mongodb
 ```
-mongodb --dbpath d:/data
-// d:/data 为数据库文件夹位置，可自行设置
+mongodb --dbpath d:/data      // d:/data 为数据库文件夹位置，可自行设置
 ```
-### 进入项目目录VueBlog后，安装依赖
+进入项目目录VueBlog后，安装依赖
 ```
 npm install
 ```
-### 运行服务器。（确保数据库mongodb已经启动）
+运行服务器。（确保数据库mongodb已经启动）
 ```
-npm run start
-// 跑在本地的http://localhost:3030/
+npm run start             // 跑在本地的http://localhost:3030/
 ```
-### 在8080端口热重载开发
+在8080端口热重载开发
 ```
 npm run dev
 ```
-## 注意
-nodmailer
+### 注意
+使用nodmailer插件来发送邮件通知，请将/server/app.js和/server/api/comment.js中的'xxxxx@qq.com'邮箱改为自己的邮箱，多次发送邮件会把发送者的邮箱列为黑名单，请提前将接收邮箱设置白名单。
 
-## 目录
+### 目录
+```
 │  .babelrc             babel配置
 │  .editorconfig        编辑器配置
 │  .eslintignore        eslint忽略
@@ -90,7 +90,8 @@ nodmailer
 │   └─store           vuex文件
 │
 └─static            静态文件
+```
 
-## Licence
+### Licence
 MIT
 

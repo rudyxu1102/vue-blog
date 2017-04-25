@@ -23,11 +23,11 @@ router.post('/api/comment', (req, res) => {
                 const reviewer = /^@(.*):/.exec(req.body.content)[1]                // 评论者的名字
                 db.Comment.findOne({name: reviewer, articleId: req.body.articleId}, (err, doc) => {
                     const replyEmail = doc.address
-                    mail.send(replyEmail, '您在许浩东的博客有一条新评论', content, res)
+                    mail.send(replyEmail, '您在博客有一条新评论', content, res)
                 })
             }
             new db.Comment(comment).save().then(() => {
-                mail.send('562097257@qq.com', '您在许浩东的博客有一条新评论', content, res)
+                mail.send('xxxxx@qq.com', '您的博客有一条新评论', content, res)
                 res.status(200).send('send email successfully')
             }).catch(err => { console.log(err) })
             db.Article.update({aid: req.body.articleId},{$inc: {comment_n: 1}}, (err, data) => {

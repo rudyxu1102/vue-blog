@@ -17,7 +17,7 @@ route(app)
 // 发送邮件通知站长
 app.post('/api/mail', (req, res) => {
     const content = req.body.content + '\nfrom---' + req.body.address
-    mail.send('562097257@qq.com', req.body.subject, content, res)
+    mail.send('xxxxx@qq.com', req.body.subject, content, res)
 })
 
 app.listen(app.get('port'), function () {
