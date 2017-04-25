@@ -51,7 +51,8 @@ npm run dev
 ```
 
 ### 注意
-使用nodmailer插件来发送邮件通知，请将/server/app.js和/server/api/comment.js中的'xxxxx@qq.com'邮箱改为自己的邮箱，多次发送邮件会把发送者的邮箱列为黑名单，请提前将接收邮箱设置白名单。
+- 使用nodmailer插件来发送邮件通知，请将/server/app.js和/server/api/comment.js中的'xxxxx@qq.com'邮箱改为自己的邮箱，多次发送邮件会把发送者的邮箱列为黑名单，请提前将接收邮箱设置白名单。
+- 账号： boss           密码： 123456
 
 ### 目录
 ```
