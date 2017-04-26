@@ -47,7 +47,7 @@ mongodb --dbpath d:\data      // d:\data 为数据库文件夹位置，可自行
 ```
 npm run start             // 跑在本地的http://localhost:3030/
 ```
-在8080端口热重载开发
+在8082端口热重载开发
 ```
 npm run dev
 ```
