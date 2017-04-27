@@ -63,13 +63,12 @@ npm run dev
 
 ![bug图片](https://segmentfault.com/img/bVMRdf?w=736&h=411)
 
-原因：node-sass无法正常下载，国内下载被墙，可以使用cnpm下载
+原因：node-sass无法正常下载，国内下载被墙，也可以使用cnpm下载
 
 解决方法：
 
 ```
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-cnpm node-sass --save-dev
+npm node-sass --save-dev
 ```
 
 ### 效果展示
