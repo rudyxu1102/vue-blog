@@ -48,7 +48,7 @@ mongod --dbpath d:\data      // d:\data 为数据库文件夹位置，可自行�
 ```
 npm run start             // 跑在本地的http://localhost:3030/
 ```
-在8082端口热重载开发，等待2~3分钟后，会自动弹出浏览器窗口,加载会比较慢，请耐心等待
+在8082端口热重载开发，等待2~3分钟后，会自动弹出浏览器窗口，加载会比较慢，请耐心等待
 ```
 npm run dev
 ```
@@ -59,7 +59,7 @@ npm run dev
 - 账号： boss    密码： 123456
 
 ### 运行项目可能会出现的问题
-node-sass安装出错
+`node-sass安装出错`
 
 ![bug图片](https://segmentfault.com/img/bVMRdf?w=736&h=411)
 
