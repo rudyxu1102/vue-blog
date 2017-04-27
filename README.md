@@ -24,6 +24,7 @@
 - 修改账户
 - 权限验证
 - 登录验证
+- markdown编辑器
 
 ## Setup
 
@@ -73,6 +74,8 @@ npm run dev
 ![搜索](https://segmentfault.com/img/bVMKyV?w=1356&h=645)
 
 ![修改账户](https://segmentfault.com/img/bVMKyX?w=1359&h=641)
+
+![编辑器](http://chuantu.biz/t5/74/1493256337x2728278710.png)
 
 
 ### 目录
