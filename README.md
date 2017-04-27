@@ -75,7 +75,7 @@ npm run dev
 
 ![修改账户](https://segmentfault.com/img/bVMKyX?w=1359&h=641)
 
-![编辑器](http://chuantu.biz/t5/74/1493256337x2728278710.png)
+![编辑器](https://segmentfault.com/img/bVMPbw?w=1363&h=648)
 
 
 ### 目录
