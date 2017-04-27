@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         delTag () {
-            this.tags.splice(this.index, 1)
+            this.tags.splice(this.index, 1)             // 通过操作数组来删除标签
         },
         addTag () {
             let currentIndex = this.index
@@ -44,9 +44,9 @@ export default {
                 }
             }
             if (isOnly) {
-                this.tags.push('')
+                this.tags.push('')      // 通过操作数组来增加空标签
                 setTimeout(() => {
-                    document.getElementsByClassName('newInput')[this.index + 1].focus()
+                    document.getElementsByClassName('newInput')[this.index + 1].focus()  // 新生成的空标签获得焦点
                 }, 0)
             }
         }
@@ -54,10 +54,10 @@ export default {
     computed: {
         text: {
             get () {
-                return this.tags[this.index]
+                return this.tags[this.index]        // 获取标签数组元素值
             },
             set (value) {
-                this.tags[this.index] = value.trim()
+                this.tags[this.index] = value.trim()    // 改变标签数组
             }
         }
     }

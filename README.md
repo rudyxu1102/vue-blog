@@ -48,14 +48,26 @@ mongod --dbpath d:\data      // d:\data 为数据库文件夹位置，可自行�
 ```
 npm run start             // 跑在本地的http://localhost:3030/
 ```
-在8082端口热重载开发
+在8082端口热重载开发，等待2~3分钟后，会自动弹出浏览器窗口,加载会比较慢，请耐心等待
 ```
 npm run dev
 ```
 
 ### 注意
 - 使用nodmailer插件来发送邮件通知，请将/server/app.js和/server/api/comment.js中的'xxxxx@qq.com'邮箱改为自己的邮箱，多次发送邮件会把发送者的邮箱列为黑名单，请提前在接收者邮箱设置白名单。发送邮箱已经为大家注册了一个公用的126邮箱，在项目已经配置好了。
+- 数据可视化软件推荐 ---[Robomongo官网下载地址](https://robomongo.org/download), 在启动mongodb后就可以打开这个软件
 - 账号： boss    密码： 123456
+
+### 运行项目可能会出现的问题
+node-sass安装出错
+
+![bug图片](https://segmentfault.com/img/bVMRdf?w=736&h=411)
+原因：node-sass无法正常下载，国内下载被墙，可以使用cnpm下载
+解决方法：
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm node-sass --save-dev
+```
 
 ### 效果展示
 #### 前台效果

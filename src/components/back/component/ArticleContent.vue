@@ -41,18 +41,18 @@ export default {
         ...mapActions(['delArticle']),
         nextPage () {
             this.page++
-            this.$emit('addPage')
+            this.$emit('addPage')   // 传递给父组件
         },
         prePage () {
             if (!(this.page - 1)) {
                 alert('已经到第一页咯')
             } else {
                 this.page--
-                this.$emit('dropPage')
+                this.$emit('dropPage') // 传递给父组件
             }
         },
         deleteConfirm (aid) {
-            let toDelete = confirm('确认删除？')
+            let toDelete = confirm('确认删除？')       // confirm提示框
             if (toDelete === true) {
                 this.delArticle({aid: aid, page: this.page, route: this.$route})
             } else {

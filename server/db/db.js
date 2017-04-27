@@ -80,7 +80,7 @@ const initialize = () => {
     })
 }
 
-mongoose.connect('mongodb://127.0.0.1/xhd-Blog')
+mongoose.connect('mongodb://127.0.0.1/vue-blog')
 
 const db = mongoose.connection
 

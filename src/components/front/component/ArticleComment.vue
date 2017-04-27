@@ -61,7 +61,7 @@ export default {
     },
     computed: {
         ...mapState(['comments', 'user']),
-        likeArr () {
+        likeArr () {                            // 访问者点赞了哪些评论的数组
             if (localStorage.getItem(this.$route.params.id)) {
                 const item = localStorage.getItem(this.$route.params.id)  // 初始化访问者的点赞情况
                 return JSON.parse(item)
@@ -126,6 +126,7 @@ export default {
     },
     watch: {
         $route (to, from) {
+            // #article是跳到另一篇文章，将评论框清空，#目录标题是锚点跳转，不清空评论框
             to.hash === '#article' ? this.content = '' : 0
             this.getAllComments({id: to.params.id})
         }
