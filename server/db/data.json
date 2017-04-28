@@ -1,160 +1,158 @@
 [
   {
-  "title" : "啦啦啦",
-  "date" : "2017-04-03T02:46:54.000Z",
-  "content" : "`啦啦啦啦啦`",
-  "isPublish" : false,
-  "comment_n" : 0,
-  "tags" : [
-    "随笔"
-  ]
-},
-{
-"title" : "hello world",
-"date" : "2017-04-25T06:01:29.000Z",
-"content" : "### 你好，世界。\n\nHi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! \n\n```html\n<p> hello world </p>\n```\n\n```js\nconsole.log('hello world')\nalert('hello world')\n```",
-"isPublish" : true,
-"comment_n" : 0,
-"tags" : [
-"html",
-"css"
-]
-},
-{
-"title" : "markdown编辑器介绍",
-"date" : "2017-04-25T07:14:09.000Z",
-"content" : "## markdown编辑器\n---\n使用插件为marked.js 和 highlight.js\n\n### 插件介绍\n1. `marked.js` 解析markdown语法为html\n2. `highlight.js` 将代码高亮显示\n\n## 功能介绍\n---\n### 特点\n1. 标签处使用vue数据驱动的思想，将所有的标签作为一个数组驱动视图更新\n2. 如果内容修改后没有保存就跳转到其他页面，则会弹出提示框；如果内容没有修改过，则不会提示。\n3. 标签输入处自动去除首尾空格，如果标签重复（包括大小写），则自动弹窗警告并删除\n    \n\n### 快捷键\n如有快捷键冲突，可自行修改代码\n- tab键切换输入框\n- ctrl + ↓ 来回切换查看模式\n- 标签书写处回车enter，添加新标签\n- 光标在文章书写框处， ctrl + enter 存为草稿\n- 发布文章没有设置快捷键\n\n### 代码高亮\n```js\nlet user = {\n  name: 'shuaige',\n  age: 21\n};\n```\n> 1. 如果要修改代码高亮样式，可先按F12查看代码的className，然后修改highlight.css\n2. 如果要修改解析的html样式，如margin、border-left、border-radius等，可在marked.scss修改\n",
-"isPublish" : true,
-"comment_n" : 0,
-"tags" : [
-"marked.js",
-"highlight.js"
-]
-},
-{
-"title" : "learing css",
-"date" : "2017-04-03T02:45:18.000Z",
-"content" : "> I'm learing css.",
-"isPublish" : false,
-"comment_n" : 0,
-"tags" : [
-"css",
-"html"
-]
-},
-{
-"title" : "writing draft",
-"date" : "2017-04-03T02:45:07.000Z",
-"content" : "### I'm writing a draft.",
-"isPublish" : false,
-"comment_n" : 0,
-"tags" : [
-"draft"
-]
-},
-{
-"title" : "learing js",
-"date" : "2017-04-03T02:45:47.000Z",
-"content" : "> I'm learing js.",
-"isPublish" : false,
-"comment_n" : 0,
-"tags" : [
-"javascript"
-]
-},
-{
-"title" : "测试--文章目录",
-"content" : "# 一级标题 \n## 二级标题 a\n### 三级标题1\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n### 三级标题2\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n## 二级标题b\n#### 四级标题1\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n\n## 二级标题2.1\n#### 四级标题2\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n\n\n",
-"date" : "2017-04-25T02:18:48.000Z",
-"isPublish" : true,
-"comment_n" : 0,
-"tags" : [
-"test"
-]
-},
-{
-"title" : "关于我",
-"date" : "2017-04-25T07:55:40.000Z",
-"content" : "## 随笔\n---\n### 感悟\n不知不觉已经花了一个月的时间去做这个这个博客项目了，这个过程有苦有乐，虽然这个简单的项目在别人眼里可能没什么特点，但是对于我自己来说，能完成这个项目真是太好了，自己做了一回设计者和体验者，感受到了编程创造的乐趣，虽然每次调试完一个bug后，短暂的开心之后又会迎来下一个bug，无穷无尽的bug让我心力交瘁，还好现在看起来是没什么bug，我得趁现在还没什么bug，去找找暑假的实习了，不然得一直陷在这个博客项目里了，对于一个非科班的学生来说，暑假可没什么地方可以去，以后有时间精力再对这个博客进行完善了。Goodbye，myblog！\n\n### 联系方式\n- 广州大学大三在读， 2018毕业\n- QQ： 3552116732\n- 邮箱： xuhaodong66@gmail.com\n\n\n\n",
-"isPublish" : true,
-"comment_n" : 0,
-"tags" : [
-"个人介绍"
-]
-},
-{
-"title" : "测试--标签去重",
-"content" : "## 测试标签去重\n---\n### 文章的schema\n```js\nconst ArticleSchema = new Schema(\n    {\n        aid: { type : Number, index: { unique: true } },\n        title: String,\n        content: String,\n        tags: [String],\n        date: Date,\n        isPublish: Boolean,\n        comment_n: Number\n    },\n    { versionKey: false }\n)\n```\n\n### 标签去重\n主要是使用了mongodb里面的distinct方法，就可以方便把文章schema里的tags合并",
-"date" : "2017-04-25T05:59:09.000Z",
-"isPublish" : true,
-"comment_n" : 0,
-"tags" : [
-"html",
-"css"
-]
-},
-{
-"title" : "test--draft",
-"content" : "> hi",
-"date" : "2017-04-25T06:04:12.000Z",
-"isPublish" : false,
-"comment_n" : 0,
-"tags" : [
-"test"
-]
-},
-{
-"comment_n" : 0,
-"title" : "如何生成文章目录",
-"content" : "## 实现的需求\n---\n1. 点击目录对应标题后， 会自动跳到相应的锚点\n2. 不同层次的标题目录左边距不同\n3. 向下滚动后一段距离后，目录相对屏幕固定\n\n## 如何生成文章目录      \n--- \n\n### 重写原本marked解析h标签的格式          \n   \n原本marked解析h标签会将除了英文和数字以外的字符替换为'-'，包括中文字符，如果用中文写h标签，这样生成的锚点和id都为'-'字符，除非用英文数字写标题，所以需要对h标签的格式重写。\n\n通过设置`renderer.heading`后,  `marked`解析h标签的格式可以重写。具体可以看/src/components/back/editor.vue\n\n```html\n<h1>一级标题</h1>\n\n<!--转换为下面这种格式-->\n\n<a href=\"#一级标题\" class=\"hashTitle\" data-scroll>\n    <h1 id=\"一级标题\">一级标题</h1>\n</a>\n```\n上面的data-scroll是使smooth-scroll，可以是跳转锚点平滑滚动\n\n### 获取所有h标签生成目录数组\n首先将从后台获取到的内容用marked解析成html字符串，再用正则表达式取出h标签中的重要信息，h标签的等级和id值，然后通过一点简单的算法算出不同标签对应的层级， 不同的层级在目录里的左边距不同，最后push到目录list数组中。下面是目录数组的格式。\n```js\nlet list = [\n    {\n        level: 1,\n        size: 2,\n        content: '二级标题'\n    },\n    {\n        level: 2,\n        size: 3,\n        content: '三级标题'\n    }\n];\n```\n具体的算法可以看/src/store/getters.js",
-"date" : "2017-04-25T06:23:16.000Z",
-"isPublish" : true,
-"tags" : [
-"模块介绍",
-"marked.js"
-]
-},
-{
-"comment_n" : 0,
-"title" : "动态展示页面",
-"content" : "## 前言\n\n---\n最近一直在鼓捣怎么给自己的个人博客添加一个功能---向下滚动的时候，用一些动画展示页面，最终自己瞎折腾用Vue的自定义指令找出了看起来比较优雅的方法，先上代码！\n\n### 代码\n\n```html\n<!--'animated bounceIn' 为animated.css里的-->\n<div class=\"newBlog\" v-scroll-show>\n    <p class=\"headline animated bounceIn\">最近更新</p>\n    <div class=\"posts animated fadeIn\">\n        <p>文章</p>\n    </div>\n</div>\n```\n```css\n.newBlog {\n    min-height: 500px;\n}\n.headline, .posts {\n    display: none;\n}\n```\n```js\nexport default {\n    directives: {\n        scrollShow: {\n            bind: (el) => {\n                window.addEventListener('scroll', () => {\n                    if (document.body.scrollTop + 400 > el.offsetTop) {\n                        for (let i = 0; i < el.children.length; i++) {\n                            setTimeout(() => {  el.children[i].style.display = 'block'  }, 1000 * i)\n                        }\n                    }\n                })\n            }\n        }\n    }\n}\n```\n\n### 简单介绍实现过程\n主要使用Vue的自定义指令，监听滚动事件，当滚动条的scrollTop等于要动态展示节点的offsetTop - 400时，延时展示该节点的子节点children\n\n## 结尾\n\n---\n这是自己想的一个方法，如果各位有什么更优雅的方法去实现的话，欢迎告知，先谢谢啦！",
-"date" : "2017-04-25T07:11:41.000Z",
-"isPublish" : true,
-"tags" : [
-"模块介绍",
-"Vue"
-]
-},
-{
-"comment_n" : 0,
-"title" : "平滑滚动",
-"content" : "### 前言\n之前给自己的博客中`回到顶部`功能主要用的setTimeout延时滚动，看到vue文档中点击对应标题，就可以平滑滚动到锚点，就很好奇是怎么实现的，看了一下网页的源码，发现是使用了一个叫做smooth-scroll的轻量插件，所以自己也鼓捣使用了这个插件，把原本用setTimeout回到顶部的功能也直接用这个插件实现。\n### 使用插件\n- smooth-scroll\n",
-"date" : "2017-04-25T07:40:34.000Z",
-"isPublish" : true,
-"tags" : [
-"模块介绍"
-]
-},
-{
-"comment_n" : 0,
-"title" : "canvas粒子效果",
-"content" : "## 前言\n\n---\n在这个博客啥都还没搭的时候，就已经决定要用canvas来给自己的博客加一点炫酷的效果了，在网上找了一两天的时间，看有没有上面比较炫酷的canvas效果，顺便简单学习一下canvas，毕竟canvas还没学过，最终选择这样一个canvas粒子效果，从而也决定我的博客是为主题为暗色系列的。    \n\n\n## canvas粒子效果\n\n---\n### 看懂源代码\n看了很多的canvas炫酷的效果，最终还是被粒子效果吸引。在一次google搜索以后，找到了一个[非常炫酷的canvas效果](http://www.mrspeaker.net/dev/parcycle/)，当时就想着一定要把这个炫酷的效果放到自己的博客上，于是就右键点击查看源代码，一点一点的去理解这个效果的实现原理，经过一两天的苦思冥想/(ㄒoㄒ)/~~，终于理解了这个网站的源代码，虽然这个过程很累，不过实在是这个canvas效果太吸引我了，所以对这个canvas粒子效果也很执着。\n\n### 后期改良\n\n\n后期经过不断修改，给这个canvas添加了以下的功能\n- 鼠标点击后，随机变化颜色\n- 鼠标跟随canvas粒子效果\n- 鼠标离开页面后，从左到右循环移动\n\n## 结尾\n自己的github里有对源代码进行改良后的代码，与这个博客的效果有一些不一样，有兴趣可以去看一下----[github链接](https://fatdong1.github.io/canvas/particle/index.html)\n",
-"date" : "2017-04-25T07:10:51.000Z",
-"isPublish" : true,
-"tags" : [
-"模块介绍",
-"canvas"
-]
-},
-{
-"comment_n" : 0,
-"title" : "评论模块",
-"content" : "## 前言\n---\n自己写了一个简单评论模块，实现下面的需求：点赞，回复，头像，通知等。\n\n## 简单介绍\n---\n### 通知功能实现\n当有访问者评论后，会通过邮件通知评论者和站长。使用插件为`nodemailer`，尝试了gmail、126、163邮箱，最终决定了126邮箱，因为gmail的安全机制导致有时候有些邮件发不出去，而用163邮箱容易被放到邮箱的垃圾箱中。在这个项目中，我自己注册了一个公用的126邮箱供开发者使用来发送邮件，如果想要使用自己的邮箱来发送邮件，在配置nodemailer时会用到授权码，注意这个不是邮箱密码，可以到网上搜索设置授权码。\n\n但是，如果频繁使用126邮箱发送邮件到固定的邮箱中，超过一定次数会邮件会被放入接收者邮箱的垃圾箱中。解决方法：设置接受者邮箱的白名单为该126邮箱，添加该126邮箱为邮箱联系人。\n### 点赞功能\n将访问者在每篇文章点赞的数量记录在客户端的浏览器localStorage中，如果不清除浏览器缓存，在下次同一个访问者访问的时候，会从浏览器中的localStorage读取点赞记录。\n### 头像功能\n通过判断state.users来判断是站长还是访问者，从而设置不同的头像\n### 评论者重名\n在提交评论的时候，会在后台鉴别该评论名字是否对应特定邮箱，如果数据库已有该评论者名字且邮箱不对应，则无法提交评论，防止评论者重名。\n",
-"date" : "2017-04-25T07:39:03.000Z",
-"isPublish" : true,
-"tags" : [
-"模块介绍",
-"nodemailer"
-]
-}
+    "title" : "啦啦啦",
+    "date" : "2017-04-03T02:46:54.000Z",
+    "content" : "`啦啦啦啦啦`",
+    "isPublish" : false,
+    "comment_n" : 0,
+    "tags" : ["随笔"]
+  },
+  {
+    "title" : "hello world",
+    "date" : "2017-04-25T06:01:29.000Z",
+    "content" : "### 你好，世界。\n\nHi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! Hi, my name is Haodong Xu. Welcome to my blog. Nice to meet you! \n\n```html\n<p> hello world </p>\n```\n\n```js\nconsole.log('hello world')\nalert('hello world')\n```",
+    "isPublish" : true,
+    "comment_n" : 0,
+    "tags" : [
+      "html",
+      "css"
+    ]
+  },
+  {
+    "title" : "markdown编辑器介绍",
+    "date" : "2017-04-25T07:14:09.000Z",
+    "content" : "## markdown编辑器\n---\n使用插件为marked.js 和 highlight.js\n\n### 插件介绍\n1. `marked.js` 解析markdown语法为html\n2. `highlight.js` 将代码高亮显示\n\n## 功能介绍\n---\n### 特点\n1. 标签处使用vue数据驱动的思想，将所有的标签作为一个数组驱动视图更新\n2. 如果内容修改后没有保存就跳转到其他页面，则会弹出提示框；如果内容没有修改过，则不会提示。\n3. 标签输入处自动去除首尾空格，如果标签重复（包括大小写），则自动弹窗警告并删除\n    \n\n### 快捷键\n如有快捷键冲突，可自行修改代码\n- tab键切换输入框\n- ctrl + ↓ 来回切换查看模式\n- 标签书写处回车enter，添加新标签\n- 光标在文章书写框处， ctrl + enter 存为草稿\n- 发布文章没有设置快捷键\n\n### 代码高亮\n```js\nlet user = {\n  name: 'shuaige',\n  age: 21\n};\n```\n> 1. 如果要修改代码高亮样式，可先按F12查看代码的className，然后修改highlight.css\n2. 如果要修改解析的html样式，如margin、border-left、border-radius等，可在marked.scss修改\n",
+    "isPublish" : true,
+    "comment_n" : 0,
+    "tags" : [
+      "marked.js",
+      "highlight.js"
+    ]
+  },
+  {
+    "title" : "learing css",
+    "date" : "2017-04-03T02:45:18.000Z",
+    "content" : "> I'm learing css.",
+    "isPublish" : false,
+    "comment_n" : 0,
+    "tags" : [
+      "css",
+      "html"
+    ]
+  },
+  {
+    "title" : "writing draft",
+    "date" : "2017-04-03T02:45:07.000Z",
+    "content" : "### I'm writing a draft.",
+    "isPublish" : false,
+    "comment_n" : 0,
+    "tags" : [
+      "draft"
+    ]
+  },
+  {
+    "title" : "learing js",
+    "date" : "2017-04-03T02:45:47.000Z",
+    "content" : "> I'm learing js.",
+    "isPublish" : false,
+    "comment_n" : 0,
+    "tags" : [
+      "javascript"
+    ]
+  },
+  {
+    "title" : "测试--文章目录",
+    "content" : "# 一级标题 \n## 二级标题 a\n### 三级标题1\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n### 三级标题2\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n## 二级标题b\n#### 四级标题1\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n\n## 二级标题2.1\n#### 四级标题2\n催眠术！这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。这是一段内容。\n\n\n",
+    "date" : "2017-04-25T02:18:48.000Z",
+    "isPublish" : true,
+    "comment_n" : 0,
+    "tags" : [
+      "test"
+    ]
+  },
+  {
+    "title" : "关于我",
+    "date" : "2017-04-25T07:55:40.000Z",
+    "content" : "## 随笔\n---\n### 感悟\n不知不觉已经花了一个月的时间去做这个这个博客项目了，这个过程有苦有乐，虽然这个简单的项目在别人眼里可能没什么特点，但是对于我自己来说，能完成这个项目真是太好了，自己做了一回设计者和体验者，感受到了编程创造的乐趣，虽然每次调试完一个bug后，短暂的开心之后又会迎来下一个bug，无穷无尽的bug让我心力交瘁，还好现在看起来是没什么bug，我得趁现在还没什么bug，去找找暑假的实习了，不然得一直陷在这个博客项目里了，对于一个非科班的学生来说，暑假可没什么地方可以去，以后有时间精力再对这个博客进行完善了。Goodbye，myblog！\n\n### 联系方式\n- 广州大学大三在读， 2018毕业\n- QQ： 3552116732\n- 邮箱： xuhaodong66@gmail.com\n\n\n\n",
+    "isPublish" : true,
+    "comment_n" : 0,
+    "tags" : [
+      "个人介绍"
+    ]
+  },
+  {
+    "title" : "测试--标签去重",
+    "content" : "## 测试标签去重\n---\n### 文章的schema\n```js\nconst ArticleSchema = new Schema(\n    {\n        aid: { type : Number, index: { unique: true } },\n        title: String,\n        content: String,\n        tags: [String],\n        date: Date,\n        isPublish: Boolean,\n        comment_n: Number\n    },\n    { versionKey: false }\n)\n```\n\n### 标签去重\n主要是使用了mongodb里面的distinct方法，就可以方便把文章schema里的tags合并",
+    "date" : "2017-04-25T05:59:09.000Z",
+    "isPublish" : true,
+    "comment_n" : 0,
+    "tags" : [
+      "html",
+      "css"
+    ]
+  },
+  {
+    "title" : "test--draft",
+    "content" : "> hi",
+    "date" : "2017-04-25T06:04:12.000Z",
+    "isPublish" : false,
+    "comment_n" : 0,
+    "tags" : [
+      "test"
+    ]
+  },
+  {
+    "comment_n" : 0,
+    "title" : "如何生成文章目录",
+    "content" : "## 实现的需求\n---\n1. 点击目录对应标题后， 会自动跳到相应的锚点\n2. 不同层次的标题目录左边距不同\n3. 向下滚动后一段距离后，目录相对屏幕固定\n\n## 如何生成文章目录      \n--- \n\n### 重写原本marked解析h标签的格式          \n   \n原本marked解析h标签会将除了英文和数字以外的字符替换为'-'，包括中文字符，如果用中文写h标签，这样生成的锚点和id都为'-'字符，除非用英文数字写标题，所以需要对h标签的格式重写。\n\n通过设置`renderer.heading`后,  `marked`解析h标签的格式可以重写。具体可以看/src/components/back/editor.vue\n\n```html\n<h1>一级标题</h1>\n\n<!--转换为下面这种格式-->\n\n<a href=\"#一级标题\" class=\"hashTitle\" data-scroll>\n    <h1 id=\"一级标题\">一级标题</h1>\n</a>\n```\n上面的data-scroll是使smooth-scroll，可以是跳转锚点平滑滚动\n\n### 获取所有h标签生成目录数组\n首先将从后台获取到的内容用marked解析成html字符串，再用正则表达式取出h标签中的重要信息，h标签的等级和id值，然后通过一点简单的算法算出不同标签对应的层级， 不同的层级在目录里的左边距不同，最后push到目录list数组中。下面是目录数组的格式。\n```js\nlet list = [\n    {\n        level: 1,\n        size: 2,\n        content: '二级标题'\n    },\n    {\n        level: 2,\n        size: 3,\n        content: '三级标题'\n    }\n];\n```\n具体的算法可以看/src/store/getters.js",
+    "date" : "2017-04-25T06:23:16.000Z",
+    "isPublish" : true,
+    "tags" : [
+      "模块介绍",
+      "marked.js"
+    ]
+  },
+  {
+    "comment_n" : 0,
+    "title" : "动态展示页面",
+    "content" : "## 前言\n\n---\n最近一直在鼓捣怎么给自己的个人博客添加一个功能---向下滚动的时候，用一些动画展示页面，最终自己瞎折腾用Vue的自定义指令找出了看起来比较优雅的方法，先上代码！\n\n### 代码\n\n```html\n<!--'animated bounceIn' 为animated.css里的-->\n<div class=\"newBlog\" v-scroll-show>\n    <p class=\"headline animated bounceIn\">最近更新</p>\n    <div class=\"posts animated fadeIn\">\n        <p>文章</p>\n    </div>\n</div>\n```\n```css\n.newBlog {\n    min-height: 500px;\n}\n.headline, .posts {\n    display: none;\n}\n```\n```js\nexport default {\n    directives: {\n        scrollShow: {\n            bind: (el) => {\n                window.addEventListener('scroll', () => {\n                    if (document.body.scrollTop + 400 > el.offsetTop) {\n                        for (let i = 0; i < el.children.length; i++) {\n                            setTimeout(() => {  el.children[i].style.display = 'block'  }, 1000 * i)\n                        }\n                    }\n                })\n            }\n        }\n    }\n}\n```\n\n### 简单介绍实现过程\n主要使用Vue的自定义指令，监听滚动事件，当滚动条的scrollTop等于要动态展示节点的offsetTop - 400时，延时展示该节点的子节点children\n\n## 结尾\n\n---\n这是自己想的一个方法，如果各位有什么更优雅的方法去实现的话，欢迎告知，先谢谢啦！",
+    "date" : "2017-04-25T07:11:41.000Z",
+    "isPublish" : true,
+    "tags" : [
+      "模块介绍",
+      "Vue"
+    ]
+  },
+  {
+    "comment_n" : 0,
+    "title" : "平滑滚动",
+    "content" : "### 前言\n之前给自己的博客中`回到顶部`功能主要用的setTimeout延时滚动，看到vue文档中点击对应标题，就可以平滑滚动到锚点，就很好奇是怎么实现的，看了一下网页的源码，发现是使用了一个叫做smooth-scroll的轻量插件，所以自己也鼓捣使用了这个插件，把原本用setTimeout回到顶部的功能也直接用这个插件实现。\n### 使用插件\n- smooth-scroll\n",
+    "date" : "2017-04-25T07:40:34.000Z",
+    "isPublish" : true,
+    "tags" : [
+      "模块介绍"
+    ]
+  },
+  {
+    "comment_n" : 0,
+    "title" : "canvas粒子效果",
+    "content" : "## 前言\n\n---\n在这个博客啥都还没搭的时候，就已经决定要用canvas来给自己的博客加一点炫酷的效果了，在网上找了一两天的时间，看有没有上面比较炫酷的canvas效果，顺便简单学习一下canvas，毕竟canvas还没学过，最终选择这样一个canvas粒子效果，从而也决定我的博客是为主题为暗色系列的。    \n\n\n## canvas粒子效果\n\n---\n### 看懂源代码\n看了很多的canvas炫酷的效果，最终还是被粒子效果吸引。在一次google搜索以后，找到了一个[非常炫酷的canvas效果](http://www.mrspeaker.net/dev/parcycle/)，当时就想着一定要把这个炫酷的效果放到自己的博客上，于是就右键点击查看源代码，一点一点的去理解这个效果的实现原理，经过一两天的苦思冥想/(ㄒoㄒ)/~~，终于理解了这个网站的源代码，虽然这个过程很累，不过实在是这个canvas效果太吸引我了，所以对这个canvas粒子效果也很执着。\n\n### 后期改良\n\n\n后期经过不断修改，给这个canvas添加了以下的功能\n- 鼠标点击后，随机变化颜色\n- 鼠标跟随canvas粒子效果\n- 鼠标离开页面后，从左到右循环移动\n\n## 结尾\n自己的github里有对源代码进行改良后的代码，与这个博客的效果有一些不一样，有兴趣可以去看一下----[github链接](https://fatdong1.github.io/canvas/particle/index.html)\n",
+    "date" : "2017-04-25T07:10:51.000Z",
+    "isPublish" : true,
+    "tags" : [
+      "模块介绍",
+      "canvas"
+    ]
+  },
+  {
+    "comment_n" : 0,
+    "title" : "评论模块",
+    "content" : "## 前言\n---\n自己写了一个简单评论模块，实现下面的需求：点赞，回复，头像，通知等。\n\n## 简单介绍\n---\n### 通知功能实现\n当有访问者评论后，会通过邮件通知评论者和站长。使用插件为`nodemailer`，尝试了gmail、126、163邮箱，最终决定了126邮箱，因为gmail的安全机制导致有时候有些邮件发不出去，而用163邮箱容易被放到邮箱的垃圾箱中。在这个项目中，我自己注册了一个公用的126邮箱供开发者使用来发送邮件，如果想要使用自己的邮箱来发送邮件，在配置nodemailer时会用到授权码，注意这个不是邮箱密码，可以到网上搜索设置授权码。\n\n但是，如果频繁使用126邮箱发送邮件到固定的邮箱中，超过一定次数会邮件会被放入接收者邮箱的垃圾箱中。解决方法：设置接受者邮箱的白名单为该126邮箱，添加该126邮箱为邮箱联系人。\n### 点赞功能\n将访问者在每篇文章点赞的数量记录在客户端的浏览器localStorage中，如果不清除浏览器缓存，在下次同一个访问者访问的时候，会从浏览器中的localStorage读取点赞记录。\n### 头像功能\n通过判断state.users来判断是站长还是访问者，从而设置不同的头像\n### 评论者重名\n在提交评论的时候，会在后台鉴别该评论名字是否对应特定邮箱，如果数据库已有该评论者名字且邮箱不对应，则无法提交评论，防止评论者重名。\n",
+    "date" : "2017-04-25T07:39:03.000Z",
+    "isPublish" : true,
+    "tags" : [
+      "模块介绍",
+      "nodemailer"
+    ]
+  }
 ]
