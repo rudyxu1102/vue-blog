@@ -45,6 +45,6 @@ export default {}
     }
     p.login {
         cursor: pointer;
-        color: darkturquoise;
+        color: #fff;
     }
 </style>
