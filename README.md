@@ -68,7 +68,7 @@ npm run dev
 解决方法：
 
 ```
-npm node-sass --save-dev
+npm install node-sass --save-dev
 ```
 
 ### 效果展示
