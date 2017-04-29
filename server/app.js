@@ -12,6 +12,15 @@ app.use(favicon(path.resolve(__dirname, '../static/favicon.ico')))
 app.use('/static', express.static(path.resolve(__dirname, '../static')))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+// 设置跨域访问
+app.all('*',function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, authorization, Accept, X-Requested-With , yourHeaderFeild');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS, PATCH');
+    next()
+})
+
 route(app)
 
 // 发送邮件通知站长
