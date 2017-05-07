@@ -73,7 +73,7 @@ export default {
             margin: 20px auto 10px;
             height: 45px;
             font-size: 20px;
-            border: 2px solid #ffc520;
+            border: 2px solid rgb(129, 216, 208);
             border-radius: 30px;
             outline: none;
             text-align: center;
@@ -88,7 +88,7 @@ export default {
             font-size: 40px;
             cursor: pointer;
             &:hover {
-                 color: #ffc520;
+                 color: rgb(129, 216, 208);
              }
         }
     }
@@ -107,7 +107,7 @@ export default {
         }
     }
     p {
-        border-bottom: 3px double #ffc520;
+        border-bottom: 3px double rgb(129, 216, 208);
         width: 200px;
         font-size: 30px;
         margin:0 auto 40px;

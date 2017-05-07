@@ -159,7 +159,7 @@ export default {
         })
 
         window.addEventListener('click', function () {
-//            active = !active
+            active = !active
             startColor = []
             endColor = []
 //            colorRandom = []

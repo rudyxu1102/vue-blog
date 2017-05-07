@@ -74,7 +74,7 @@ export default {
      }
     .newInput {
         border: none;
-        border-bottom: 2px solid #ffc520;
+        border-bottom: 2px solid rgb(129, 216, 208);
         outline: none;
         background: transparent;
         color: #ffffff;

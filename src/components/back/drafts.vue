@@ -52,7 +52,7 @@ export default {
     height: 570px;
     color: #ffffff;
     P {
-        border-bottom: 3px double #ffc520;
+        border-bottom: 3px double rgb(129, 216, 208);
         width: 200px;
         font-size: 30px;
         margin:0 auto 40px;

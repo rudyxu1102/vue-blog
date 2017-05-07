@@ -147,7 +147,7 @@ export default {
     padding: 0 50px 0;
     input {
         border: none;
-        border-bottom: 2px solid #ffc520;
+        border-bottom: 2px solid rgb(129, 216, 208);
         outline: none;
         background: transparent;
         color: #ffffff;
@@ -169,7 +169,7 @@ export default {
         .icon-zengjia {
             margin-left: 5px;
             font-size: 16px;
-            color: #ffc520;
+            color: rgb(129, 216, 208);
             cursor: pointer;
             &:hover {
                  color: darkturquoise;
@@ -178,7 +178,7 @@ export default {
         }
     }
     .info {
-        border: 2px solid #ffc520;
+        border: 2px solid rgb(129, 216, 208);
         position: relative;
         height: 470px;
         .right {
@@ -186,9 +186,9 @@ export default {
             position: absolute;
             right: -2px;
             top: -32px;
-            border-top: 2px solid #ffc520;
-            border-right: 2px solid #ffc520;
-            border-left: 2px solid #ffc520;
+            border-top: 2px solid rgb(129, 216, 208);
+            border-right: 2px solid rgb(129, 216, 208);
+            border-left: 2px solid rgb(129, 216, 208);
             p {
                 float: left;
                 width: 80px;
@@ -198,7 +198,7 @@ export default {
                 cursor: pointer;
             }
             p:nth-child(1) {
-                border-right: 2px solid #ffc520;
+                border-right: 2px solid rgb(129, 216, 208);
             }
         }
         #editor {
@@ -242,7 +242,7 @@ export default {
     bottom: 40px;
 }
 .active {
-    background: #ffc520;
+    background: rgb(129, 216, 208);
     color: #111111;
 }
 </style>

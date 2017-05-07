@@ -69,8 +69,8 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 table {
-    border-left: 3px solid #ffc520;
-    border-right: 3px solid #ffc520;
+    border-left: 3px solid rgb(129, 216, 208);
+    border-right: 3px solid rgb(129, 216, 208);
     width: 900px;
     margin: 0 auto;
     text-align: center;
@@ -90,10 +90,10 @@ table {
     i {
         font-size: 20px;
         margin-right: 10px;
-        color: #ffc520;
+        color: rgb(129, 216, 208);
         cursor: pointer;
         &:hover {
-            color: darkturquoise;
+            color: #ffc520;
         }
     }
     tfoot tr td:nth-child(1), tfoot tr td:nth-child(3) {

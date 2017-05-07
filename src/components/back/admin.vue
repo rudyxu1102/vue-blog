@@ -72,7 +72,7 @@ export default {
             margin-left: 20px;
             i.icon-zhuye {
                 font-size: 30px;
-                color: gold;
+                color: rgb(129, 216, 208);
                 cursor: pointer;
                 &:hover {
                      color: darkturquoise;

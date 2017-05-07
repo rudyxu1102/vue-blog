@@ -1,16 +1,16 @@
 <template>
-    <div id="comment">
-        <div class="newComment">
-            <div class="headImg"><img :src="'../../../../static/' + imgName +'.jpg'"/></div>
-            <textarea spellcheck="false" placeholder="说点什么吧..." v-model="content" id="reply" ref="textBox"></textarea>
-            <input type="text" placeholder="称呼" v-model="name" class="name" ref="nameBox"/>
-            <input type="text" placeholder="address" v-model="address"/>
-            <button @click="summit" :disabled="summitFlag">
+    <div id='comment'>
+        <div class='newComment'>
+            <div class='headImg'><img :src="'../../../../static/' + imgName +'.jpg'"/></div>
+            <textarea spellcheck='false' placeholder='说点什么吧...' v-model='content' id='reply' ref='textBox'></textarea>
+            <input type='text' placeholder='称呼' v-model='name' class='name' ref='nameBox'/>
+            <input type='text' placeholder='邮箱' v-model='address'/>
+            <button @click='summit' :disabled='summitFlag'>
                 <span>{{summitFlag ? '提交中...' : '发布评论'}}</span>
             </button>
         </div>
-        <div class="allComments">
-            <div class="summary">
+        <div class='allComments'>
+            <div class='summary'>
                 <p>评论数 {{comments.length}}</p>
                 <p>
                    <span @click="getAllComments({id: $route.params.id})">最早 </span>|
@@ -18,26 +18,26 @@
                    <span @click="getAllComments({id: $route.params.id, sort: 'like'})"> 最热</span>
                 </p>
             </div>
-            <div class="comments" v-for="(comment,index) in comments">
-                <div id="info" :class="comment.imgName">
-                    <p class="commentName">#{{index + 1}} <span>{{comment.name}}</span></p>
-                    <p class="text">{{comment.content}}</p>
-                    <div class="options">
-                        <p class="commentDate">{{comment.date | toDate}}</p>
-                        <a href="#comment" data-scroll>
-                            <span @click="reply(comment.name)">
-                                <i class="iconfont icon-huifu"></i>回复
+            <div class='comments' v-for='(comment,index) in comments'>
+                <div id='info' :class='comment.imgName'>
+                    <p class='commentName'>#{{index + 1}} <span>{{comment.name}}</span></p>
+                    <p class='text'>{{comment.content}}</p>
+                    <div class='options'>
+                        <p class='commentDate'>{{comment.date | toDate}}</p>
+                        <a href='#comment' data-scroll>
+                            <span @click='reply(comment.name)'>
+                                <i class='iconfont icon-huifu'></i>回复
                             </span>
                         </a>
-                        <p @click="addLike(comment._id, index)">
-                            <i class="iconfont icon-like" :class="{activeLike: likeArr.indexOf(index) !== -1}">
+                        <p @click='addLike(comment._id, index)'>
+                            <i class='iconfont icon-like' :class='{activeLike: likeArr.indexOf(index) !== -1}'>
                             </i> {{comment.like}}
                         </p>
                     </div>
                     <img :src="'../../../../static/' + comment.imgName + '.jpg'"/>
                 </div>
             </div>
-            <p v-show="comments.length === 0" class="nocomment">哎，没人理我 :(</p>
+            <p v-show='comments.length === 0' class='nocomment'>哎，没人理我 :(</p>
         </div>
     </div>
 </template>
@@ -82,6 +82,22 @@ export default {
             } else if (!re.test(this.address)) {
                 alert('请正确填写邮箱地址')
                 return
+            }
+            // 限制评论内容
+            if (this.content.length > 500) {
+                alert('您的评论内容太长，请删除部分之后再提交！')
+                return false
+            } else if (this.content.length < 5) {
+                alert('您的评论内容太短，请不要发表无意义的评论哦！')
+                return false
+            } else if (/\d{7,}/i.test(this.content) || // 连续7个以上数字，过滤发Q号和Q群的评论
+                /(\d.*){7,}/i.test(this.content) || // 非连续的7个以上数字，过滤用字符间隔开的Q号和Q群的评论
+                /\u52A0.*\u7FA4/i.test(this.content) || // 包含“加群”两字的通常是发Q群的垃圾评论
+                /(\u9876.*){5,}/i.test(this.content) || // 过滤5个以上“顶”字的评论
+                /([\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u4E03\u516B\u4E5D\u25CB\u58F9\u8D30\u53C1\u8086\u4F0D\u9646\u67D2\u634C\u7396\u96F6].*){7,}/i.test(this.content) // 过滤用汉字发Q号和Q群的评论
+            ) {
+                alert('请不要发表灌水、广告、违法、Q群Q号等信息，感谢您的配合！')
+                return false
             }
             this.summitFlag = true
             this.summitComment({
@@ -138,7 +154,7 @@ export default {
 
 </script>
 
-<style lang="scss" rel="stylesheet/scss" scoped>
+<style lang='scss' rel='stylesheet/scss' scoped>
 #comment {
     margin: 30px auto 10px;
     padding-top: 30px;
@@ -170,7 +186,7 @@ export default {
             resize: none;
             background: transparent;
             outline: none;
-            font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",  STXihei, "华文细黑",  serif;
+            font-family: Georgia, 'Times New Roman', 'Microsoft YaHei', '微软雅黑',  STXihei, '华文细黑',  serif;
         }
         input {
             color: #ffffff;
