@@ -13,7 +13,7 @@ route(app)
 // 发送邮件通知站长
 app.post('/api/mail', (req, res) => {
     const content = '主题：'+ req.body.subject + '\n内容：' + req.body.content + '\nfrom---' + req.body.address
-    mail.send('562097257@qq.com', '您的博客有一条新留言', content, res)
+    mail.send('xxx@qq.com', '您的博客有一条新留言', content, res)
     res.status(200).send('send email successfully')
 })
 

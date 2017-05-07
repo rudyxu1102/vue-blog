@@ -18,7 +18,7 @@ router.post('/api/comment', (req, res) => {
                 articleId: req.body.articleId,
                 like: 0
             }
-            const content = '评论内容： "' + req.body.content + '"\n评论者：“' + req.body.name + '"\n网址：www.xuhaodong.cn' + req.body.curPath
+            const content = '评论内容： "' + req.body.content + '"\n评论者：“' + req.body.name + '"\n网址：www.xxx.cn' + req.body.curPath
             if (/^@(.*):/.test(req.body.content)) {
                 const reviewer = /^@(.*):/.exec(req.body.content)[1]                // 评论者的名字
                 db.Comment.findOne({name: reviewer, articleId: req.body.articleId}, (err, doc) => {
