@@ -8,6 +8,7 @@
                 <div class="flex">
                     <div v-for="(article, index) in reducedArticles">
                         <time>{{article.date | toDate}}</time>
+                        <span class="commentNumber"><i class="iconfont icon-huifu"></i>{{article.comment_n}}</span>
                         <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'}" tag="p" exact class="title_1">{{article.title}}</router-link>
                         <p class="content">{{article.content}}</p>
                         <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'}" tag="button" exact><span>Read More</span></router-link>
@@ -109,27 +110,26 @@ export default {
                 justify-content: center;
                 div {
                     width: 270px;
-                    border: 3px solid #cccccc;
+                    border: 3px solid rgb(129, 216, 208);
                     padding: 0 30px 20px;
                     margin: 0 30px 30px 30px;
                     time {
-                        border-bottom: 2px dashed #ffc520;
                         width: 100%;
                         height: 60px;
-                        display: block;
                         font-size: 20px;
                         line-height: 60px;
                     }
-                    p:nth-child(2) {
-                        margin-top: 20px;
+                    p:nth-child(3) {
                         font-size: 30px;
                         font-weight: bold;
+                        padding-top: 20px;
+                        border-top: 2px dashed rgb(129, 216, 208);
                         &:hover {
                              color: rgb(0, 194, 169);
                              cursor: pointer;
                          }
                     }
-                    p:nth-child(3) {
+                    p:nth-child(4) {
                         margin-top: 30px;
                     }
                 }
@@ -155,7 +155,7 @@ export default {
             input {
                 color: #ffffff;
                 font-size: 18px;
-                border: 2px solid #00ff7f;
+                border: 2px solid rgb(129, 216, 208);
                 width: 300px;
                 height: 25px;
                 margin-bottom: 20px;
@@ -165,7 +165,7 @@ export default {
             textarea {
                 color: #ffffff;
                 font-size: 18px;
-                border: 2px solid #00ff7f;
+                border: 2px solid rgb(129, 216, 208);
                 width: 500px;
                 height: 300px;
                 resize: none;
@@ -189,5 +189,12 @@ p.headline {
     padding-bottom: 20px;
     border-bottom: 5px double rgb(0, 194, 169);
 }
-
+.commentNumber {
+    margin-left: 10px;
+    color: #ffffff;
+    i {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+}
 </style>

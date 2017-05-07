@@ -4,7 +4,7 @@ const route = require('./api/index.js')
 const mail = require('./email')
 const app = express()
 
-app.set('port', (process.env.port || 3030))
+app.set('port', (process.env.port || 3003))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 

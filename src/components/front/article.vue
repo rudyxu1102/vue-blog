@@ -158,6 +158,7 @@ export default {
             }
         }
         .indexes {
+            margin-top: 50px;
             .last {
                 color: #fff;
                 font-size: 20px;

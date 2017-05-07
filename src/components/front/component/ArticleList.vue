@@ -114,7 +114,7 @@ export default {
             li {
                 list-style-type: circle;
                 a {
-                    color: darkturquoise;
+                    color: rgb(129, 216, 208);
                     display: block;
                     padding: 6px 0 6px 0;
                     font-size: 16px;

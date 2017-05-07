@@ -229,7 +229,7 @@ export default {
             padding: 5px;
             margin-top: 10px;
             #info {
-                width: calc(100%-100px);
+                width: 500px;
                 border: 2px solid rgba(245, 245, 245, 0.5);
                 border-radius: 5px;
                 padding: 10px;
@@ -314,7 +314,7 @@ export default {
      }
 }
 .me {
-    margin-right: 100px;
+    margin-left: 216px;
     img {
         right: 10px;
     }

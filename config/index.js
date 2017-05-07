@@ -29,7 +29,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/api': {
-            target: 'http://localhost:3030',
+            target: 'http://localhost:3003',
             changeOrigin: true,
             pathRewrite: {
                 '^/api': '/api'
@@ -44,6 +44,6 @@ module.exports = {
     cssSourceMap: false
   },
   jwt: {
-      cert: 'fatdong'
+      cert: '123'
   }
 }
