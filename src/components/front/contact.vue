@@ -5,7 +5,9 @@
             <input type="text" placeholder=" 邮件主题" v-model="subject"/>
             <input type="text" placeholder=" 邮箱" v-model="address"/>
             <textarea placeholder=" 来唠唠嗑呗" spellcheck="false" v-model="content"></textarea>
-            <button class="sendEmail" @click="send"><span>确认</span></button>
+            <button class="sendEmail" @click="send" :disabled="sendFlag">
+                <span>{{sendFlag ? '发送中...' : '确认'}}</span>
+            </button>
         </div>
     </div>
 </template>
@@ -17,7 +19,8 @@ export default {
         return {
             subject: '',
             address: '',
-            content: ''
+            content: '',
+            sendFlag: false
         }
     },
     created () {
@@ -38,13 +41,20 @@ export default {
                 alert('请正确填写邮箱地址')
                 return
             }
-            this.sendMail({subject: this.subject, address: this.address, content: this.content})
-                .then(() => {
-                    this.subject = ''
-                    this.content = ''
-                    this.address = ''
-                    alert('邮件发送成功')
-                }).catch(() => { alert('sorry, 邮件发送失败，请重新发送') })
+            this.sendFlag = true
+            this.sendMail({
+                subject: this.subject,
+                address: this.address,
+                content: this.content
+            }).then(() => {
+                this.subject = ''
+                this.content = ''
+                this.address = ''
+                this.sendFlag = false
+            }).catch(() => {
+                this.sendFlag = false
+                alert('sorry, 邮件发送失败，请重新发送')
+            })
         }
     }
 

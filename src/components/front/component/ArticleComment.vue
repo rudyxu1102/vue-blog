@@ -19,20 +19,23 @@
                 </p>
             </div>
             <div class="comments" v-for="(comment,index) in comments">
-                <div class="info">
+                <div id="info" :class="comment.imgName">
                     <p class="commentName">#{{index + 1}} <span>{{comment.name}}</span></p>
-                    <p class="commentDate">{{comment.date | toDate}}</p>
+                    <p class="text">{{comment.content}}</p>
+                    <div class="options">
+                        <p class="commentDate">{{comment.date | toDate}}</p>
+                        <a href="#comment" data-scroll>
+                            <span @click="reply(comment.name)">
+                                <i class="iconfont icon-huifu"></i>回复
+                            </span>
+                        </a>
+                        <p @click="addLike(comment._id, index)">
+                            <i class="iconfont icon-like" :class="{activeLike: likeArr.indexOf(index) !== -1}">
+                            </i> {{comment.like}}
+                        </p>
+                    </div>
+                    <img :src="'../../../../static/' + comment.imgName + '.jpg'"/>
                 </div>
-                <p class="text">{{comment.content}}</p>
-                <div class="options">
-                    <a href="#comment" data-scroll>
-                        <span @click="reply(comment.name)">
-                            <i class="iconfont icon-huifu"></i>回复
-                        </span>
-                    </a>
-                    <p @click="addLike(comment._id, index)"><i class="iconfont icon-like" :class="{activeLike: likeArr.indexOf(index) !== -1}"></i> {{comment.like}}</p>
-                </div>
-                <img :src="'../../../../static/' + comment.imgName + '.jpg'"/>
             </div>
             <p v-show="comments.length === 0" class="nocomment">哎，没人理我 :(</p>
         </div>
@@ -139,7 +142,6 @@ export default {
 #comment {
     margin: 30px auto 10px;
     padding-top: 30px;
-    border-top: 2px solid #00ff7f;
     text-align: left;
     .newComment {
         display: flex;
@@ -192,14 +194,13 @@ export default {
         }
     }
     .allComments {
-        border: 1px solid rgb(193, 193, 193);
-        border-radius:  5px;
         margin-top: 30px;
         .summary {
             display: flex;
             justify-content: space-between;
             background: rgba(245, 245, 245, 0.5);
             padding: 10px;
+            border-radius:  5px;
             span {
                 cursor: pointer;
                 &:hover {
@@ -209,9 +210,13 @@ export default {
         }
         .comments {
             position: relative;
-            border-bottom: 1px solid rgb(193, 193, 193);
             padding: 5px;
-            .info {
+            margin-top: 10px;
+            #info {
+                width: calc(100%-100px);
+                border: 2px solid rgba(245, 245, 245, 0.5);
+                border-radius: 5px;
+                padding: 10px;
                 color: #ccc;
                 .commentName {
                     font-size: 18px;
@@ -220,39 +225,39 @@ export default {
                         color: darkturquoise;
                     }
                 }
-            }
-            .text {
-                margin-top: 10px;
-            }
-            .options {
-                text-align: right;
-                a {
-                    color: white;
-                    margin-right: 10px;
-                    i.icon-huifu {
-                        margin-right: 5px;
+                .text {
+                    margin-top: 10px;
+                }
+                .options {
+                    text-align: right;
+                    a {
+                        color: white;
+                        margin-right: 10px;
+                        i.icon-huifu {
+                            margin-right: 5px;
+                        }
+                        &:hover {
+                            color: deepskyblue;
+                         }
                     }
-                    &:hover {
-                        color: deepskyblue;
-                     }
+                    p {
+                        display: inline-block;
+                        margin-right: 5px;
+                        cursor: pointer;
+                        &:hover {
+                             color: darkturquoise;
+                         }
+                    }
                 }
-                p {
-                    display: inline-block;
-                    margin-right: 5px;
-                    cursor: pointer;
-                    &:hover {
-                         color: darkturquoise;
-                     }
+                img {
+                    width: 60px;
+                    height: 60px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -30px;
+                    border: 2px solid #cccccc;
+                    border-radius: 5px;
                 }
-            }
-            img {
-                width: 50px;
-                height: 50px;
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                border: 2px solid #cccccc;
-                border-radius: 5px;
             }
         }
         .nocomment {
@@ -263,5 +268,61 @@ export default {
 }
 .activeLike {
     color: #ffc520;
+}
+.reviewer {
+    margin-left: 100px;
+    img {
+        left: 10px;
+    }
+    &:after {
+         position: absolute;
+         left: 88px;
+         top: 50%;
+         margin-top: -7px;
+         content: '';
+         width: 0;
+         height: 0;
+         border: 10px solid transparent;
+         border-right-color: #000000;
+     }
+    &:before {
+         position: absolute;
+         left: 85px;
+         top: 50%;
+         margin-top: -7px;
+         content: '';
+         width: 0;
+         height: 0;
+         border: 10px solid transparent;
+         border-right-color: rgba(245, 245, 245, 0.5);
+     }
+}
+.me {
+    margin-right: 100px;
+    img {
+        right: 10px;
+    }
+    &:after {
+         position: absolute;
+         right: 88px;
+         top: 50%;
+         margin-top: -8px;
+         content: '';
+         width: 0;
+         height: 0;
+         border: 10px solid transparent;
+         border-left-color: #000000;
+     }
+    &:before {
+         position: absolute;
+         right: 85px;
+         top: 50%;
+         margin-top: -8px;
+         content: '';
+         width: 0;
+         height: 0;
+         border: 10px solid transparent;
+         border-left-color: rgba(245, 245, 245, 0.5);
+     }
 }
 </style>

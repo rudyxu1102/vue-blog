@@ -17,9 +17,9 @@
             <div class="content animated fadeIn" v-html="mdHtml"></div>
             <div class="indexes animated fadeIn">
                 <div class="last animated fadeIn">
-                    <router-link :to="{name: 'article', params: {id: articles[prePage].aid, index: prePage, page: $route.params.page}, hash: '#article'}"  v-if="articles[prePage]" tag="p">
+                    <router-link :to="{name: 'article', params: {id: articles[prePage].aid, index: prePage, page: $route.params.page}, hash: '#article'}"  v-if="articles[prePage]" tag="p" class="left">
                         <i class="iconfont icon-left"></i>{{articles[prePage].title}}</router-link>
-                    <router-link :to="{name: 'article', params: {id: articles[nextPage].aid, index: nextPage, page: $route.params.page}, hash: '#article'}" v-if="articles[nextPage]" tag="p">
+                    <router-link :to="{name: 'article', params: {id: articles[nextPage].aid, index: nextPage, page: $route.params.page}, hash: '#article'}" v-if="articles[nextPage]" tag="p" class="right">
                         {{articles[nextPage].title}}<i class="iconfont icon-right"></i></router-link>
                 </div>
             </div>
@@ -180,9 +180,19 @@ export default {
                     cursor: pointer;
                     color: #00ff7f;
                     display: inline-block;
+                    padding: 0 10px;
+                    transition: 1s;
                     &:hover {
                          color: darkturquoise;
                      }
+                }
+                p.left:hover {
+                    transition:  1s;
+                    padding-left: 0;
+                }
+                p.right:hover {
+                    transition: 1s;
+                    padding-right: 0;
                 }
             }
         }

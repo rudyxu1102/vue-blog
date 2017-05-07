@@ -19,7 +19,6 @@
     "marked": "^0.3.6",
     "mongoose": "^4.9.1",
     "nodemailer": "^4.0.0",
-    "serve-favicon": "^2.4.2",
     "sha1": "^1.1.1",
     "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "vue": "^2.2.2",

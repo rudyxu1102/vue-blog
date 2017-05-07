@@ -23,7 +23,9 @@
                 <input type="text" placeholder=" 邮件主题" v-model="subject"/>
                 <input type="text" placeholder=" 邮箱" v-model="address"/>
                 <textarea placeholder=" 来唠唠嗑呗" spellcheck="false" v-model="content"></textarea>
-                <button class="sendEmail" @click="send"><span>确认</span></button>
+                <button class="sendEmail" @click="send"  :disabled="sendFlag">
+                    <span>{{sendFlag ? '发送中...' : '确认'}}</span>
+                </button>
             </div>
         </section>
     </div>
@@ -37,7 +39,8 @@ export default {
         return {
             subject: '',
             address: '',
-            content: ''
+            content: '',
+            sendFlag: false
         }
     },
     created () {
@@ -62,13 +65,20 @@ export default {
                 alert('请正确填写邮箱地址')
                 return
             }
-            this.sendMail({subject: this.subject, address: this.address, content: this.content})
-                .then(() => {
-                    this.subject = ''
-                    this.content = ''
-                    this.address = ''
-                    alert('邮件发送成功')
-                }).catch(() => { alert('sorry, 邮件发送失败，请重新发送') })
+            this.sendFlag = true
+            this.sendMail({
+                subject: this.subject,
+                address: this.address,
+                content: this.content
+            }).then(() => {
+                this.subject = ''
+                this.content = ''
+                this.address = ''
+                this.sendFlag = false
+            }).catch(() => {
+                this.sendFlag = false
+                alert('sorry, 邮件发送失败，请重新发送')
+            })
         }
     }
 }
@@ -96,13 +106,12 @@ export default {
                 color: #fff;
                 display: flex;
                 flex-wrap: wrap;
-                margin: 0 100px 0;
-                justify-content: space-between;
+                justify-content: center;
                 div {
                     width: 270px;
                     border: 3px solid #cccccc;
                     padding: 0 30px 20px;
-                    margin-bottom: 20px;
+                    margin: 0 30px 30px 30px;
                     time {
                         border-bottom: 2px dashed #ffc520;
                         width: 100%;
