@@ -92,7 +92,6 @@ export default {
 .articleContent {
     #articles {
         padding: 30px 200px 30px;
-        min-height: 700px;
         .tags {
             .tagFlex {
                 display: flex;
@@ -103,7 +102,7 @@ export default {
                     transition:  1s;
                 }
                 button {
-                    background: #00ff7f;
+                    background: rgb(129, 216, 208);
                     color: #ffffff;
                     width: 100px;
                     margin: 0 20px 20px 0;
@@ -113,7 +112,7 @@ export default {
         div#article {
             color: #fff;
             width: 100%;
-            border-bottom: 2px solid #00ff7f;
+            border-bottom: 2px solid rgb(129, 216, 208);
             h2 {
                 margin-top: 30px;
                 margin-bottom: 20px;

@@ -113,7 +113,6 @@ export default {
         overflow: hidden;
         width: 100%;
         height: 600px;
-        border-bottom: 3px solid #cccccc;
     }
     .bgImage {
         display: block;

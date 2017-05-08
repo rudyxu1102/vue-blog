@@ -1,13 +1,15 @@
 <template>
     <div id='comment'>
         <div class='newComment'>
-            <div class='headImg'><img :src="'../../../../static/' + imgName +'.jpg'"/></div>
+            <img :src="'../../../../static/' + imgName +'.jpg'"/>
             <textarea spellcheck='false' placeholder='说点什么吧...' v-model='content' id='reply' ref='textBox'></textarea>
-            <input type='text' placeholder='称呼' v-model='name' class='name' ref='nameBox'/>
-            <input type='text' placeholder='邮箱' v-model='address'/>
-            <button @click='summit' :disabled='summitFlag'>
-                <span>{{summitFlag ? '提交中...' : '发布评论'}}</span>
-            </button>
+            <div class="inputBox">
+                <input type='text' placeholder='称呼' v-model='name' class='name' ref='nameBox'/>
+                <input type='text' placeholder='邮箱' v-model='address'/>
+                <button @click='summit' :disabled='summitFlag'>
+                    <span>{{summitFlag ? '提交中...' : '发布评论'}}</span>
+                </button>
+            </div>
         </div>
         <div class='allComments'>
             <div class='summary'>
@@ -160,20 +162,17 @@ export default {
     padding-top: 30px;
     text-align: left;
     .newComment {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        position: relative;
         width: 100%;
-        .headImg {
-            align-self: center;
-            text-align: center;
-            width: 200px;
-            img {
-                width: 100px;
-                height: 100px;
-                border: 2px solid #cccccc;
-                border-radius: 10px;
-            }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            margin-top: -50px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #cccccc;
+            border-radius: 10px;
         }
         textarea {
             color: #ffffff;
@@ -181,32 +180,38 @@ export default {
             border: 2px solid darkturquoise;
             padding: 5px;
             border-radius: 10px;
-            width: calc(100% - 214px);
+            width: calc(100% - 264px);
+            margin-left: 250px;
             height: 200px;
             resize: none;
             background: transparent;
             outline: none;
             font-family: Georgia, 'Times New Roman', 'Microsoft YaHei', '微软雅黑',  STXihei, '华文细黑',  serif;
         }
-        input {
-            color: #ffffff;
-            font-size: 18px;
-            border: 2px solid darkturquoise;
-            border-radius: 5px;
-            outline: none;
-            width: 200px;
-            height: 25px;
-            margin: 20px 10px 10px 0;
-            padding-left: 5px;
-            display: inline-block;
-            background: transparent;
-        }
-        input.name {
-            margin-left: 200px;
-        }
-        button {
-            margin-top: 10px;
-            float: right;
+        .inputBox {
+            margin-left: 250px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            input {
+                flex-grow: 1;
+                margin-right: 25px;
+                color: #ffffff;
+                font-size: 18px;
+                border: 2px solid darkturquoise;
+                border-radius: 5px;
+                outline: none;
+                width: 200px;
+                height: 25px;
+                margin-top: 20px;
+                padding-left: 5px;
+                display: inline-block;
+                background: transparent;
+            }
+            button {
+                flex-grow: 1;
+                margin-top: 10px;
+            }
         }
     }
     .allComments {
@@ -228,8 +233,9 @@ export default {
             position: relative;
             padding: 5px;
             margin-top: 10px;
+            width: 100%;
             #info {
-                width: 500px;
+                width: 50%;
                 border: 2px solid rgba(245, 245, 245, 0.5);
                 border-radius: 5px;
                 padding: 10px;
@@ -242,9 +248,14 @@ export default {
                     }
                 }
                 .text {
+                    overflow: hidden;
                     margin-top: 10px;
+                    margin-bottom: 10px;
                 }
                 .options {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
                     text-align: right;
                     a {
                         color: white;
@@ -314,13 +325,14 @@ export default {
      }
 }
 .me {
-    margin-left: 216px;
+    position: relative;
+    margin-left: 35%;
     img {
-        right: 10px;
+        right: -95px;
     }
     &:after {
          position: absolute;
-         right: 88px;
+         right: -18px;
          top: 50%;
          margin-top: -8px;
          content: '';
@@ -331,7 +343,7 @@ export default {
      }
     &:before {
          position: absolute;
-         right: 85px;
+         right: -22px;
          top: 50%;
          margin-top: -8px;
          content: '';

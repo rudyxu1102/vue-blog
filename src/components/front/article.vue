@@ -178,6 +178,7 @@ export default {
                     margin-left: 10px;
                 }
                 p {
+                    flex-grow: 1;
                     cursor: pointer;
                     color: #00ff7f;
                     display: inline-block;
@@ -187,13 +188,19 @@ export default {
                          color: darkturquoise;
                      }
                 }
-                p.left:hover {
-                    transition:  1s;
-                    padding-left: 0;
+                p.left {
+                    text-align: left;
+                    &:hover {
+                        transition:  1s;
+                        padding-left: 0;
+                     }
                 }
-                p.right:hover {
-                    transition: 1s;
-                    padding-right: 0;
+                p.right {
+                    /*align-self: flex-end;*/
+                    &:hover {
+                        transition: 1s;
+                        padding-right: 0;
+                     }
                 }
             }
         }
