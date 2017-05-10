@@ -335,7 +335,7 @@ export default {
     }
     &:after {
          position: absolute;
-         right: -1.125rem;
+         right: -1.2rem;
          top: 50%;
          margin-top: -0.5rem;
          content: '';
@@ -346,7 +346,7 @@ export default {
      }
     &:before {
          position: absolute;
-         right: -1.375rem;
+         right: -1.35rem;
          top: 50%;
          margin-top: -0.5rem;
          content: '';

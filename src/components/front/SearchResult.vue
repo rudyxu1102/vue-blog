@@ -80,7 +80,7 @@ export default {
     div#article {
         color: #fff;
         width: 100%;
-        border-bottom: 0.125rem solid #00ff7f;
+        border-bottom: 0.125rem solid rgb(129, 216, 208);
         h2 {
             margin-top: 1.875rem;
             margin-bottom: 1.25rem;
@@ -98,7 +98,7 @@ export default {
             width: 8.75rem;
             height: 2.5rem;
             line-height: 2.5rem;
-            background: deepskyblue;
+            background: rgb(129, 216, 208);
             margin-bottom: 1.25rem;
             border-radius: 0.25rem;
             margin-left: calc(100% - 8.75rem);

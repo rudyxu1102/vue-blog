@@ -90,7 +90,7 @@ export default {
             margin: 0 auto 6.25rem;
             .icon-icon69 {
                 font-size: 3.75rem;
-                color:  darkturquoise;
+                color:  rgb(129, 216, 208);
             }
         }
         div {
@@ -98,7 +98,7 @@ export default {
             margin: 0 auto;
             position: relative;
             i {
-                color: deepskyblue;
+                color: rgb(129, 216, 208);
                 font-size: 1.875rem;
                 display: block;
                 position: absolute;
@@ -116,13 +116,13 @@ export default {
             margin-left: 4.375rem;
             outline: none;
             border: none;
-            border-bottom: 0.1875rem solid #fc8c84;
+            border-bottom: 0.1875rem solid rgb(129, 216, 208);
             background: transparent;
             color: #fff;
             font-size: 1rem;
             padding-left: 0.625rem;
             &:focus + i {
-                 color: #ffc520;
+                 color: darkturquoise;
              }
         }
         button {
@@ -131,13 +131,13 @@ export default {
             bottom: 0;
             left: 50%;
             margin-left: -5rem;
-            background: deepskyblue;
+            background: rgb(129, 216, 208);
         }
     }
     p{
         text-align: center;
         height: 1rem;
-        color: royalblue;
+        color: rgb(129, 216, 208);
     }
     .fade-leave-active {
         transition: opacity .5s

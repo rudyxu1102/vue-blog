@@ -42,7 +42,7 @@ Vue.directive('scrollShow', {
                 for (let i = 0; i < el.children.length; i++) {
                     setTimeout(() => {
                         el.children[i] ? el.children[i].style.display = 'block' : 0
-                    }, 1000 * i)
+                    }, 500 * i)
                 }
             }
         })

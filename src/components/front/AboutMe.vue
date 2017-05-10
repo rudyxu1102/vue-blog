@@ -1,6 +1,8 @@
 <template>
     <div id="contact" v-scroll-show>
-        <p class="headline animated bounceIn">About me</p>
+        <a href="#about_me" class="animated bounceIn" data-scroll>
+            <p class="headline" id="about_me">About me</p>
+        </a>
         <div class="info animated tada">
             <img src="../../../static/me.jpg" alt="me"/>
             <div class="wraper">
@@ -29,6 +31,7 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 #contact {
+    min-height: 43.75rem;
     padding: 0 1rem 5rem;
     background: rgba(55, 57, 65, 0.2);
     p.headline {
@@ -41,7 +44,7 @@ export default {
         width: 55%;
         margin: 6.875rem auto 0;
         padding-bottom: 2rem;
-        border: 0.1875rem solid rgb(0, 194, 169);
+        border: 0.1875rem solid rgb(129, 216, 208);
         transition: all 2s;
         &:hover {
              background: rgb(0, 194, 169);
@@ -88,7 +91,7 @@ p.headline {
     color: #fff;
     font-size: 2.5rem;
     padding-bottom: 1.25rem;
-    border-bottom: 0.3125rem double rgb(0, 194, 169);
+    border-bottom: 0.3125rem double rgb(129, 216, 208);
 }
 @media screen and (max-width: 440px) {
     .headline, .info {
@@ -104,6 +107,9 @@ p.headline {
         }
         p.left {
             color: rgb(129, 216, 208) !important;
+        }
+        p.right {
+            width: 100% !important;
         }
     }
 }

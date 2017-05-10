@@ -1,6 +1,8 @@
 <template>
     <div class="contact" v-scroll-show>
-        <p class="headline animated bounceIn">Contact me</p>
+        <a href="#callMe" class="animated bounceIn" data-scroll>
+            <p class="headline" id="callMe">Contact me</p>
+        </a>
         <div class="email animated fadeIn">
             <input type="text" placeholder=" 邮件主题" v-model="subject"/>
             <input type="text" placeholder=" 邮箱" v-model="address"/>
@@ -65,8 +67,7 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
 .contact {
     background: rgba(55, 57, 65, 0.2);
-    min-height: 43.75rem;
-    padding: 0 1rem;
+    padding: 0 1rem 2rem;
     p {
         display: none;
         width: 17.5rem;
@@ -109,7 +110,7 @@ p.headline {
     color: #fff;
     font-size: 2.5rem;
     padding-bottom: 1.25rem;
-    border-bottom: 0.3125rem double rgb(0, 194, 169);
+    border-bottom: 0.3125rem double rgb(129, 216, 208);
 }
 @media screen and (max-width: 440px) {
     .headline, .email {

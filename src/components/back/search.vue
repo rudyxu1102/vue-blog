@@ -66,6 +66,7 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
 .container {
     text-align: center;
+    padding-bottom: 2rem;
     .search {
         margin-right: -2.8125rem;
         input {

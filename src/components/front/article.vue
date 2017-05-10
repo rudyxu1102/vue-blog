@@ -116,7 +116,7 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 .wrapper {
-    padding: 1.875rem 15.625rem 1.875rem;
+    padding: 1.875rem 15.625rem 0;
     color: #ffffff;
     position: relative;
     min-height: 43.75rem;

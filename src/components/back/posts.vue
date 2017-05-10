@@ -65,6 +65,7 @@ export default {
 }
 @media screen and (max-width: 440px) {
     .wrapper {
+        padding-top: 2rem !important;
         margin-bottom: 4rem;
         .addPost {
             position: absolute !important;

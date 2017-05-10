@@ -87,7 +87,7 @@ export default {
                 font-size: 1.25rem;
             }
             &:hover {
-                 color: darkturquoise;
+                 color: rgb(129, 216, 208);
              }
         }
     }

@@ -102,7 +102,6 @@ export default {
         }
         .posts {
             display: none;
-            padding-bottom: 5rem;
             .flex {
                 color: #fff;
                 display: flex;
@@ -114,8 +113,8 @@ export default {
                     flex-shrink: 1;
                     width: 15rem;
                     border: 0.1875rem solid rgb(129, 216, 208);
-                    padding: 0 1.4rem 1.25rem;
-                    margin: 0 1.875rem 2.2rem 1.875rem;
+                    padding: 0 2rem 1.25rem;
+                    margin: 0 2rem 4rem 2rem;
                     .option {
                         display: flex;
                         flex-wrap: wrap;
@@ -148,8 +147,8 @@ export default {
     }
     .contact {
         background: rgba(55, 57, 65, 0.2);
-        height: 43.75rem;
         padding: 0 1rem;
+        padding-bottom: 2rem;
         .title {
             color: white;
             display: none;
@@ -199,7 +198,7 @@ p.headline {
     color: #fff;
     font-size: 2.5rem;
     padding-bottom: 1.25rem;
-    border-bottom: 0.3125rem double rgb(0, 194, 169);
+    border-bottom: 0.3125rem double rgb(129, 216, 208);
 }
 .commentNumber {
     color: #ffffff;

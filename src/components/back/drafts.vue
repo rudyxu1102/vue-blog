@@ -50,6 +50,7 @@ export default {
 .container {
     padding-top: 0.625rem;
     color: #ffffff;
+    position: relative;
     P {
         border-bottom: 0.1875rem double rgb(129, 216, 208);
         width: 12.5rem;
@@ -64,5 +65,14 @@ export default {
          right: 1.25rem;
      }
 }
-
+@media screen and (max-width: 440px) {
+    .container {
+        padding-top: 2rem !important;
+        margin-bottom: 3rem;
+        .addPost {
+            position: absolute;
+            bottom: -3rem;
+        }
+    }
+}
 </style>

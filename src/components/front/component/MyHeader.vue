@@ -84,9 +84,6 @@ export default {
                 position: absolute;
                 right: 0.5rem;
                 top: 0.2rem;
-                &:hover {
-                     color: deepskyblue;
-                 }
             }
         }
         nav {
