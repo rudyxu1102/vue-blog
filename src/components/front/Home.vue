@@ -6,9 +6,11 @@
             </a>
             <div class="posts animated fadeIn">
                 <div class="flex">
-                    <div v-for="(article, index) in reducedArticles">
+                    <div v-for="(article, index) in reducedArticles" class="oneArticle">
+                        <div class="option">
                         <time>{{article.date | toDate}}</time>
                         <span class="commentNumber"><i class="iconfont icon-huifu"></i>{{article.comment_n}}</span>
+                        </div>
                         <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'}" tag="p" exact class="title_1">{{article.title}}</router-link>
                         <p class="content">{{article.content}}</p>
                         <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'}" tag="button" exact><span>Read More</span></router-link>
@@ -83,54 +85,62 @@ export default {
         }
     }
 }
-
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 .container {
     background: rgba(55, 57, 65, 0.2);
     .newBlog {
-        min-height: 700px;
+        min-height: 43.75rem;
         .title {
-            color: white;
             display: none;
-            margin-bottom: 60px;
+            margin-bottom: 3.75rem;
             p {
-                padding-top: 45px;
-                width: 250px;
+                padding-top: 2.8125rem;
+                width: 15.625rem;
             }
         }
         .posts {
             display: none;
-            padding-bottom: 80px;
+            padding-bottom: 5rem;
             .flex {
                 color: #fff;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                div {
-                    width: 270px;
-                    border: 3px solid rgb(129, 216, 208);
-                    padding: 0 30px 20px;
-                    margin: 0 30px 30px 30px;
-                    time {
-                        width: 100%;
-                        height: 60px;
-                        font-size: 20px;
-                        line-height: 60px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                div.oneArticle {
+                    flex-shrink: 1;
+                    width: 15rem;
+                    border: 0.1875rem solid rgb(129, 216, 208);
+                    padding: 0 1.4rem 1.25rem;
+                    margin: 0 1.875rem 2.2rem 1.875rem;
+                    .option {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        padding-top: 1rem;
+                        time {
+                            flex-shrink: 1;
+                            width: 16rem;
+                            padding-bottom: 1rem;
+                            display: inline-block;
+                            font-size: 1.25rem;
+                        }
                     }
-                    p:nth-child(3) {
-                        font-size: 30px;
+                    p:nth-child(2) {
+                        font-size: 1.875rem;
                         font-weight: bold;
-                        padding-top: 20px;
-                        border-top: 2px dashed rgb(129, 216, 208);
+                        padding-top: 1.25rem;
+                        border-top: 0.125rem dashed rgb(129, 216, 208);
                         &:hover {
                              color: rgb(0, 194, 169);
                              cursor: pointer;
                          }
                     }
-                    p:nth-child(4) {
-                        margin-top: 30px;
+                    p:nth-child(3) {
+                        margin-top: 1.875rem;
                     }
                 }
             }
@@ -138,63 +148,75 @@ export default {
     }
     .contact {
         background: rgba(55, 57, 65, 0.2);
-        height: 700px;
+        height: 43.75rem;
+        padding: 0 1rem;
         .title {
             color: white;
             display: none;
-            margin-bottom: 60px;
+            margin-bottom: 3.75rem;
             p {
-                padding-top: 45px;
-                width: 250px;
+                padding-top: 2.8125rem;
+                width: 15.625rem;
             }
         }
         .email {
             display: none;
-            width: 500px;
-            margin: 50px auto 0;
+            margin: 3.125rem auto 0;
+            width: 40%;
             input {
                 color: #ffffff;
-                font-size: 18px;
-                border: 2px solid rgb(129, 216, 208);
-                width: 300px;
-                height: 25px;
-                margin-bottom: 20px;
+                font-size: 1.125rem;
+                border: 0.125rem solid rgb(129, 216, 208);
+                width: 70%;
+                height: 1.5625rem;
+                margin-bottom: 1.25rem;
                 display: block;
                 background: transparent;
             }
             textarea {
                 color: #ffffff;
-                font-size: 18px;
-                border: 2px solid rgb(129, 216, 208);
-                width: 500px;
-                height: 300px;
+                font-size: 1.125rem;
+                border: 0.125rem solid rgb(129, 216, 208);
+                width: 100%;
+                height: 15rem;
                 resize: none;
                 background: transparent;
+                padding-top: 0.5rem;
                 font-family: Georgia, "Microsoft YaHei", "微软雅黑",  STXihei, "华文细黑",  serif;
             }
             .sendEmail {
-                width: 100px;
-                margin-top: 10px;
-                margin-left: calc(100% - 100px);
+                width: 6.25rem;
+                margin-top: 0.625rem;
+                margin-left: calc(100% - 6.25rem);
             }
         }
     }
 }
 p.headline {
-    padding-top: 70px;
-    margin: 0 auto 20px;
+    padding-top: 4.375rem;
+    margin: 0 auto 1.25rem;
     text-align: center;
     color: #fff;
-    font-size: 40px;
-    padding-bottom: 20px;
-    border-bottom: 5px double rgb(0, 194, 169);
+    font-size: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.3125rem double rgb(0, 194, 169);
 }
 .commentNumber {
-    margin-left: 10px;
     color: #ffffff;
+    font-size: 1.25rem;
     i {
-        font-size: 18px;
-        margin-right: 5px;
+        font-size: 1.25rem;
+        margin-right: 0.3125rem;
+    }
+}
+@media screen and (max-width: 440px) {
+    .oneArticle {
+        flex-grow: 1;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .email {
+        width: 100% !important;
     }
 }
 </style>

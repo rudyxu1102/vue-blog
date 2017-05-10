@@ -65,49 +65,58 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
 .contact {
     background: rgba(55, 57, 65, 0.2);
-    min-height: 700px;
+    min-height: 43.75rem;
+    padding: 0 1rem;
     p {
         display: none;
-        width: 280px;
+        width: 17.5rem;
     }
     .email {
         display: none;
-        width: 500px;
-        margin: 50px auto 0;
+        width: 40%;
+        margin: 3.125rem auto 0;
         input {
             color: #ffffff;
-            font-size: 18px;
-            border: 2px solid #00ff7f;
-            width: 300px;
-            height: 25px;
-            margin-bottom: 20px;
+            font-size: 1.125rem;
+            border: 0.125rem solid rgb(129, 216, 208);
+            width: 70%;
+            height: 1.5625rem;
+            margin-bottom: 1.25rem;
             display: block;
             background: transparent;
         }
         textarea {
             color: #ffffff;
-            font-size: 18px;
-            border: 2px solid #00ff7f;
-            width: 500px;
-            height: 300px;
+            font-size: 1.125rem;
+            border: 0.125rem solid rgb(129, 216, 208);
+            width: 100%;
+            height: 15rem;
             resize: none;
             background: transparent;
             font-family: Georgia, "Microsoft YaHei", "微软雅黑",  STXihei, "华文细黑",  serif;
         }
         .sendEmail {
-            width: 100px;
-            margin-top: 10px;
-            margin-left: calc(100% - 100px);
+            width: 6.25rem;
+            margin-top: 0.625rem;
+            margin-left: calc(100% - 6.25rem);
         }
     }
 }
 p.headline {
-    padding-top: 70px;
-    margin: 0 auto 20px;
+    padding-top: 4.375rem;
+    margin: 0 auto 1.25rem;
     text-align: center;
     color: #fff;
-    font-size: 40px;
-    padding-bottom: 20px;
-    border-bottom: 5px double rgb(0, 194, 169);
+    font-size: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.3125rem double rgb(0, 194, 169);
+}
+@media screen and (max-width: 440px) {
+    .headline, .email {
+        display: block !important;
+    }
+    .email {
+        width: 100% !important;
+    }
 }
 </style>

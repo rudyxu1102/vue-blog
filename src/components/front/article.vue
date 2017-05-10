@@ -116,76 +116,82 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 .wrapper {
-    padding: 30px 250px 30px;
+    padding: 1.875rem 15.625rem 1.875rem;
     color: #ffffff;
-    text-align: right;
     position: relative;
+    min-height: 43.75rem;
     #content {
-        min-height: 600px;
         .title, .appendInfo, .content, .indexes, .comment, .list {
             display: none;
         }
         h1 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
         .content {
-            min-height: 500px;
-            margin-top: 10px;
+            min-height: 31.25rem;
+            margin-top: 1rem;
             text-align: left;
-            font-size: 16px;
+            font-size: 1rem;
             white-space: pre-wrap;
             word-wrap: break-word;
         }
         .appendInfo {
+            text-align: right;
+            time {
+                display: inline-block;
+            }
             span {
                 color: #fff;
-                margin-left: 10px;
+                display: inline-block;
+                margin-left: 0.625rem;
             }
             a.commentCount {
+                display: inline-block;
                 color: #ffffff;
                 cursor: pointer;
-                margin-left: 10px;
+                margin-left: 0.625rem;
                 &:hover {
                      color: darkturquoise;
                  }
             }
             i {
-                margin-right: 5px;
+                margin-right: 0.3125rem;
             }
             i.icon-shijian, i.icon-label {
-                font-size: 20px;
+                font-size: 1.25rem;
             }
         }
         .indexes {
-            margin-top: 50px;
+            margin-top: 3.125rem;
             .last {
                 color: #fff;
-                font-size: 20px;
+                font-size: 1.25rem;
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
-                margin-top: 20px;
+                margin-top: 1.25rem;
                 i {
-                    font-size: 18px;
-                    color: #00ff7f;
+                    font-size: 1.125rem;
+                    color: rgb(129, 216, 208);
                 }
                 i.icon-left {
-                    margin-right: 10px;
+                    margin-right: 0.625rem;
                 }
                 i.icon-right {
-                    margin-left: 10px;
+                    margin-left: 0.625rem;
                 }
                 p {
                     flex-grow: 1;
                     cursor: pointer;
-                    color: #00ff7f;
+                    color: rgb(129, 216, 208);
                     display: inline-block;
-                    padding: 0 10px;
+                    padding: 0 0.625rem;
                     transition: 1s;
+                    margin-top: 1rem;
                     &:hover {
-                         color: darkturquoise;
+                         color: #00ff7f;
                      }
                 }
                 p.left {
@@ -196,7 +202,7 @@ export default {
                      }
                 }
                 p.right {
-                    /*align-self: flex-end;*/
+                    text-align: right;
                     &:hover {
                         transition: 1s;
                         padding-right: 0;
@@ -207,14 +213,30 @@ export default {
     }
     i.icon-fanhui {
         color: #C0CCDA;
-        font-size: 30px;
+        font-size: 1.875rem;
         position: absolute;
-        bottom: 20px;
-        left: 20px;
+        bottom: 1.25rem;
+        left: 1.25rem;
         cursor: pointer;
         &:hover {
             color: darkturquoise;
          }
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .list {
+        display: none !important;
+    }
+    .appendInfo {
+        text-align: center !important;
+    }
+    .wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    i.icon-fanhui {
+        display: none !important;
     }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <fire-canvas></fire-canvas>
+    <fire-canvas class="fire"></fire-canvas>
     <router-view></router-view>
   </div>
 </template>
@@ -42,7 +42,15 @@ export default {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        height: 100%;
+        min-height: 100%;
         width: 100%;
+    }
+    @media screen and (max-width: 440px) {
+        .fire {
+            display: none;
+        }
+        #app {
+            background: #000;
+        }
     }
 </style>

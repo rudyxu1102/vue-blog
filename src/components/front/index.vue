@@ -4,7 +4,7 @@
         <router-view class="content" v-show="!isLoading"></router-view>
         <spinner v-show="isLoading"></spinner>
         <transition name="huojian" enter-active-class="animated bounceIn" leave-active-class="animated fadeOut">
-            <a href="#app" data-scroll><i class="iconfont icon-huojian" v-if="show"></i></a>
+            <a href="#app" class="rocket" data-scroll><i class="iconfont icon-huojian" v-if="show"></i></a>
         </transition>
         <my-footer></my-footer>
     </div>
@@ -51,21 +51,26 @@ h1 {
     text-align: center;
 }
 .icon-huojian {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #C0CCDA;
     position: fixed;
-    bottom: 20px;
-    right: 40px;
+    bottom: 1.25rem;
+    right: 2.5rem;
     cursor: pointer;
     transition:  1s;
     &:hover {
-         bottom: 30px;
+         bottom: 1.875rem;
          color: #00ff7f;
          transition:  1s;
      }
 }
 .totop {
-    bottom: 500px;
+    bottom: 31.25rem;
     transition: 1s;
+}
+@media screen and (max-width: 440px) {
+    .icon-huojian {
+        right: 0.5rem;
+    }
 }
 </style>

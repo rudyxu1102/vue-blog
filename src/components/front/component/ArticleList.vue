@@ -3,7 +3,7 @@
         <i class="iconfont icon-mulu" @click="showList = true" v-show="!showList"></i>
         <i class="iconfont icon-icon13" @click="showList = false" v-show="showList"></i>
         <transition-group enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div" id="showCata">
-            <div id="empty" key="empty" ref="emptyBox" style="top: 36px; height: 30px" v-show="showList"></div>
+            <div id="empty" key="empty" ref="emptyBox" style="top: 2rem; height: 1.875rem" v-show="showList"></div>
             <p class="summary" v-show="showList" key="summary">文章目录</p>
             <ul v-show="showList" class="catalog" key="catalog">
                 <li
@@ -57,7 +57,7 @@ export default {
     watch: {
         $route (to, from) {
             if (to.name === 'article' && to.hash === '#article') {
-                this.$refs.emptyBox.style.top = 36 + 'px'
+                this.$refs.emptyBox.style.top = 2 + 'rem'
             }
         }
     }
@@ -67,25 +67,25 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 #list {
-    left: 5px;
-    top: 40px;
+    left: 0.3125rem;
+    top: 2.5rem;
     text-align: left;
     position: absolute;
-    max-width: 220px;
+    max-width: 13.75rem;
     i.icon-mulu {
         position: absolute;
-        left: 20px;
-        top: 10px;
+        left: 1.25rem;
+        top: 0.625rem;
         color: #ffffff;
-        font-size: 20px;
+        font-size: 1.25rem;
         cursor: pointer;
     }
     i.icon-icon13 {
         position: absolute;
-        right: -15px;
-        top: 5px;
+        right: -0.9375rem;
+        top: 0.3125rem;
         color: #fff;
-        font-size: 15px;
+        font-size: 0.9375rem;
         font-weight: bolder;
         cursor: pointer;
         &:hover {
@@ -97,27 +97,28 @@ export default {
             width: 100%;
             background: rgba(204, 204, 204, 0.5);
             position: absolute;
-            padding-left: 5px;
-            border-left: 3px solid darkturquoise;
+            padding-left: 0.3125rem;
+            border-left: 0.1875rem solid darkturquoise;
             transition: 1s;
         }
         p.summary {
             color: white;
-            font-size: 20px;
+            font-size: 1.25rem;
             font-weight: bold;
-            margin-left: 10px;
-            margin-bottom: 10px;
+            height: 2rem;
+            margin-left: 0.625rem;
         }
         .catalog {
-            border-left: 3px solid #cccccc;
-            padding-left: 25px;
+            border-left: 0.1875rem solid #cccccc;
+            padding-left: 1.5625rem;
             li {
+                min-height: 1.875rem;
                 list-style-type: circle;
                 a {
                     color: rgb(129, 216, 208);
                     display: block;
-                    padding: 6px 0 6px 0;
-                    font-size: 16px;
+                    padding: 0.375rem 0 0.375rem 0;
+                    font-size: 1rem;
                     cursor: pointer;
                     &:hover {
                          color: #00ff7f;
@@ -130,7 +131,7 @@ export default {
 
 @for $i from 2 to 6 {
     .level-#{$i} {
-        border-left: 5px solid transparent;
+        border-left: 0.3125rem solid transparent;
         margin-left: #{($i - 1) * 20}px;
     }
 }

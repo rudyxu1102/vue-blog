@@ -1,30 +1,31 @@
 blockquote {
-  margin-top: 20px;
-  border-left: 3px solid darkturquoise;
-  padding: 0 10px;
+  margin-top: 1.25rem;
+  border-left: 0.1875rem solid darkturquoise;
+  padding: 0 0.625rem;
   background: rgba(204, 204, 204, 0.5);
 }
 ul, ol{
   margin-top: 0;
-  padding-left: 20px;
-  line-height: 18px;
+  padding-left: 1.25rem;
+  line-height: 1.125rem;
 }
 code {
   color: rgb(147, 240, 216);
   background: rgb(71, 73,73);
   font-family: Consolas;
-  padding: 0 5px;
-  white-space: pre-wrap;
-  border-radius: 5px;
+  padding: 0 0.3125rem;
+  border-radius: 0.3125rem;
+  overflow-x: auto;
 }
 hr {
-  margin: 10px 0 0;
+  margin: 0.625rem 0 0;
 }
 pre {
-  padding: 10px 10px;
+  padding: 0.625rem 0.625rem;
   background:  rgb(71, 73,73);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
+  overflow-x: auto;
 }
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }

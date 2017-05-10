@@ -44,7 +44,7 @@ export default {
             content: '文章见解',
             animation: 'animated flipInY'
         })
-        this.getAllArticles({value: '全部', page: 1})
+        this.getAllArticles({page: 1})
         this.getAllTags()
     },
     computed: {
@@ -91,78 +91,87 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
 .articleContent {
     #articles {
-        padding: 30px 200px 30px;
+        padding: 1.875rem 12.5rem 1.875rem;
         .tags {
             .tagFlex {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: flex-start;
+                justify-content: space-around;
                 .activeBtn {
                     background: #ffc520;
+                    color: #ffffff;
                     transition:  1s;
                 }
                 button {
+                    transition:  1s;
+                    padding-left: 1rem;
+                    padding-right: 0.2rem;
+                    text-align: center;
                     background: rgb(129, 216, 208);
-                    color: #ffffff;
-                    width: 100px;
-                    margin: 0 20px 20px 0;
+                    color: #00193a;
+                    margin: 0 1.25rem 1.25rem 0;
                 }
             }
         }
         div#article {
             color: #fff;
             width: 100%;
-            border-bottom: 2px solid rgb(129, 216, 208);
+            border-bottom: 0.125rem solid rgb(129, 216, 208);
             h2 {
-                margin-top: 30px;
-                margin-bottom: 20px;
+                margin-top: 1.875rem;
+                margin-bottom: 1.25rem;
             }
             time {
-                margin-top: 10px;
+                margin-top: 0.625rem;
+                margin-right: 0.625rem;
             }
             p {
                 white-space: pre-wrap;
                 word-wrap: break-word;
-                margin-top: 30px;
-                margin-bottom: 30px;
+                margin-top: 1.875rem;
+                margin-bottom: 1.875rem;
             }
             button {
-                width: 140px;
-                height: 40px;
-                line-height: 40px;
-                background: deepskyblue;
-                margin-bottom: 20px;
-                border-radius: 4px;
-                margin-left: calc(100% - 140px);
+                width: 8.75rem;
+                height: 2.5rem;
+                line-height: 2.5rem;
+                margin-bottom: 1.25rem;
+                border-radius: 0.25rem;
+                margin-left: calc(100% - 8.75rem);
             }
             .articleTag {
-                margin-left: 10px;
-                margin-bottom: 30px;
+                margin-bottom: 1.875rem;
+                margin-right: 0.625rem;
             }
             .commentNumber {
-                margin-left: 10px;
                 color: #ffffff;
                 i {
-                    font-size: 18px;
-                    margin-right: 5px;
+                    font-size: 1.125rem;
+                    margin-right: 0.3125rem;
                 }
             }
             i.icon-label, i.icon-shijian {
                 color: #ffffff;
-                font-size: 20px;
-                margin-right: 5px;
+                font-size: 1.25rem;
+                margin-right: 0.3125rem;
             }
         }
         p.noMore {
             width: 100%;
             color: #ffffff;
-            margin-top: 30px;
+            margin-top: 1.875rem;
             text-align: center;
         }
     }
     .spinner {
         margin-top: 0;
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
+    }
+}
+@media screen and (max-width: 440px) {
+    #articles {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 }
 </style>

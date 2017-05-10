@@ -14,17 +14,17 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     .loading{
-        width: 150px;
-        height: 15px;
-        margin: 40px auto 40px;
+        width: 9.375rem;
+        height: 0.9375rem;
+        margin: 2.5rem auto 2.5rem;
     }
     .loading span{
         display: inline-block;
-        width: 15px;
+        width: 0.9375rem;
         height: 100%;
-        margin-right: 5px;
+        margin-right: 0.3125rem;
         border-radius: 50%;
-        background: #00ff7f;
+        background: rgb(129, 216, 208);
         -webkit-animation: load 1.04s ease infinite;
     }
     .loading span:last-child{

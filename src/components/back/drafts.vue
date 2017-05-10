@@ -48,21 +48,21 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 .container {
-    padding-top: 10px;
-    height: 570px;
+    padding-top: 0.625rem;
     color: #ffffff;
     P {
-        border-bottom: 3px double rgb(129, 216, 208);
-        width: 200px;
-        font-size: 30px;
-        margin:0 auto 40px;
-        padding-bottom: 10px;
+        border-bottom: 0.1875rem double rgb(129, 216, 208);
+        width: 12.5rem;
+        font-size: 1.875rem;
+        margin:0 auto 2.5rem;
+        padding-bottom: 0.625rem;
         text-align: center;
     }
     .addPost {
          position: fixed;
-         bottom: 20px;
-         right: 20px;
+         bottom: 1.25rem;
+         right: 1.25rem;
      }
 }
+
 </style>

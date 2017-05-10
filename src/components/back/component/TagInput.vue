@@ -74,22 +74,22 @@ export default {
      }
     .newInput {
         border: none;
-        border-bottom: 2px solid rgb(129, 216, 208);
+        border-bottom: 0.125rem solid rgb(129, 216, 208);
         outline: none;
         background: transparent;
         color: #ffffff;
-        margin-bottom: 10px;
-        margin-right: 5px;
+        margin-bottom: 0.625rem;
+        margin-right: 0.3125rem;
         text-align: center;
-        width: 100px;
-        height: 30px;
-        font-size: 16px;
+        width: 6.25rem;
+        height: 1.875rem;
+        font-size: 1rem;
     }
     i {
         position: absolute;
         right: 0;
-        top: -5px;
-        font-size: 16px;
+        top: -0.3125rem;
+        font-size: 1rem;
         color: #ffc520;
         cursor: pointer;
         opacity: 0;

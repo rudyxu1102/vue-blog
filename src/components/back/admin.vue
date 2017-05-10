@@ -62,16 +62,16 @@ export default {
     .statusLine {
         background: transparent;
         width: 100%;
-        height: 50px;
-        line-height: 50px;
+        height: 3.125rem;
+        line-height: 3.125rem;
         color: #fff;
-        font-size: 18px;
+        font-size: 1.125rem;
         display: flex;
         justify-content: space-between;
         p.left {
-            margin-left: 20px;
+            margin-left: 1.25rem;
             i.icon-zhuye {
-                font-size: 30px;
+                font-size: 1.875rem;
                 color: rgb(129, 216, 208);
                 cursor: pointer;
                 &:hover {
@@ -81,10 +81,10 @@ export default {
         }
         p.right {
             cursor: pointer;
-            margin-right: 20px;
-            color: rgb(147, 240, 216);
+            margin-right: 1.25rem;
+            color: rgb(129, 216, 208);
             i.icon-out {
-                font-size: 20px;
+                font-size: 1.25rem;
             }
             &:hover {
                  color: darkturquoise;
@@ -96,37 +96,56 @@ export default {
         display: inline-block;
         position: relative;
         color: #fff;
-        margin-top: 220px;
-        width: 100px;
+        margin-top: 13.75rem;
+        width: 6.25rem;
         ul {
             padding-left: 0;
             list-style: none;
             li {
-                width: 100px;
-                height: 40px;
-                line-height: 40px;
+                width: 6.25rem;
+                height: 2.5rem;
+                line-height: 2.5rem;
                 text-align: center;
                 cursor: pointer;
-                border-left: 3px solid transparent;
+                border-left: 0.1875rem solid transparent;
                 transition: 1s;
                 &:hover {
                      transition: 1s;
-                     padding-left: 20px;
+                     padding-left: 1.25rem;
                      color: darkturquoise;
                  }
                 i {
-                    font-size: 18px;
-                    margin-right: 10px;
+                    font-size: 1.125rem;
+                    margin-right: 0.625rem;
                 }
             }
             li.router-link-active {
-                border-left: 3px solid darkturquoise;
+                border-left: 0.1875rem solid darkturquoise;
                 background: rgba(204, 204, 204, 0.5);
             }
         }
     }
     .content {
-        margin-left: 100px;
+        margin-left: 6.25rem;
+    }
+}
+@media screen and (max-width: 440px) {
+    .content {
+        margin-left: 0 !important;
+    }
+    nav {
+        float: none !important;
+        margin-top: 1rem !important;
+        width: 100% !important;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            width: 100% !important;
+            li:hover {
+                padding-left: 0 !important;
+            }
+        }
     }
 }
 </style>

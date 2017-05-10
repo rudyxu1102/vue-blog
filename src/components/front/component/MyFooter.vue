@@ -15,15 +15,15 @@ export default {}
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     .iconfont {
-       font-size: 30px;
+       font-size: 1.875rem;
        color: #fff;
-       margin-right: 10px;
+       margin-right: 0.625rem;
     }
     .icon-github:hover {
              color: royalblue;
     }
     .icon-cion15 {
-        font-size: 26px;
+        font-size: 1.625rem;
     }
     .icon-cion15:hover {
         color: deepskyblue;
@@ -33,15 +33,15 @@ export default {}
     }
     div {
         text-align: center;
-        padding-top: 10px;
-        line-height: 40px;
+        padding-top: 0.625rem;
+        line-height: 2.5rem;
         width: 100%;
         background: rgba(55, 57, 65, 0.5);
     }
     p {
         text-align: center;
         color: #ffffff;
-        font-size: 16px;
+        font-size: 1rem;
     }
     span.login {
         cursor: pointer;

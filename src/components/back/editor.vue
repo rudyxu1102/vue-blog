@@ -144,31 +144,32 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 .wrapper {
-    padding: 0 50px 0;
+    position: relative;
+    padding: 0 3.125rem 0;
     input {
         border: none;
-        border-bottom: 2px solid rgb(129, 216, 208);
+        border-bottom: 0.125rem solid rgb(129, 216, 208);
         outline: none;
         background: transparent;
         color: #ffffff;
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
         text-align: center;
     }
     .title input {
         width: 100%;
-        height: 50px;
-        font-size: 30px;
+        height: 3.125rem;
+        font-size: 1.875rem;
     }
     #tags {
         input {
-            width: 100px;
-            height: 30px;
-            font-size: 16px;
-            margin-right: 2px;
+            width: 6.25rem;
+            height: 1.875rem;
+            font-size: 1rem;
+            margin-right: 0.125rem;
         }
         .icon-zengjia {
-            margin-left: 5px;
-            font-size: 16px;
+            margin-left: 0.3125rem;
+            font-size: 1rem;
             color: rgb(129, 216, 208);
             cursor: pointer;
             &:hover {
@@ -178,37 +179,37 @@ export default {
         }
     }
     .info {
-        border: 2px solid rgb(129, 216, 208);
+        border: 0.125rem solid rgb(129, 216, 208);
         position: relative;
-        height: 470px;
+        height: 29.375rem;
         .right {
             color: #ffffff;
             position: absolute;
-            right: -2px;
-            top: -32px;
-            border-top: 2px solid rgb(129, 216, 208);
-            border-right: 2px solid rgb(129, 216, 208);
-            border-left: 2px solid rgb(129, 216, 208);
+            right: -0.125rem;
+            top: -2rem;
+            border-top: 0.125rem solid rgb(129, 216, 208);
+            border-right: 0.125rem solid rgb(129, 216, 208);
+            border-left: 0.125rem solid rgb(129, 216, 208);
             p {
                 float: left;
-                width: 80px;
-                height: 30px;
-                line-height: 30px;
+                width: 5rem;
+                height: 1.875rem;
+                line-height: 1.875rem;
                 text-align: center;
                 cursor: pointer;
             }
             p:nth-child(1) {
-                border-right: 2px solid rgb(129, 216, 208);
+                border-right: 0.125rem solid rgb(129, 216, 208);
             }
         }
         #editor {
             width: 100%;
-            height: 470px;
+            height: 29.375rem;
             border: none;
             background: transparent;
             resize: none;
             outline: none;
-            font-size: 16px;
+            font-size: 1rem;
             overflow-y: auto;
             white-space: pre-wrap;
             font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",  STXihei, "华文细黑",  serif;
@@ -217,11 +218,11 @@ export default {
         .preview {
             font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",  STXihei, "华文细黑",  serif;
             display: block;
-            height: 430px;
+            height: 26.875rem;
             color: #ffffff;
-            font-size: 16px;
+            font-size: 1rem;
             overflow-y: auto;
-            padding: 20px 20px;
+            padding: 1.25rem 1.25rem;
             white-space: pre-wrap;
             word-wrap: break-word;
             outline: none;
@@ -230,19 +231,46 @@ export default {
     }
 }
 .publish {
-    width: 100px;
+    width: 6.25rem;
     position: fixed;
-    left: 0;
-    top: 50px;
+    left: 1rem;
+    bottom: 32.5rem;
+    background: rgb(129, 216, 208);
+    color: #000;
 }
 .draft {
-    width: 100px;
+    width: 6.25rem;
     position: fixed;
-    left: 0;
-    bottom: 40px;
+    left: 1rem;
+    bottom: 2.5rem;
+    background: rgb(129, 216, 208);
+    color: #000;
 }
 .active {
     background: rgb(129, 216, 208);
     color: #111111;
+}
+@media screen and (max-width: 440px) {
+    .wrapper {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-bottom: 3rem;
+    }
+    .publish {
+        position: absolute !important;
+        bottom: -3rem !important;
+        left: 1rem !important;
+    }
+    .draft {
+        position: absolute !important;
+        left: calc(100% - 7.25rem) !important;
+        bottom: -3rem !important;
+    }
+    #tags {
+        width: 13.7rem !important;
+    }
+    .icon-zengjia {
+        margin-left: -1rem !important;
+    }
 }
 </style>

@@ -82,75 +82,63 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
     .account {
         position: relative;
-        margin: 80px auto 0;
-        width: calc(100% - 100px);
-        height: 400px;
+        margin: 5rem auto 0;
+        height: 25rem;
         p.icon {
-            width: calc(100% - 100px);
+            width: calc(100% - 6.25rem);
             text-align: center;
-            margin: 0 auto 100px;
+            margin: 0 auto 6.25rem;
             .icon-icon69 {
-                font-size: 60px;
+                font-size: 3.75rem;
                 color:  darkturquoise;
             }
         }
         div {
-            width: 300px;
+            width: 18.75rem;
             margin: 0 auto;
             position: relative;
             i {
                 color: deepskyblue;
-                font-size: 30px;
+                font-size: 1.875rem;
                 display: block;
                 position: absolute;
                 top: 0;
-                left: 20px;
+                left: 1.25rem;
                 transition:  0.5s;
             }
         }
         input {
-            width: 200px;
-            height: 30px;
+            width: 12.5rem;
+            height: 1.875rem;
             display: block;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            margin-left: 70px;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            margin-left: 4.375rem;
             outline: none;
             border: none;
-            border-bottom: 3px solid #fc8c84;
+            border-bottom: 0.1875rem solid #fc8c84;
             background: transparent;
             color: #fff;
-            font-size: 16px;
-            padding-left: 10px;
+            font-size: 1rem;
+            padding-left: 0.625rem;
             &:focus + i {
                  color: #ffc520;
              }
         }
         button {
-            width: 200px;
+            width: 12.5rem;
             position: absolute;
             bottom: 0;
             left: 50%;
-            margin-left: -80px;
+            margin-left: -5rem;
+            background: deepskyblue;
         }
     }
     p{
         text-align: center;
-        height: 16px;
+        height: 1rem;
         color: royalblue;
     }
-    /*#btn_place {*/
-        /*width: 100%;*/
-        /*position: absolute;*/
-        /*bottom: -45px;*/
-        /*button {*/
-            /*margin-top: 0;*/
-        /*}*/
-    /*}*/
-    /*.button_1 {*/
-        /*margin-left: 30px;*/
-        /*margin-right: 40px;*/
-    /*}*/
     .fade-leave-active {
         transition: opacity .5s
     }

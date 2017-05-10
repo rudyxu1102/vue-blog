@@ -98,7 +98,7 @@ router.get('/api/someArticles', (req, res) => {
                 res.send(articles)
             })
     } else if (key === 'title') {                               // 根据标题的部分内容来搜索文章
-        db.Article.find({title: re})
+        db.Article.find({title: re, isPublish: true})
             .sort({date: -1}).limit(4).skip(skip).exec()
             .then((articles) => {
                 res.send(articles)

@@ -76,56 +76,62 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 #search {
-    padding: 30px 200px 30px;
+    padding: 1.875rem 12.5rem 1.875rem;
     div#article {
         color: #fff;
         width: 100%;
-        border-bottom: 2px solid #00ff7f;
+        border-bottom: 0.125rem solid #00ff7f;
         h2 {
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 1.875rem;
+            margin-bottom: 1.25rem;
         }
         time {
-            margin-top: 10px;
+            margin-top: 0.625rem;
         }
         p {
             white-space: pre-wrap;
             word-wrap: break-word;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            margin-top: 1.875rem;
+            margin-bottom: 1.875rem;
         }
         button {
-            width: 140px;
-            height: 40px;
-            line-height: 40px;
+            width: 8.75rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
             background: deepskyblue;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            margin-left: calc(100% - 140px);
+            margin-bottom: 1.25rem;
+            border-radius: 0.25rem;
+            margin-left: calc(100% - 8.75rem);
         }
         .articleTag {
-            margin-left: 20px;
-            margin-bottom: 30px;
+            margin-left: 1.25rem;
+            margin-bottom: 1.875rem;
         }
         .commentNumber {
-            margin-left: 10px;
+            margin-left: 0.625rem;
             color: #ffffff;
             i {
-                font-size: 18px;
-                margin-right: 5px;
+                font-size: 1.125rem;
+                margin-right: 0.3125rem;
             }
         }
         i.icon-label, i.icon-shijian {
             color: #ffffff;
-            font-size: 20px;
-            margin-right: 5px;
+            font-size: 1.25rem;
+            margin-right: 0.3125rem;
         }
     }
     p.noMore {
         width: 100%;
         color: #ffffff;
-        margin-top: 20px;
+        margin-top: 1.25rem;
         text-align: center;
+    }
+}
+@media screen and (max-width: 440px) {
+    #search {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 }
 </style>

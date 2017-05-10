@@ -67,14 +67,14 @@ export default {
 .container {
     text-align: center;
     .search {
-        margin-right: -45px;
+        margin-right: -2.8125rem;
         input {
-            width: 450px;
-            margin: 20px auto 10px;
-            height: 45px;
-            font-size: 20px;
-            border: 2px solid rgb(129, 216, 208);
-            border-radius: 30px;
+            width: 28.125rem;
+            margin: 1.25rem auto 0.625rem;
+            height: 2.8125rem;
+            font-size: 1.25rem;
+            border: 0.125rem solid rgb(129, 216, 208);
+            border-radius: 1.875rem;
             outline: none;
             text-align: center;
             color: #ffffff;
@@ -82,10 +82,10 @@ export default {
         }
         i {
             position: relative;
-            left: -55px;
-            top: 9px;
+            left: -3.4375rem;
+            top: 0.5625rem;
             color: rgb(169, 169, 169);
-            font-size: 40px;
+            font-size: 2.5rem;
             cursor: pointer;
             &:hover {
                  color: rgb(129, 216, 208);
@@ -94,25 +94,32 @@ export default {
     }
     .searchString {
         color: #fff;
-        font-size: 20px;
-        margin-bottom: 70px;
+        font-size: 1.25rem;
+        margin-bottom: 4.375rem;
         input {
             outline: none;
             cursor: pointer;
-            margin-right: 10px;
+            margin-right: 0.625rem;
         }
         label {
-            margin-right: 20px;
+            margin-right: 1.25rem;
             cursor: pointer;
         }
     }
     p {
-        border-bottom: 3px double rgb(129, 216, 208);
-        width: 200px;
-        font-size: 30px;
-        margin:0 auto 40px;
-        padding-bottom: 10px;
+        border-bottom: 0.1875rem double rgb(129, 216, 208);
+        width: 12.5rem;
+        font-size: 1.875rem;
+        margin:0 auto 2.5rem;
+        padding-bottom: 0.625rem;
         color: #ffffff;
+    }
+}
+@media screen and (max-width: 440px) {
+    .search {
+        input {
+            width: 80% !important;
+        }
     }
 }
 </style>

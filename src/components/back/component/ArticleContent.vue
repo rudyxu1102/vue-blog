@@ -69,11 +69,11 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 table {
-    border-left: 3px solid rgb(129, 216, 208);
-    border-right: 3px solid rgb(129, 216, 208);
-    width: 900px;
+    border-left: 0.1875rem solid rgb(129, 216, 208);
+    border-right: 0.1875rem solid rgb(129, 216, 208);
     margin: 0 auto;
     text-align: center;
+    height: 25rem;
     th, td {
         width: 25%;
     }
@@ -84,12 +84,12 @@ table {
         color: #ffffff;
     }
     tr {
-        height: 40px;
-        line-height: 30px;
+        height: 2.5rem;
+        line-height: 1.875rem;
     }
     i {
-        font-size: 20px;
-        margin-right: 10px;
+        font-size: 1.25rem;
+        margin-right: 0.625rem;
         color: rgb(129, 216, 208);
         cursor: pointer;
         &:hover {

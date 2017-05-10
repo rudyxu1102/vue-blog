@@ -4,8 +4,8 @@
             <img :src="'../../../../static/' + imgName +'.jpg'"/>
             <textarea spellcheck='false' placeholder='说点什么吧...' v-model='content' id='reply' ref='textBox'></textarea>
             <div class="inputBox">
-                <input type='text' placeholder='称呼' v-model='name' class='name' ref='nameBox'/>
                 <input type='text' placeholder='邮箱' v-model='address'/>
+                <input type='text' placeholder='称呼' v-model='name' class='name' ref='nameBox'/>
                 <button @click='summit' :disabled='summitFlag'>
                     <span>{{summitFlag ? '提交中...' : '发布评论'}}</span>
                 </button>
@@ -25,7 +25,7 @@
                     <p class='commentName'>#{{index + 1}} <span>{{comment.name}}</span></p>
                     <p class='text'>{{comment.content}}</p>
                     <div class='options'>
-                        <p class='commentDate'>{{comment.date | toDate}}</p>
+                        <p class='commentDate'>{{comment.date | to_date}}</p>
                         <a href='#comment' data-scroll>
                             <span @click='reply(comment.name)'>
                                 <i class='iconfont icon-huifu'></i>回复
@@ -87,10 +87,10 @@ export default {
             }
             // 限制评论内容
             if (this.content.length > 500) {
-                alert('您的评论内容太长，请删除部分之后再提交！')
+                alert('您的评论内容太长，要言简意赅哦')
                 return false
             } else if (this.content.length < 5) {
-                alert('您的评论内容太短，请不要发表无意义的评论哦！')
+                alert('您的评论内容太短，说多一点嘛')
                 return false
             } else if (/\d{7,}/i.test(this.content) || // 连续7个以上数字，过滤发Q号和Q群的评论
                 /(\d.*){7,}/i.test(this.content) || // 非连续的7个以上数字，过滤用字符间隔开的Q号和Q群的评论
@@ -158,8 +158,8 @@ export default {
 
 <style lang='scss' rel='stylesheet/scss' scoped>
 #comment {
-    margin: 30px auto 10px;
-    padding-top: 30px;
+    margin: 1.875rem auto 0.625rem;
+    padding-top: 1.875rem;
     text-align: left;
     .newComment {
         position: relative;
@@ -167,61 +167,62 @@ export default {
         img {
             position: absolute;
             top: 50%;
-            left: 50px;
-            margin-top: -50px;
-            width: 100px;
-            height: 100px;
-            border: 2px solid #cccccc;
-            border-radius: 10px;
+            left: 3.125rem;
+            margin-top: -3.125rem;
+            width: 6.25rem;
+            height: 6.25rem;
+            border: 0.125rem solid #cccccc;
+            border-radius: 0.625rem;
         }
         textarea {
             color: #ffffff;
-            font-size: 18px;
-            border: 2px solid darkturquoise;
-            padding: 5px;
-            border-radius: 10px;
-            width: calc(100% - 264px);
-            margin-left: 250px;
-            height: 200px;
+            font-size: 1.125rem;
+            border: 0.125rem solid rgb(129, 216, 208);
+            padding: 0.3125rem;
+            border-radius: 0.625rem;
+            width: calc(100% - 16.5rem);
+            margin-left: 15.625rem;
+            height: 12.5rem;
             resize: none;
             background: transparent;
             outline: none;
             font-family: Georgia, 'Times New Roman', 'Microsoft YaHei', '微软雅黑',  STXihei, '华文细黑',  serif;
         }
         .inputBox {
-            margin-left: 250px;
+            margin-left: 15.625rem;
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-end;
+            justify-content: center;
             input {
                 flex-grow: 1;
-                margin-right: 25px;
+                margin-right: 1.5625rem;
                 color: #ffffff;
-                font-size: 18px;
-                border: 2px solid darkturquoise;
-                border-radius: 5px;
+                font-size: 1.125rem;
+                border: 0.125rem solid rgb(129, 216, 208);
+                border-radius: 0.3125rem;
                 outline: none;
-                width: 200px;
-                height: 25px;
-                margin-top: 20px;
-                padding-left: 5px;
+                width: 12.5rem;
+                height: 1.5625rem;
+                margin-top: 1.25rem;
+                margin-bottom: 0.625rem;
+                padding-left: 0.3125rem;
                 display: inline-block;
                 background: transparent;
             }
             button {
                 flex-grow: 1;
-                margin-top: 10px;
+                margin-top: 0.625rem;
             }
         }
     }
     .allComments {
-        margin-top: 30px;
+        margin-top: 1.875rem;
         .summary {
             display: flex;
             justify-content: space-between;
             background: rgba(245, 245, 245, 0.5);
-            padding: 10px;
-            border-radius:  5px;
+            padding: 0.625rem;
+            border-radius:  0.3125rem;
             span {
                 cursor: pointer;
                 &:hover {
@@ -231,26 +232,28 @@ export default {
         }
         .comments {
             position: relative;
-            padding: 5px;
-            margin-top: 10px;
+            padding: 0.3125rem;
+            margin-top: 0.625rem;
             width: 100%;
+            display: flex;
+            flex-wrap: wrap;
             #info {
-                width: 50%;
-                border: 2px solid rgba(245, 245, 245, 0.5);
-                border-radius: 5px;
-                padding: 10px;
+                width: 60%;
+                border: 0.125rem solid rgba(245, 245, 245, 0.5);
+                border-radius: 0.3125rem;
+                padding: 0.625rem;
                 color: #ccc;
                 .commentName {
-                    font-size: 18px;
-                    margin-bottom: 5px;
+                    font-size: 1.125rem;
+                    margin-bottom: 0.3125rem;
                     span {
                         color: darkturquoise;
                     }
                 }
                 .text {
                     overflow: hidden;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
+                    margin-top: 0.625rem;
+                    margin-bottom: 0.625rem;
                 }
                 .options {
                     display: flex;
@@ -259,9 +262,9 @@ export default {
                     text-align: right;
                     a {
                         color: white;
-                        margin-right: 10px;
+                        margin-right: 0.625rem;
                         i.icon-huifu {
-                            margin-right: 5px;
+                            margin-right: 0.3125rem;
                         }
                         &:hover {
                             color: deepskyblue;
@@ -269,7 +272,7 @@ export default {
                     }
                     p {
                         display: inline-block;
-                        margin-right: 5px;
+                        margin-right: 0.3125rem;
                         cursor: pointer;
                         &:hover {
                              color: darkturquoise;
@@ -277,18 +280,18 @@ export default {
                     }
                 }
                 img {
-                    width: 60px;
-                    height: 60px;
+                    width: 3.75rem;
+                    height: 3.75rem;
                     position: absolute;
                     top: 50%;
-                    margin-top: -30px;
-                    border: 2px solid #cccccc;
-                    border-radius: 5px;
+                    margin-top: -1.875rem;
+                    border: 0.125rem solid #cccccc;
+                    border-radius: 0.3125rem;
                 }
             }
         }
         .nocomment {
-            margin: 20px auto;
+            margin: 1.25rem auto;
             text-align: center;
         }
     }
@@ -297,60 +300,78 @@ export default {
     color: #ffc520;
 }
 .reviewer {
-    margin-left: 100px;
+    margin-left: 6.25rem;
     img {
-        left: 10px;
+        left: 0.625rem;
     }
     &:after {
          position: absolute;
-         left: 88px;
+         left: 5.5rem;
          top: 50%;
-         margin-top: -7px;
+         margin-top: -0.4375rem;
          content: '';
          width: 0;
          height: 0;
-         border: 10px solid transparent;
+         border: 0.625rem solid transparent;
          border-right-color: #000000;
      }
     &:before {
          position: absolute;
-         left: 85px;
+         left: 5.3125rem;
          top: 50%;
-         margin-top: -7px;
+         margin-top: -0.4375rem;
          content: '';
          width: 0;
          height: 0;
-         border: 10px solid transparent;
+         border: 0.625rem solid transparent;
          border-right-color: rgba(245, 245, 245, 0.5);
      }
 }
 .me {
     position: relative;
-    margin-left: 35%;
+    margin-left: calc(40% - 7.625rem);
     img {
-        right: -95px;
+        right: -5.9375rem;
     }
     &:after {
          position: absolute;
-         right: -18px;
+         right: -1.125rem;
          top: 50%;
-         margin-top: -8px;
+         margin-top: -0.5rem;
          content: '';
          width: 0;
          height: 0;
-         border: 10px solid transparent;
+         border: 0.625rem solid transparent;
          border-left-color: #000000;
      }
     &:before {
          position: absolute;
-         right: -22px;
+         right: -1.375rem;
          top: 50%;
-         margin-top: -8px;
+         margin-top: -0.5rem;
          content: '';
          width: 0;
          height: 0;
-         border: 10px solid transparent;
+         border: 0.625rem solid transparent;
          border-left-color: rgba(245, 245, 245, 0.5);
      }
+}
+
+@media screen and (max-width: 980px) {
+    .newComment {
+        img {
+            display: none !important;
+        }
+        textarea {
+            width: calc(100% - 0.875rem) !important;
+            margin-left: 0 !important;
+        }
+        .inputBox {
+            margin-left: 0 !important;
+            input {
+                width: 40% !important;
+            }
+        }
+    }
 }
 </style>

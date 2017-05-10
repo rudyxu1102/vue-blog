@@ -2,7 +2,12 @@
   margin: 0;
   padding: 0;
 }
+html {
+  height: 100%;
+  font-size: 16px;
+}
 body {
+  height: 100%;
   font-family: "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
 }
 a {
@@ -10,40 +15,39 @@ a {
   color: rgb(129, 216, 208);
 }
 button {
-  width: 110px;
-  height: 40px;
+  height: 2.5rem;
   border: none;
   outline: none;
-  color: #ffffff;
-  background: darkturquoise;
-  margin-top: 30px;
-  padding-left: 7px;
+  color: #00193a;
+  background: rgb(129, 216, 208);
+  margin-top: 1.875rem;
+  padding-left: 0.4375rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   transition: 0.5s;
-  font-size: 14px;
+  font-size: 0.875rem;
   span {
     display: inline-block;
-    height: 40px;
-    line-height: 40px;
+    height: 2.5rem;
+    line-height: 2.5rem;
     position: relative;
     transition: 0.5s;
   }
   &:hover span {
-    padding-right: 10px;
+    padding-right: 0.625rem;
     transition: 0.5s;
   }
   span:after {
     content: '\00bb';
     opacity: 0;
     transition: 0.5s;
-    font-size: 20px;
+    font-size: 1.25rem;
     position: relative;
     right: 0;
   }
   &:hover span:after{
     opacity: 1;
-    right: -8px;
+    right: -0.5rem;
   }
 }
 .hashTitle {
@@ -53,4 +57,31 @@ h1, h2, h3, h4, h5, h6 {
   color: rgb(129, 216, 208);
 }
 
+
+@media screen and (max-width: 400px) {
+  html {font-size: 20px;}
+}
+@media screen and (max-width: 380px) {
+  html {font-size: 19px;}
+}
+@media screen and (max-width: 360px) {
+  html {font-size: 18px;}
+}
+@media screen and (max-width: 340px) {
+  html {font-size: 17px;}
+}
+@media screen and (max-width: 320px) {
+  html {font-size: 16px;}
+}
+//@media screen and (min-width: 440px) {
+//  html {font-size: 18px;}
+//}
+//
+//@media screen and (min-width: 480px) {
+//  html {font-size: 17px;}
+//}
+//
+//@media screen and (min-width: 640px) {
+//  html {font-size: 16px;}
+//}
 

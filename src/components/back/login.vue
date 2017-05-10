@@ -1,16 +1,18 @@
 <template>
     <div class="wrapper">
-        <i class="iconfont icon-icon69"></i>
-        <div>
-            <input type="text" placeholder="请输入你的账号" v-model="name"/>
-            <i class="iconfont icon-zhanghu"></i>
+        <div class="login">
+            <i class="iconfont icon-icon69"></i>
+            <div>
+                <input type="text" placeholder="请输入你的账号" v-model="name"/>
+                <i class="iconfont icon-zhanghu"></i>
+            </div>
+            <div>
+                <input type="password" placeholder="请输入你的密码" v-model="password" @keydown.enter="confirm(name, password)"/>
+                <i class="iconfont icon-yuechi"></i>
+            </div>
+            <p>{{info}}</p>
+            <button @click="confirm(name, password)"><span>登录</span></button>
         </div>
-        <div>
-            <input type="password" placeholder="请输入你的密码" v-model="password" @keydown.enter="confirm(name, password)"/>
-            <i class="iconfont icon-yuechi"></i>
-        </div>
-        <p>{{info}}</p>
-        <button @click="confirm(name, password)"><span>登录</span></button>
     </div>
 </template>
 
@@ -50,59 +52,69 @@ export default {
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
 .wrapper {
-    width: 500px;
-    margin: 130px auto;
-    text-align: center;
-    position: relative;
-    .icon-icon69 {
-        font-size: 60px;
-        color: darkturquoise;
-    }
-    div {
-        width: 300px;
-        margin: 0 auto;
-        position: relative;
-        i {
-            color: deepskyblue;
-            font-size: 30px;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 20px;
-            transition:  0.5s;
-        }
-    }
-    input {
-        width: 200px;
-        height: 30px;
-        display: block;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        margin-left: 70px;
-        outline: none;
-        border: none;
-        border-bottom: 3px solid #fc8c84;
-        background: transparent;
-        color: #fff;
-        font-size: 16px;
-        padding-left: 10px;
-        &:focus + i {
-             color: #ffc520;
-         }
-    }
-    button {
-        width: 200px;
-        padding-left: 0;
-        margin-top: 20px;
-        position: relative;
-        left: 20px;
+    .login {
+        width: 17.5rem;
+        height: 20rem;
+        margin: 9rem auto 0;
         text-align: center;
+        position: relative;
+        .icon-icon69 {
+            font-size: 3.75rem;
+            color: darkturquoise;
+        }
+        div {
+            width: 18.75rem;
+            margin: 0 auto;
+            position: relative;
+            i {
+                color: deepskyblue;
+                font-size: 1.875rem;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 1.25rem;
+                transition:  0.5s;
+            }
+        }
+        input {
+            width: 12.5rem;
+            height: 1.875rem;
+            display: block;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            margin-left: 4.375rem;
+            outline: none;
+            border: none;
+            border-bottom: 0.1875rem solid #fc8c84;
+            background: transparent;
+            color: #fff;
+            font-size: 1rem;
+            padding-left: 0.625rem;
+            &:focus + i {
+                 color: #ffc520;
+             }
+        }
+        button {
+            width: 12.5rem;
+            padding-left: 0;
+            margin-top: 1.25rem;
+            position: relative;
+            left: 1.25rem;
+            text-align: center;
+            background: darkturquoise;
+        }
     }
 }
 
 p {
     color: #ffffff;
     width: 100%;
-    height: 20px;
+    height: 1.25rem;
+}
+@media screen and (max-width: 440px) {
+    /*.wrapper {*/
+        /*margin-left: 0 !important;*/
+        /*margin-right: 0 !important;*/
+    /*}*/
 }
 </style>
