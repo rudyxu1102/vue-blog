@@ -26,6 +26,9 @@ export default {
     moreArticle_toggle: (state, flag) => {
         state.moreArticle = flag
     },
+    noMore_toggle: (state, flag) => {
+        state.noMore = flag
+    },
     // tags
     set_tags: (state, tags) => {
         state.tags = tags

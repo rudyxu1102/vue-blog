@@ -55,7 +55,7 @@ export default {
     .login {
         width: 17.5rem;
         height: 20rem;
-        margin: 9rem auto 0;
+        margin: 3rem auto 0;
         text-align: center;
         position: relative;
         .icon-icon69 {

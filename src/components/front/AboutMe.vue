@@ -1,6 +1,6 @@
 <template>
     <div id="contact" v-scroll-show>
-        <a href="#about_me" class="animated bounceIn" data-scroll>
+        <a href="#about_me" class="title animated bounceIn" data-scroll>
             <p class="headline" id="about_me">About me</p>
         </a>
         <div class="info animated tada">
@@ -31,12 +31,14 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 #contact {
-    min-height: 43.75rem;
+    min-height: 30rem;
     padding: 0 1rem 5rem;
     background: rgba(55, 57, 65, 0.2);
-    p.headline {
+    .title {
         display: none;
-        width: 17.5rem;
+        p.headline {
+            width: 13rem;
+        }
     }
     .info {
         display: none;
@@ -89,12 +91,12 @@ p.headline {
     margin: 0 auto 1.25rem;
     text-align: center;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding-bottom: 1.25rem;
     border-bottom: 0.3125rem double rgb(129, 216, 208);
 }
 @media screen and (max-width: 440px) {
-    .headline, .info {
+    .title, .info {
         display: block !important;
     }
     .info {

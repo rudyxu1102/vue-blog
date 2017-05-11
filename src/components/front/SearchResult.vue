@@ -10,8 +10,9 @@
                 <span>Continue reading</span>
             </router-link>
         </div>
-        <spinner v-show="loadMore"></spinner>
-        <p v-show="!loadMore" class="noMore">没有搜索到更多</p>
+        <spinner v-show="loadMore" class="loading"></spinner>
+        <p v-if="!loadMore" v-show="!noMore" class="noMore animated fadeIn">下拉加载更多</p>
+        <p v-if="noMore" class="noMore animated fadeIn">没啦没啦，别扯了</p>
     </div>
 </template>
 
@@ -46,7 +47,7 @@ export default {
         next()
     },
     computed: {
-        ...mapState(['loadMore', 'moreArticle', 'isLoading']),
+        ...mapState(['loadMore', 'moreArticle', 'isLoading', 'noMore']),
         ...mapGetters(['reducedArticles'])
     },
     methods: {
@@ -76,7 +77,7 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 #search {
-    padding: 1.875rem 12.5rem 1.875rem;
+    padding: 1.875rem 12.5rem 0;
     div#article {
         color: #fff;
         width: 100%;
@@ -124,7 +125,8 @@ export default {
     p.noMore {
         width: 100%;
         color: #ffffff;
-        margin-top: 1.25rem;
+        margin-top: 1.875rem;
+        margin-bottom: 1.875rem;
         text-align: center;
     }
 }

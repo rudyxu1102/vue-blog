@@ -22,7 +22,8 @@
                     <span>Continue reading</span>
                 </router-link>
             </div>
-            <p v-show="!loadMore" class="noMore animated fadeIn">没有更多了</p>
+            <p v-if="!loadMore" v-show="!noMore" class="noMore animated fadeIn">下拉加载更多</p>
+            <p v-if="noMore" class="noMore animated fadeIn">已经到底了，别扯了</p>
         </div>
         <spinner v-show="loadMore" class="spinner"></spinner>
     </div>
@@ -49,7 +50,7 @@ export default {
     },
     computed: {
         ...mapGetters(['reducedArticles', 'allTags']),
-        ...mapState(['curTag', 'loadMore', 'moreArticle', 'isLoading'])
+        ...mapState(['curTag', 'loadMore', 'moreArticle', 'isLoading', 'noMore'])
     },
     mounted () {
         window.addEventListener('scroll', this.handleScroll)
@@ -91,7 +92,7 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
 .articleContent {
     #articles {
-        padding: 1.875rem 12.5rem 1.875rem;
+        padding: 1.875rem 12.5rem 0;
         .tags {
             .tagFlex {
                 display: flex;
@@ -158,14 +159,13 @@ export default {
         }
         p.noMore {
             width: 100%;
+            height: 1.5rem;
+            line-height: 1.5rem;
             color: #ffffff;
             margin-top: 1.875rem;
+            margin-bottom: 1.875rem;
             text-align: center;
         }
-    }
-    .spinner {
-        margin-top: 0;
-        margin-bottom: 2.5rem;
     }
 }
 @media screen and (max-width: 440px) {

@@ -48,7 +48,12 @@ export default {
         return Vue.http.get('/api/articles', {params: {payload}})
             .then(response => response.json())
             .then(articles => {
-                if (articles.length === 0) { commit('moreArticle_toggle', false) }
+                if (articles.length === 0) {
+                    commit('moreArticle_toggle', false)
+                    commit('noMore_toggle', true)
+                } else {
+                    commit('noMore_toggle', false)
+                }
                 if (payload.add) {
                     commit('add_articles', articles)
                     endLoading(commit, startTime, 'loadMore_toggle')
@@ -112,7 +117,12 @@ export default {
         return Vue.http.get('/api/someArticles', {params: {payload}})
             .then(response => response.json())
             .then(articles => {
-                if (articles.length === 0) { commit('moreArticle_toggle', false) }
+                if (articles.length === 0) {
+                    commit('moreArticle_toggle', false)
+                    commit('noMore_toggle', true)
+                } else {
+                    commit('noMore_toggle', false)
+                }
                 if (payload.add) {
                     commit('add_articles', articles)
                     endLoading(commit, startTime, 'loadMore_toggle')

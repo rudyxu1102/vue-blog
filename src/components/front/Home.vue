@@ -97,7 +97,7 @@ export default {
             margin-bottom: 3.75rem;
             p {
                 padding-top: 2.8125rem;
-                width: 15.625rem;
+                width: 13rem;
             }
         }
         .posts {
@@ -149,13 +149,14 @@ export default {
         background: rgba(55, 57, 65, 0.2);
         padding: 0 1rem;
         padding-bottom: 2rem;
+        min-height: 30rem;
         .title {
             color: white;
             display: none;
             margin-bottom: 3.75rem;
             p {
                 padding-top: 2.8125rem;
-                width: 15.625rem;
+                width: 13rem;
             }
         }
         .email {
@@ -196,7 +197,7 @@ p.headline {
     margin: 0 auto 1.25rem;
     text-align: center;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding-bottom: 1.25rem;
     border-bottom: 0.3125rem double rgb(129, 216, 208);
 }

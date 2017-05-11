@@ -1,20 +1,35 @@
 import Vue              from 'vue'
 import Store            from '../store'
 import Router           from 'vue-router'
-import index            from '@/components/front/index'
-import AboutMe          from '@/components/front/AboutMe'
-import Home             from '@/components/front/Home'
-import Articles         from '@/components/front/Articles'
-import contact          from '@/components/front/contact'
-import login            from '@/components/back/login'
-import admin            from '@/components/back/admin'
-import posts            from '@/components/back/posts'
-import editor           from '@/components/back/editor'
-import drafts           from '@/components/back/drafts'
-import search           from '@/components/back/search'
-import article          from '@/components/front/article'
-import account          from '@/components/back/account'
-import SearchResult     from '@/components/front/SearchResult'
+        // import index            from '@/components/front/index'
+        // import AboutMe          from '@/components/front/AboutMe'
+        // import Home             from '@/components/front/Home'
+        // import Articles         from '@/components/front/Articles'
+        // import contact          from '@/components/front/contact'
+        // import login            from '@/components/back/login'
+        // import admin            from '@/components/back/admin'
+        // import posts            from '@/components/back/posts'
+        // import editor           from '@/components/back/editor'
+        // import drafts           from '@/components/back/drafts'
+        // import search           from '@/components/back/search'
+        // import article          from '@/components/front/article'
+        // import account          from '@/components/back/account'
+        // import SearchResult     from '@/components/front/SearchResult'
+
+const index = resolve => require(['@/components/front/index'], resolve)
+const AboutMe = resolve => require(['@/components/front/AboutMe'], resolve)
+const Home = resolve => require(['@/components/front/Home'], resolve)
+const Articles = resolve => require(['@/components/front/Articles'], resolve)
+const contact = resolve => require(['@/components/front/contact'], resolve)
+const login = resolve => require(['@/components/back/login'], resolve)
+const admin = resolve => require(['@/components/back/admin'], resolve)
+const posts = resolve => require(['@/components/back/posts'], resolve)
+const editor = resolve => require(['@/components/back/editor'], resolve)
+const drafts = resolve => require(['@/components/back/drafts'], resolve)
+const search = resolve => require(['@/components/back/search'], resolve)
+const article = resolve => require(['@/components/front/article'], resolve)
+const account = resolve => require(['@/components/back/account'], resolve)
+const SearchResult = resolve => require(['@/components/front/SearchResult'], resolve)
 
 Vue.use(Router)
 
