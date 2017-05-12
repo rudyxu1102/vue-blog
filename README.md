@@ -2,7 +2,7 @@
 
 > Vue.js+Node.js+Mongodb+Express的前后端分离的个人博客
 
-> 博客地址：www.xuhaodong.cn
+> 博客地址(未正式使用)：www.xuhaodong.cn
 
 ## 主要技术构成
 前端主要技术栈为vue.js、vue-router、 vue-resource、 vuex
