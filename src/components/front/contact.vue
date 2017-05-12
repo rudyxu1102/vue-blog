@@ -32,7 +32,7 @@ export default {
         })
     },
     methods: {
-        ...mapMutations(['set_headline']),
+        ...mapMutations(['set_headline', 'set_dialog']),
         ...mapActions(['sendMail']),
         send () {
             const re = /^[\w_-]+@[\w_-]+\.[\w\\.]+$/
