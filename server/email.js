@@ -8,12 +8,12 @@ let transporter = nodemailer.createTransport({
     }
 })
 
-exports.send = function(to, subject, text, res) {
+exports.send = function(to, subject, html, res) {
     const mailOptions = {
         from: '"博客小管家" <blogbutler@126.com>',
         to : to,
         subject : subject,
-        text : text
+        html : html
     }
 
     transporter.sendMail(mailOptions, function(error, info){

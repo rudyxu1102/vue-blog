@@ -146,7 +146,7 @@ export default {
     },
     // comment
     summitComment ({commit}, payload) {
-        return Vue.http.post('/api/comment', payload).catch((err) => { console.log(err) })
+        return Vue.http.post('/api/comment', payload)
     },
     getAllComments ({commit}, payload) {
         return Vue.http.get('/api/comments', {params: {payload}})

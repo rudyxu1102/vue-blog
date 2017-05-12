@@ -5,7 +5,7 @@
             <textarea spellcheck='false' placeholder='说点什么吧...' v-model='content' id='reply' ref='textBox'></textarea>
             <div class="inputBox">
                 <input type='text' placeholder='邮箱 (用于通知)' v-model='address'/>
-                <input type='text' placeholder='称呼' v-model='name' class='name' ref='nameBox'/>
+                <input type='text' placeholder='称呼' v-model='name' class='name' id='nameBox'/>
                 <button @click='summit' :disabled='summitFlag'>
                     <span>{{summitFlag ? '提交中...' : '发布评论'}}</span>
                 </button>
@@ -141,11 +141,14 @@ export default {
                 this.content = ''
                 this.summitFlag = false
                 this.getAllComments({id: this.$route.params.id})
-            }).catch((res) => {
-                alert(res.body)
+            }).catch((err) => {
+                this.set_dialog({
+                    info: err.body,
+                    hasTwoBtn: false,
+                    show: true
+                })
                 this.summitFlag = false
                 this.name = ''
-                this.$refs.nameBox.focus()
             })
         },
         reply (name) {
