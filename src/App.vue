@@ -2,12 +2,16 @@
   <div id="app">
     <fire-canvas class="fire"></fire-canvas>
     <router-view></router-view>
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <dialog-box v-if="dialog.show"></dialog-box>
+    </transition>
   </div>
 </template>
 
 <script>
 import FireCanvas   from './components/share/FireCanvas'
 import spinner      from './components/share/spinner'
+import DialogBox    from './components/share/DialogBox'
 import {mapState}   from 'vuex'
 import smoothScroll from 'smooth-scroll'
 
@@ -20,10 +24,11 @@ export default {
     },
     components: {
         FireCanvas,
-        spinner
+        spinner,
+        DialogBox
     },
     computed: {
-        ...mapState(['isLoading'])
+        ...mapState(['isLoading', 'dialog'])
     },
     methods: {
         changeTitle () {            // 切换标签页后，改变title

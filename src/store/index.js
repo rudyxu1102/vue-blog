@@ -15,6 +15,13 @@ const store = new Vuex.Store({
         loadMore: false,
         isSaving: false,
         noMore: false,
+        dialog: {
+            show: false,
+            hasTwoBtn: false,
+            info: 'hey',
+            resolveFn: () => {},
+            rejectFn: () => {}
+        },
         tags: [],
         curTag: '',
         article: {},

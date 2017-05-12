@@ -57,15 +57,23 @@ export default {
         ...mapGetters(['reducedArticles'])
     },
     methods: {
-        ...mapMutations(['set_headline']),
+        ...mapMutations(['set_headline', 'set_dialog']),
         ...mapActions(['getAllArticles', 'sendMail']),
         send () {
             const re = /^[\w_-]+@[\w_-]+\.[\w\\.]+$/
             if (!this.subject || !this.content) {
-                alert('还有选项没填(⊙o⊙)？')
+                this.set_dialog({
+                    info: '还有选项没填(⊙o⊙)？',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return
             } else if (!re.test(this.address)) {
-                alert('请正确填写邮箱地址')
+                this.set_dialog({
+                    info: '请正确填写邮箱地址',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return
             }
             this.sendFlag = true
@@ -80,7 +88,11 @@ export default {
                 this.sendFlag = false
             }).catch(() => {
                 this.sendFlag = false
-                alert('sorry, 邮件发送失败，请重新发送')
+                this.set_dialog({
+                    info: 'sorry, 邮件发送失败，请重新发送',
+                    hasTwoBtn: false,
+                    show: true
+                })
             })
         }
     }

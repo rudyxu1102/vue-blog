@@ -53,9 +53,9 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
 .wrapper {
     .login {
-        width: 17.5rem;
+        width: 16.125rem;
         height: 20rem;
-        margin: 3rem auto 0;
+        margin: 7rem auto 0;
         text-align: center;
         position: relative;
         .icon-icon69 {
@@ -63,16 +63,16 @@ export default {
             color: darkturquoise;
         }
         div {
-            width: 18.75rem;
+            width: 100%;
             margin: 0 auto;
             position: relative;
             i {
-                color: deepskyblue;
+                color: darkturquoise;
                 font-size: 1.875rem;
                 display: block;
                 position: absolute;
                 top: 0;
-                left: 1.25rem;
+                left: 0;
                 transition:  0.5s;
             }
         }
@@ -82,10 +82,10 @@ export default {
             display: block;
             margin-top: 2.5rem;
             margin-bottom: 1.25rem;
-            margin-left: 4.375rem;
+            margin-left: 3rem;
             outline: none;
             border: none;
-            border-bottom: 0.1875rem solid #fc8c84;
+            border-bottom: 0.1875rem solid darkturquoise;
             background: transparent;
             color: #fff;
             font-size: 1rem;
@@ -112,9 +112,8 @@ p {
     height: 1.25rem;
 }
 @media screen and (max-width: 440px) {
-    /*.wrapper {*/
-        /*margin-left: 0 !important;*/
-        /*margin-right: 0 !important;*/
-    /*}*/
+    .login {
+        margin-top: 2rem !important;
+    }
 }
 </style>

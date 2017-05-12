@@ -55,5 +55,11 @@ export default {
     // comment
     set_comments: (state, comments) => {
         state.comments = comments
+    },
+    // 对话框
+    set_dialog: (state, payload) => {
+        state.dialog = payload
+        state.dialog.resolveFn = () => {}
+        state.dialog.rejectFn = () => {}
     }
 }

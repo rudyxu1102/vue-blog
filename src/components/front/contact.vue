@@ -37,10 +37,18 @@ export default {
         send () {
             const re = /^[\w_-]+@[\w_-]+\.[\w\\.]+$/
             if (!this.subject || !this.content) {
-                alert('还有选项没填(⊙o⊙)？')
+                this.set_dialog({
+                    info: '还有选项没填(⊙o⊙)？',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return
             } else if (!re.test(this.address)) {
-                alert('请正确填写邮箱地址')
+                this.set_dialog({
+                    info: '请正确填写邮箱地址',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return
             }
             this.sendFlag = true
@@ -55,7 +63,11 @@ export default {
                 this.sendFlag = false
             }).catch(() => {
                 this.sendFlag = false
-                alert('sorry, 邮件发送失败，请重新发送')
+                this.set_dialog({
+                    info: 'sorry, 邮件发送失败，请重新发送',
+                    hasTwoBtn: false,
+                    show: true
+                })
             })
         }
     }
@@ -117,9 +129,9 @@ p.headline {
     border-bottom: 0.3125rem double rgb(129, 216, 208);
 }
 @media screen and (max-width: 440px) {
-    .title, .email {
-        display: block !important;
-    }
+    /*.title, .email {*/
+        /*display: block !important;*/
+    /*}*/
     .email {
         width: 100% !important;
     }

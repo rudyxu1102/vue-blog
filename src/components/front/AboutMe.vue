@@ -96,9 +96,9 @@ p.headline {
     border-bottom: 0.3125rem double rgb(129, 216, 208);
 }
 @media screen and (max-width: 440px) {
-    .title, .info {
-        display: block !important;
-    }
+    /*.title, .info {*/
+        /*display: block !important;*/
+    /*}*/
     .info {
         width: 100% !important;
     }

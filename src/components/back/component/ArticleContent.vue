@@ -10,7 +10,7 @@
         </thead>
         <tbody>
         <tr v-for="article in articles">
-            <td>{{article.title}}</td>
+            <router-link to="{name: 'editor', query: {aid: article.aid}}" tag="td" class="title">{{article.title}}</router-link>
             <td>{{article.tags | toTag}}</td>
             <td>{{article.date | toDate}}</td>
             <td>
@@ -30,15 +30,19 @@
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
+import {mapState, mapActions, mapMutations} from 'vuex'
 export default {
     data () {
         return {
             page: 1
         }
     },
+    computed: {
+        ...mapState(['articles', 'dialog'])
+    },
     methods: {
         ...mapActions(['delArticle']),
+        ...mapMutations(['set_dialog']),
         nextPage () {
             this.page++
             this.$emit('addPage')   // 传递给父组件
@@ -52,16 +56,20 @@ export default {
             }
         },
         deleteConfirm (aid) {
-            let toDelete = confirm('确认删除？')       // confirm提示框
-            if (toDelete === true) {
+            this.set_dialog({
+                info: '确认删除(⊙o⊙)？',
+                hasTwoBtn: true,
+                show: true
+            })
+            new Promise((resolve, reject) => {
+                this.dialog.resolveFn = resolve
+                this.dialog.rejectFn = reject
+            }).then(() => {
                 this.delArticle({aid: aid, page: this.page, route: this.$route})
-            } else {
-                // 取消删除
-            }
+            }).catch((err) => {
+                console.log(err)
+            })
         }
-    },
-    computed: {
-        ...mapState(['articles'])
     }
 }
 
@@ -102,5 +110,11 @@ table {
             color: #ffc520;
         }
     }
+}
+.title {
+    cursor: pointer;
+    &:hover {
+         color: #ffc520;
+     }
 }
 </style>

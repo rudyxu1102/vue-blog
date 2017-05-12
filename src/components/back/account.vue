@@ -82,7 +82,7 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
     .account {
         position: relative;
-        margin: 5rem auto 0;
+        margin: 5rem auto 2rem;
         height: 25rem;
         p.icon {
             width: calc(100% - 6.25rem);

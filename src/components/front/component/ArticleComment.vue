@@ -4,7 +4,7 @@
             <img :src="'../../../../static/' + imgName +'.jpg'"/>
             <textarea spellcheck='false' placeholder='说点什么吧...' v-model='content' id='reply' ref='textBox'></textarea>
             <div class="inputBox">
-                <input type='text' placeholder='邮箱' v-model='address'/>
+                <input type='text' placeholder='邮箱 (用于通知)' v-model='address'/>
                 <input type='text' placeholder='称呼' v-model='name' class='name' ref='nameBox'/>
                 <button @click='summit' :disabled='summitFlag'>
                     <span>{{summitFlag ? '提交中...' : '发布评论'}}</span>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import {mapActions, mapState} from 'vuex'
+import {mapActions, mapState, mapMutations} from 'vuex'
 export default {
     data () {
         return {
@@ -63,6 +63,10 @@ export default {
         } else {
             this.imgName = 'reviewer'
         }
+        if (localStorage.reviewer) {
+            this.address = localStorage['e-mail']
+            this.name = localStorage['reviewer']
+        }
     },
     computed: {
         ...mapState(['comments', 'user']),
@@ -76,21 +80,38 @@ export default {
     },
     methods: {
         ...mapActions(['summitComment', 'getAllComments', 'updateLike']),
+        ...mapMutations(['set_dialog']),
         summit () {
             const re = /^[\w_-]+@[\w_-]+\.[\w\\.]+$/
             if (!this.name || !this.content) {
-                alert('还有选项没填(⊙o⊙)？')
+                this.set_dialog({
+                    info: '还有选项没填(⊙o⊙)？',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return
             } else if (!re.test(this.address)) {
-                alert('请正确填写邮箱地址')
+                this.set_dialog({
+                    info: '请正确填写邮箱地址',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return
             }
             // 限制评论内容
             if (this.content.length > 500) {
-                alert('您的评论内容太长，要言简意赅哦')
+                this.set_dialog({
+                    info: '您的评论内容太长，要言简意赅哦',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return false
             } else if (this.content.length < 5) {
-                alert('您的评论内容太短，说多一点嘛')
+                this.set_dialog({
+                    info: '您的评论内容太短，说多一点嘛',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return false
             } else if (/\d{7,}/i.test(this.content) || // 连续7个以上数字，过滤发Q号和Q群的评论
                 /(\d.*){7,}/i.test(this.content) || // 非连续的7个以上数字，过滤用字符间隔开的Q号和Q群的评论
@@ -98,10 +119,17 @@ export default {
                 /(\u9876.*){5,}/i.test(this.content) || // 过滤5个以上“顶”字的评论
                 /([\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u4E03\u516B\u4E5D\u25CB\u58F9\u8D30\u53C1\u8086\u4F0D\u9646\u67D2\u634C\u7396\u96F6].*){7,}/i.test(this.content) // 过滤用汉字发Q号和Q群的评论
             ) {
-                alert('请不要发表灌水、广告、违法、Q群Q号等信息，感谢您的配合！')
+                this.set_dialog({
+                    info: '请不要发表灌水、广告、违法、Q群Q号等信息，感谢您的配合！',
+                    hasTwoBtn: false,
+                    show: true
+                })
                 return false
             }
             this.summitFlag = true
+            // 将评论者的邮箱和用户名存储在浏览器中，在created钩子中赋值, 这样刷新后邮箱和昵称都不用再写一遍
+            localStorage.setItem('e-mail', this.address)
+            localStorage.setItem('reviewer', this.name)
             this.summitComment({
                 imgName: this.imgName,
                 name: this.name,
@@ -346,7 +374,7 @@ export default {
      }
     &:before {
          position: absolute;
-         right: -1.35rem;
+         right: -1.345rem;
          top: 50%;
          margin-top: -0.5rem;
          content: '';

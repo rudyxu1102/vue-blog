@@ -238,5 +238,10 @@ export default {
     i.icon-fanhui {
         display: none !important;
     }
+    .last {
+        p:hover {
+            color: rgb(129, 216, 208) !important;
+        }
+    }
 }
 </style>

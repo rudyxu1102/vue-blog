@@ -77,7 +77,7 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 #search {
-    padding: 1.875rem 12.5rem 0;
+    padding: 0 12.5rem 0;
     div#article {
         color: #fff;
         width: 100%;

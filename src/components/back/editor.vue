@@ -91,7 +91,7 @@ export default {
         this.firstUpdate = false
     },
     computed: {
-        ...mapState(['article', 'isSaving']),
+        ...mapState(['article', 'isSaving', 'dialog']),
         mdContent: {
             get () {
                 this.mdHtml = marked(this.article.content || '', { renderer: renderer })
@@ -111,7 +111,7 @@ export default {
         addInput () {
             this.tags.push('')
         },
-        ...mapMutations(['set_article', 'update_post_content', 'update_post_title', 'update_post_tags', 'isSaving_toggle']),
+        ...mapMutations(['set_article', 'update_post_content', 'update_post_title', 'update_post_tags', 'isSaving_toggle', 'set_dialog']),
         ...mapActions(['saveArticle', 'getArticle', 'saveDraft'])
     },
     components: {
@@ -133,10 +133,20 @@ export default {
     },
     beforeRouteLeave (to, from, next) {
         if (this.isChange && !this.isSaving) {
-            let toLeave = confirm('还没保存，确认离开？')
-            toLeave ? next() : next(false)
-        } else {
-            next()
+            this.set_dialog({
+                info: '还没保存，确认离开(⊙o⊙)？',
+                hasTwoBtn: true,
+                show: true
+            })
+            new Promise((resolve, reject) => {
+                this.dialog.resolveFn = resolve
+                this.dialog.rejectFn = reject
+            }).then(
+                () => { next() },
+                () => { next(false) }
+            ).catch((err) => {
+                console.log(err)
+            })
         }
     }
 }
@@ -254,7 +264,7 @@ export default {
     .wrapper {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
     }
     .publish {
         position: absolute !important;
