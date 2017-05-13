@@ -14,11 +14,6 @@
 <script>
 import {mapState, mapMutations}   from 'vuex'
 export default {
-    data () {
-        return {
-//            show: true;
-        }
-    },
     computed: {
         ...mapState(['dialog'])
     },

@@ -10,6 +10,7 @@
                 @keydown.enter="addTag"
         />
         <i class="iconfont icon-shanchu1" @click="delTag"></i>
+        <i class="iconfont icon-zengjia" @click="addTag" v-if="index === tags.length - 1"></i>
     </div>
 </template>
 
@@ -29,6 +30,7 @@ export default {
         ...mapMutations(['set_dialog']),
         delTag () {
             this.tags.splice(this.index, 1)             // 通过操作数组来删除标签
+            console.log(this.tags)
         },
         addTag () {
             let currentIndex = this.index
@@ -42,7 +44,7 @@ export default {
                         show: true
                     })
                     isOnly = false
-                    this.tags.splice(this.index, 1)
+                    this.tags.splice(this.index, 1, '')
                     break
                 } else {
                     currentIndex--
@@ -73,7 +75,7 @@ export default {
 .tag_div {
     position: relative;
     display: inline-block;
-    &:hover i{
+    &:hover i.icon-shanchu1{
          opacity: 1;
          transition: 1s;
      }
@@ -90,7 +92,7 @@ export default {
         height: 1.875rem;
         font-size: 1rem;
     }
-    i {
+    i.icon-shanchu1 {
         position: absolute;
         right: 0;
         top: -0.3125rem;
@@ -104,5 +106,17 @@ export default {
              font-weight: bolder;
          }
     }
+}
+.icon-zengjia {
+    position: absolute;
+    right: -1rem;
+    top: 0.4rem;
+    font-size: 1rem;
+    color: rgb(129, 216, 208);
+    cursor: pointer;
+    &:hover {
+         color: darkturquoise;
+         font-weight: bolder;
+     }
 }
 </style>

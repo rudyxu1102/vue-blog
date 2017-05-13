@@ -10,7 +10,6 @@
                     :index="index"
                     :key="index"
             ></tag-input>
-            <i class="iconfont icon-zengjia" id="add" @click="addInput"></i>
         </div>
         <div class="info">
             <div class="right">
@@ -109,9 +108,6 @@ export default {
         }
     },
     methods: {
-        addInput () {
-            this.tags.push('')
-        },
         ...mapMutations(['set_article', 'update_post_content', 'update_post_title', 'update_post_tags', 'isSaving_toggle', 'set_dialog']),
         ...mapActions(['saveArticle', 'getArticle', 'saveDraft'])
     },
@@ -179,16 +175,6 @@ export default {
             height: 1.875rem;
             font-size: 1rem;
             margin-right: 0.125rem;
-        }
-        .icon-zengjia {
-            margin-left: 0.3125rem;
-            font-size: 1rem;
-            color: rgb(129, 216, 208);
-            cursor: pointer;
-            &:hover {
-                 color: darkturquoise;
-                 font-weight: bolder;
-             }
         }
     }
     .info {
