@@ -153,7 +153,7 @@ export default {
 }
 @media screen and (max-width: 440px) {
     .container, .bgImage {
-        height: 300px !important;
+        height: 18rem !important;
     }
     #title {
         font-size: 2rem !important;

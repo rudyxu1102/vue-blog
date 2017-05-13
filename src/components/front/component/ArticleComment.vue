@@ -270,7 +270,7 @@ export default {
             flex-wrap: wrap;
             #info {
                 width: 60%;
-                border: 0.125rem solid rgba(245, 245, 245, 0.5);
+                border: 0.125rem solid #cccccc;
                 border-radius: 0.3125rem;
                 padding: 0.625rem;
                 color: #ccc;
@@ -337,7 +337,7 @@ export default {
     }
     &:after {
          position: absolute;
-         left: 5.5rem;
+         left: 5.55rem;
          top: 50%;
          margin-top: -0.4375rem;
          content: '';
@@ -345,17 +345,19 @@ export default {
          height: 0;
          border: 0.625rem solid transparent;
          border-right-color: #000000;
+         z-index: 3;
      }
     &:before {
          position: absolute;
-         left: 5.3125rem;
+         left: 5.4rem;
          top: 50%;
          margin-top: -0.4375rem;
          content: '';
          width: 0;
          height: 0;
          border: 0.625rem solid transparent;
-         border-right-color: rgba(245, 245, 245, 0.5);
+         border-right-color: #cccccc;
+         z-index: 2;
      }
 }
 .me {
@@ -366,7 +368,7 @@ export default {
     }
     &:after {
          position: absolute;
-         right: -1.2rem;
+         right: -1.15rem;
          top: 50%;
          margin-top: -0.5rem;
          content: '';
@@ -374,17 +376,19 @@ export default {
          height: 0;
          border: 0.625rem solid transparent;
          border-left-color: #000000;
+         z-index: 3;
      }
     &:before {
          position: absolute;
-         right: -1.345rem;
+         right: -1.3rem;
          top: 50%;
          margin-top: -0.5rem;
          content: '';
          width: 0;
          height: 0;
          border: 0.625rem solid transparent;
-         border-left-color: rgba(245, 245, 245, 0.5);
+         border-left-color: #cccccc;
+         z-index: 2;
      }
 }
 

@@ -61,10 +61,10 @@ export default {
             left: 50%;
             margin-left: -4.6875rem;
             margin-top: -4.6875rem;
-            transform: rotateZ(0deg);
+            transform: perspective(62.5rem) translateZ(0);
             transition: all 3s;
             &:hover {
-                 transform: rotateZ(360deg);
+                 transform: perspective(62.5rem) translateZ(6.25rem);
                  transition: all 3s;
              }
         }

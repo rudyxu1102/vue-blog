@@ -141,7 +141,7 @@ export default {
                         }
                     }
                     p:nth-child(2) {
-                        font-size: 1.875rem;
+                        font-size: 1.5rem;
                         font-weight: bold;
                         padding-top: 1.25rem;
                         border-top: 0.125rem dashed rgb(129, 216, 208);
