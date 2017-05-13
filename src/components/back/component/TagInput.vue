@@ -4,7 +4,7 @@
                 type="text"
                 class="newInput"
                 placeholder="标签"
-                v-model="text"
+                v-model="tagContent"
                 onfocus="this.placeholder=''"
                 onblur="this.placeholder='标签'"
                 @keydown.enter="addTag"
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import {mapMutations}       from 'vuex'
 export default {
     data () {
         return {
@@ -21,11 +22,11 @@ export default {
         }
     },
     props: {
-        text: String,
         tags: Array,
         index: Number
     },
     methods: {
+        ...mapMutations(['set_dialog']),
         delTag () {
             this.tags.splice(this.index, 1)             // 通过操作数组来删除标签
         },
@@ -35,7 +36,11 @@ export default {
             let isOnly = true
             while (currentIndex) {
                 if (currentValue.toLowerCase() === this.tags[currentIndex - 1].toLowerCase()) {  // 标签去重
-                    alert('标签不能重复！')
+                    this.set_dialog({
+                        info: '傻了吧，标签不能重复',
+                        hasTwoBtn: false,
+                        show: true
+                    })
                     isOnly = false
                     this.tags.splice(this.index, 1)
                     break
@@ -52,7 +57,7 @@ export default {
         }
     },
     computed: {
-        text: {
+        tagContent: {
             get () {
                 return this.tags[this.index]        // 获取标签数组元素值
             },

@@ -6,7 +6,7 @@
         <div id="tags">
             <tag-input
                     v-for="(item, index) in tags"
-                    :text="item" :tags="tags"
+                    :tags="tags"
                     :index="index"
                     :key="index"
             ></tag-input>
@@ -84,7 +84,8 @@ export default {
             }
         })
     },
-    updated () {                            // 因为切换预览模式，也会触发数据更新，所以不用beforeUpdate, 而用watch监听数据变化
+    updated () {
+    // 因为切换预览模式，也会触发数据更新，所以不用beforeUpdate, 而用watch监听数据变化
         if (this.firstUpdate) {
             this.isChange = false
         }
