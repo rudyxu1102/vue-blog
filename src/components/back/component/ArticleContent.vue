@@ -10,7 +10,7 @@
         </thead>
         <tbody>
         <tr v-for="article in articles">
-            <router-link to="{name: 'editor', query: {aid: article.aid}}" tag="td" class="title">{{article.title}}</router-link>
+            <router-link :to="{name: 'editor', query: {aid: article.aid}}" tag="td" class="title">{{article.title}}</router-link>
             <td>{{article.tags | toTag}}</td>
             <td>{{article.date | toDate}}</td>
             <td>
@@ -81,7 +81,8 @@ table {
     border-right: 0.1875rem solid rgb(129, 216, 208);
     margin: 0 auto;
     text-align: center;
-    height: 25rem;
+    max-height: 25rem;
+    min-width: 70%;
     th, td {
         width: 25%;
     }

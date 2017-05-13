@@ -102,8 +102,8 @@ export default {
                 }, () => { alert('保存失败') }).catch((err) => { console.log(err) })
         }
     },
-    getAllDrafts ({commit}, page) {
-        return Vue.http.get('/api/drafts', {params: {page}})
+    getAllDrafts ({commit}, payload) {
+        return Vue.http.get('/api/drafts', {params: {payload}})
             .then(response => response.json())
             .then(articles => {
                 commit('set_all_articles', articles)

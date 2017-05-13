@@ -37,8 +37,8 @@ router.patch('/api/draft/:aid', confirmToken, (req, res) => {
 
 // 获取所有的草稿
 router.get('/api/drafts', (req, res) => {
-    const page = req.query.page
-    const limit = req.query.limit || 8
+    const page = req.query.payload.page
+    const limit = req.query.payload.limit - 0 || 8
     const skip = limit * (page - 1 )
     db.Article.find({isPublish: false}).sort({date: -1}).limit(limit).skip(skip).exec().then((articles) => {
         res.send(articles)
