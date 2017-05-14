@@ -13,8 +13,8 @@ route(app)
 // 发送邮件通知站长
 app.post('/api/mail', (req, res) => {
     const content = `
-<div style="width: 90%; border: 2px solid lightskyblue; margin: 1rem auto; padding: 1rem; text-align: center;">
-    <p style="border-bottom: 1px dashed lightskyblue;margin: 0;padding-bottom: 1rem; color: lightgreen; font-size: 1.25rem;">MyBlog Message</p>
+<div style="width: 90%; border: 2px solid lightgreen; margin: 1rem auto; padding: 1rem; text-align: center;">
+    <p style="border-bottom: 1px dashed lightgreen;margin: 0;padding-bottom: 1rem; color: lightgreen; font-size: 1.25rem;">MyBlog Message</p>
 <p style="margin: 1rem 0 0;">hello,站长 &#x1f608</p>
 <p sytle="margin: 0 0 1rem;">你有一条新留言</p>
 <p style="width: 70%; border-left: 4px solid lightgreen; padding: 1rem; margin: 0 auto 2rem; text-align: left;white-space: pre-line;">主题: ${req.body.subject}
