@@ -11,7 +11,7 @@
                 <i class="iconfont icon-search" @click="search"></i>
             </div>
             <nav>
-                <ul>
+                <ul class="catalog">
                     <router-link to="/home" tag="li">首页</router-link>
                     <router-link to="/articles" tag="li">博客</router-link>
                     <router-link to="/contact" tag="li">联系站长</router-link>

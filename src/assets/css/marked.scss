@@ -5,18 +5,14 @@ blockquote {
   background: rgba(204, 204, 204, 0.5);
 }
 ul, ol{
-  margin-bottom: -1.5rem;
+  margin-top: 0;
+  margin-bottom: -2rem;
   padding-left: 1.25rem;
   line-height: 1.125rem;
 }
-ul:not(.catalog) {
-  margin-top: -1rem;
-}
-ol {
-  margin-top: 0;
-}
-img {
-  border: 1px solid #fff;
+
+img:not(.bgImage) {
+  border: 1px solid #ccc;
 }
 code {
   color: rgb(147, 240, 216);
