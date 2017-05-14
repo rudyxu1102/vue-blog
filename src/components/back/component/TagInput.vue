@@ -6,7 +6,7 @@
                 placeholder="标签"
                 v-model="tagContent"
                 onfocus="this.placeholder=''"
-                onblur="this.placeholder='标签'"
+                @blur="isRepeated"
                 @keydown.enter="addTag"
         />
         <i class="iconfont icon-shanchu1" @click="delTag"></i>
@@ -33,9 +33,14 @@ export default {
             console.log(this.tags)
         },
         addTag () {
+            this.tags.push('')      // 通过操作数组来增加空标签
+            setTimeout(() => {
+                document.getElementsByClassName('newInput')[this.index + 1].focus()  // 新生成的空标签获得焦点
+            }, 0)
+        },
+        isRepeated () {
             let currentIndex = this.index
             let currentValue = this.tags[currentIndex]
-            let isOnly = true
             while (currentIndex) {
                 if (currentValue.toLowerCase() === this.tags[currentIndex - 1].toLowerCase()) {  // 标签去重
                     this.set_dialog({
@@ -43,18 +48,11 @@ export default {
                         hasTwoBtn: false,
                         show: true
                     })
-                    isOnly = false
                     this.tags.splice(this.index, 1, '')
                     break
                 } else {
                     currentIndex--
                 }
-            }
-            if (isOnly) {
-                this.tags.push('')      // 通过操作数组来增加空标签
-                setTimeout(() => {
-                    document.getElementsByClassName('newInput')[this.index + 1].focus()  // 新生成的空标签获得焦点
-                }, 0)
             }
         }
     },
