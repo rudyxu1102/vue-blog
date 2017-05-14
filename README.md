@@ -68,7 +68,7 @@ npm run dev
 
 最近更新
 
-![最近更新](http://chuantu.biz/t5/86/1494740309x2728278710.png)
+![最近更新](https://segmentfault.com/img/bVNEeZ?w=1345&h=644)
 
 某一篇文章
 
