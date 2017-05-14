@@ -64,11 +64,15 @@ npm run dev
 
 博客所有文章
 
-![博客文章](https://segmentfault.com/img/bVMKxx?w=1339&h=645)
+![博客文章](http://chuantu.biz/t5/86/1494740214x2728278710.png)
+
+最近更新
+
+![最近更新](http://chuantu.biz/t5/86/1494740309x2728278710.png)
 
 某一篇文章
 
-![文章](https://segmentfault.com/img/bVMKx9?w=1346&h=643)
+![文章](http://chuantu.biz/t5/86/1494740261x2728278710.png)
 
 留言
 
