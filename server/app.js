@@ -29,5 +29,5 @@ app.post('/api/mail', (req, res) => {
 })
 
 app.listen(app.get('port'), function () {
-    console.log('Visit http://localhost:' + app.get('port'))
+    console.log('GetData http://localhost:' + app.get('port'))
 })
