@@ -76,7 +76,7 @@ npm run dev
 
 评论
 
-![评论](https://segmentfault.com/img/bVMPiH?w=1346&h=645)
+![评论](https://segmentfault.com/img/bVNEgl?w=1343&h=645)
 
 #### 后台效果
 
@@ -90,13 +90,14 @@ npm run dev
 
  修改账户
 
-![修改账户](http://chuantu.biz/t5/86/1494739218x2728278710.png)
+![修改账户](https://segmentfault.com/img/bVNEiV?w=1366&h=638)
 
 markdown编辑器
 
 ![编辑器](https://segmentfault.com/img/bVNEiK?w=1366&h=643)
 
 移动端演示
+
 ![移动端](https://segmentfault.com/img/remote/1460000009411216?w=318&h=568)
 ### 目录
 ```
