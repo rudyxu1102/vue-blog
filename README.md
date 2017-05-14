@@ -72,7 +72,7 @@ npm run dev
 
 某一篇文章
 
-![文章](http://chuantu.biz/t5/86/1494740261x2728278710.png)
+![文章](https://segmentfault.com/img/bVNEvl?w=1347&h=635)
 
 留言
 
@@ -86,11 +86,11 @@ npm run dev
 
 所有文章
 
-![所有文章](http://chuantu.biz/t5/86/1494738886x2728278710.png)
+![所有文章](https://segmentfault.com/img/bVNEvp?w=1366&h=644)
 
 搜索文章
 
-![搜索](http://chuantu.biz/t5/86/1494739081x2728278710.png)
+![搜索](https://segmentfault.com/img/bVNEvo?w=1366&h=644)
 
  修改账户
 
