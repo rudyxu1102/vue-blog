@@ -64,7 +64,7 @@ npm run dev
 
 博客所有文章
 
-![博客文章](http://chuantu.biz/t5/86/1494740214x2728278710.png)
+![博客文章](https://segmentfault.com/img/bVNEvk?w=1346&h=645)
 
 最近更新
 
