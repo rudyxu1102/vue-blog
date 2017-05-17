@@ -119,6 +119,7 @@ export default {
             width: 100%;
             border-bottom: 0.125rem solid rgb(129, 216, 208);
             h2 {
+                color: rgb(129, 216, 208);
                 margin-top: 1.875rem;
                 margin-bottom: 1.25rem;
             }

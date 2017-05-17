@@ -115,7 +115,7 @@ export default {
                 min-height: 1.875rem;
                 list-style-type: circle;
                 a {
-                    color: rgb(129, 216, 208);
+                    color: #F0F0F0;
                     display: block;
                     padding: 0.375rem 0 0.375rem 0;
                     font-size: 1rem;

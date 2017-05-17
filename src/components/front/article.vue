@@ -117,9 +117,9 @@ export default {
 <style lang="scss" rel="stylesheet/scss" scoped>
 .wrapper {
     padding: 1.875rem 15.625rem 0;
-    color: #ffffff;
     position: relative;
     min-height: 43.75rem;
+    color: #c0ccda;
     #content {
         .title, .appendInfo, .content, .indexes, .comment, .list {
             display: none;
@@ -127,6 +127,7 @@ export default {
         h1 {
             text-align: center;
             margin-bottom: 1.25rem;
+            color: #F0F0F0;
         }
         .content {
             min-height: 31.25rem;
@@ -139,10 +140,11 @@ export default {
         .appendInfo {
             text-align: right;
             time {
+                color: #F0F0F0;
                 display: inline-block;
             }
             span {
-                color: #fff;
+                color: #F0F0F0;
                 display: inline-block;
                 margin-left: 0.625rem;
             }
@@ -185,13 +187,13 @@ export default {
                 p {
                     flex-grow: 1;
                     cursor: pointer;
-                    color: rgb(129, 216, 208);
+                    color: #c0ccda;
                     display: inline-block;
                     padding: 0 0.625rem;
                     transition: 1s;
                     margin-top: 1rem;
                     &:hover {
-                         color: #00ff7f;
+                         color: rgb(129, 216, 208);
                      }
                 }
                 p.left {
