@@ -67,11 +67,13 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 #list {
+    color: #F0F0F0;
     left: 0.3125rem;
     top: 2.5rem;
     text-align: left;
     position: absolute;
     max-width: 13.75rem;
+
     i.icon-mulu {
         position: absolute;
         left: 1.25rem;

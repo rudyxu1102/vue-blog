@@ -61,7 +61,8 @@ export default {
         this.getArticle(this.$route.params.id)
         this.initPage()
     },
-    beforeRouteUpdate (to, from, next) {        // 从foo/1跳到foo/2组件会复用，不会再执行created钩子函数，可以在这里执行
+    beforeRouteUpdate (to, from, next) {
+    // 从foo/1跳到foo/2组件会复用，不会再执行created钩子函数，可以在这里执行
         this.getArticle(to.params.id)
         if (to.params.index === 0) {
             this.prePage = -1
