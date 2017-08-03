@@ -162,11 +162,9 @@ export default {
             active = !active
             startColor = []
             endColor = []
-//            colorRandom = []
             for (let i = 0; i < 4; i++) {
                 startColor.push(random(0, 255))
                 endColor.push(random(0, 255))
-//                colorRandom.push(random(0, 100))
             }
 //            获取喜欢的颜色，设置在起始数据
 //            console.log('startColor: ' + startColor)

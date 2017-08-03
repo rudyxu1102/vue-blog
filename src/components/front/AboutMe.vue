@@ -9,7 +9,7 @@
                 <p class="left">邮箱:</p><p class="right">xuhaodong66@gmail.com</p>
                 <p class="left">QQ:</p><p class="right">3552116732</p>
                 <p class="left">学校:</p><p class="right">广州大学大三在校生</p>
-                <p class="left">求职意向:</p><p class="right">2017暑假前端实习</p>
+                <p class="left">在线简历:</p><a class="right" href="https://job.xuhaodong.cn">job.xuhaodong.cn</a>
             </div>
         </div>
     </div>
