@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper" id="article" v-scroll-show>
-        <div id="content"  v-scroll-show>
+    <div class="wrapper" id="article">
+        <div id="content">
             <h1 class="title animated fadeIn">{{article.title}}</h1>
             <div class="appendInfo animated fadeIn">
                 <time>
@@ -9,7 +9,7 @@
                 <span>
                     <i class="iconfont icon-label"></i>{{article.tags | toTag}}
                 </span>
-                <a class="commentCount" href="#comment" data-scroll>
+                <a class="commentCount" href="#comment">
                     <i class="iconfont icon-huifu"></i>{{article.comment_n}}
                 </a>
             </div>
@@ -122,9 +122,6 @@ export default {
     min-height: 43.75rem;
     color: #c0ccda;
     #content {
-        .title, .appendInfo, .content, .indexes, .comment, .list {
-            display: none;
-        }
         h1 {
             text-align: center;
             margin-bottom: 1.25rem;

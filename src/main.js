@@ -35,20 +35,6 @@ Vue.filter('toTag', (arr) => {
     }
 })
 
-Vue.directive('scrollShow', {
-    bind: (el) => {
-        window.addEventListener('scroll', () => {
-            if (document.body.scrollTop + 600 > el.offsetTop) {
-                for (let i = 0; i < el.children.length; i++) {
-                    setTimeout(() => {
-                        el.children[i] ? el.children[i].style.display = 'block' : 0
-                    }, 500 * i)
-                }
-            }
-        })
-    }
-})
-
 Vue.http.interceptors.push((request, next) => {
     if (window.localStorage.getItem('token')) {
         request.headers.set('authorization', 'Bearer ' + window.localStorage.getItem('token'))

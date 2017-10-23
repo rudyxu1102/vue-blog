@@ -1,6 +1,6 @@
 <template>
-    <div id="contact" v-scroll-show>
-        <a href="#about_me" class="title animated bounceIn" data-scroll>
+    <div id="contact">
+        <a href="#about_me" class="title animated bounceIn">
             <p class="headline" id="about_me">About me</p>
         </a>
         <div class="info animated tada">
@@ -35,13 +35,11 @@ export default {
     padding: 0 1rem 5rem;
     background: rgba(55, 57, 65, 0.2);
     .title {
-        display: none;
         p.headline {
             width: 13rem;
         }
     }
     .info {
-        display: none;
         position: relative;
         width: 55%;
         margin: 6.875rem auto 0;

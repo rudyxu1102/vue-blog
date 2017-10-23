@@ -4,7 +4,7 @@
         <router-view class="content" v-show="!isLoading"></router-view>
         <spinner v-show="isLoading"></spinner>
         <transition name="huojian" enter-active-class="animated bounceIn" leave-active-class="animated fadeOut">
-            <a href="#app" class="rocket" data-scroll><i class="iconfont icon-huojian" v-if="show"></i></a>
+            <a href="#app" class="rocket"><i class="iconfont icon-huojian" v-if="show"></i></a>
         </transition>
         <my-footer></my-footer>
     </div>

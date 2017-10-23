@@ -13,12 +13,8 @@ import FireCanvas   from './components/share/FireCanvas'
 import spinner      from './components/share/spinner'
 import DialogBox    from './components/share/DialogBox'
 import {mapState}   from 'vuex'
-import smoothScroll from 'smooth-scroll'
 
 export default {
-    created () {
-        smoothScroll.init()
-    },
     mounted () {
         document.addEventListener('visibilitychange', this.changeTitle, false)
     },

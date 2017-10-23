@@ -4,10 +4,10 @@
             <div class="tags animated fadeIn">
                 <div class="tagFlex">
                     <button
-                            v-for="(tag, index) in allTags"
-                            v-bind:class="{activeBtn: selectIndex === index}"
-                            v-on:click="switchTag({value: tag, page: 1}, index, tag)"
-                            >
+                          v-for="(tag, index) in allTags"
+                          v-bind:class="{activeBtn: selectIndex === index}"
+                          v-on:click="switchTag({value: tag, page: 1}, index, tag)"
+                          >
                         <span>{{tag}}</span>
                     </button>
                 </div>

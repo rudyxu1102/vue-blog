@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <section class="newBlog" v-scroll-show>
-            <a href="#lastPost" class="title animated bounceIn" data-scroll>
+        <section class="newBlog">
+            <a href="#lastPost" class="title animated bounceIn">
                 <p class="headline" id="lastPost">最近更新</p>
             </a>
             <div class="posts animated fadeIn">
@@ -18,8 +18,8 @@
                 </div>
             </div>
         </section>
-        <section class="contact" v-scroll-show>
-            <a href="#contactMe" class="title animated bounceIn" data-scroll>
+        <section class="contact">
+            <a href="#contactMe" class="title animated bounceIn">
                 <p class="headline" id="contactMe">Contact me</p>
             </a>
             <div class="email animated fadeIn">
@@ -105,15 +105,14 @@ export default {
     .newBlog {
         min-height: 43.75rem;
         .title {
-            display: none;
-            margin-bottom: 3.75rem;
+            margin-bottom: 4.75rem;
             p {
                 padding-top: 2.8125rem;
                 width: 13rem;
             }
         }
         .posts {
-            display: none;
+            margin-top:1rem;
             .flex {
                 color: #fff;
                 display: flex;
@@ -164,7 +163,6 @@ export default {
         min-height: 30rem;
         .title {
             color: white;
-            display: none;
             margin-bottom: 3.75rem;
             p {
                 padding-top: 2.8125rem;
@@ -172,7 +170,6 @@ export default {
             }
         }
         .email {
-            display: none;
             margin: 3.125rem auto 0;
             width: 40%;
             input {
@@ -206,7 +203,7 @@ export default {
 }
 p.headline {
     padding-top: 4.375rem;
-    margin: 0 auto 1.25rem;
+    margin: 0 auto 2.25rem;
     text-align: center;
     color: #fff;
     font-size: 2rem;
