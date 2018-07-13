@@ -158,6 +158,10 @@ markdown编辑器
 ```
 
 
-### Licence
-MIT
+### TODO
+- 添加服务器配置教程
+- 简化webpack配置
+- 添加代码规范。BEM + JsDoc
+- 重构代码
+
 
