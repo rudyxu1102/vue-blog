@@ -12,7 +12,7 @@
     "highlight.js": "^9.10.0",
     "jsonwebtoken": "^7.3.0",
     "marked": "^0.3.6",
-    "mongoose": "^4.9.1",
+    "mongoose": "^5.10.4",
     "nodemailer": "^4.0.0",
     "sha1": "^1.1.1"
   }
