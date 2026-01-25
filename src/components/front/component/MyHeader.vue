@@ -12,10 +12,10 @@
             </div>
             <nav>
                 <ul class="catalog">
-                    <router-link to="/home" tag="li">首页</router-link>
-                    <router-link to="/articles" tag="li">博客</router-link>
-                    <router-link to="/contact" tag="li">联系站长</router-link>
-                    <router-link to="/about" tag="li">关于我</router-link>
+                    <li @click="$router.push('/home')" :class="{active: $route.path === '/home'}">首页</li>
+                    <li @click="$router.push('/articles')" :class="{active: $route.path === '/articles'}">博客</li>
+                    <li @click="$router.push('/contact')" :class="{active: $route.path === '/contact'}">联系站长</li>
+                    <li @click="$router.push('/about')" :class="{active: $route.path === '/about'}">关于我</li>
                 </ul>
             </nav>
         </div>
@@ -29,16 +29,21 @@
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
+import { mapState, mapActions } from 'pinia'
+import { useUiStore } from '@/stores/ui'
+import { useArticleStore } from '@/stores/article'
+
 export default {
     data () {
         return {
             text: ''
         }
     },
-    computed: mapState(['headline']),
+    computed: {
+        ...mapState(useUiStore, ['headline'])
+    },
     methods: {
-        ...mapActions(['searchArticles']),
+        ...mapActions(useArticleStore, ['searchArticles']),
         search () {
             this.$router.push({name: 'SearchResult', params: {text: this.text}, hash: '#search'})
         }
@@ -109,7 +114,7 @@ export default {
                          border-bottom: 0.1875rem solid rgb(129, 216, 208);
                          transition: all 0.8s;
                      }
-                    &.router-link-active {
+                    &.active {
                          border-bottom: 0.1875rem solid rgb(129, 216, 208);
                      }
                 }

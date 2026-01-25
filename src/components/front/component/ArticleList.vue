@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'pinia'
+import { useArticleStore } from '@/stores/article'
 
 export default {
     data () {
@@ -33,7 +34,7 @@ export default {
         window.removeEventListener('scroll', this.handleScroll)
     },
     computed: {
-        ...mapGetters(['articleList'])
+        ...mapGetters(useArticleStore, ['articleList'])
     },
     methods: {
         handleScroll () {

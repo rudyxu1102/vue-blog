@@ -15,7 +15,10 @@
 </template>
 
 <script>
-import {mapMutations, mapActions} from 'vuex'
+import { mapActions } from 'pinia'
+import { useUiStore } from '@/stores/ui'
+import { useArticleStore } from '@/stores/article'
+
 export default {
     data () {
         return {
@@ -26,25 +29,25 @@ export default {
         }
     },
     created () {
-        this.set_headline({
+        this.setHeadline({
             content: '联系站长',
             animation: 'animated rotateIn'
         })
     },
     methods: {
-        ...mapMutations(['set_headline', 'set_dialog']),
-        ...mapActions(['sendMail']),
+        ...mapActions(useUiStore, ['setHeadline', 'setDialog']),
+        ...mapActions(useArticleStore, ['sendMail']),
         send () {
             const re = /^[\w_-]+@[\w_-]+\.[\w\\.]+$/
             if (!this.subject || !this.content) {
-                this.set_dialog({
+                this.setDialog({
                     info: '还有选项没填(⊙o⊙)？',
                     hasTwoBtn: false,
                     show: true
                 })
                 return
             } else if (!re.test(this.address)) {
-                this.set_dialog({
+                this.setDialog({
                     info: '请正确填写邮箱地址',
                     hasTwoBtn: false,
                     show: true
@@ -63,7 +66,7 @@ export default {
                 this.sendFlag = false
             }).catch(() => {
                 this.sendFlag = false
-                this.set_dialog({
+                this.setDialog({
                     info: 'sorry, 邮件发送失败，请重新发送',
                     hasTwoBtn: false,
                     show: true

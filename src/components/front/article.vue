@@ -4,10 +4,10 @@
             <h1 class="title animated fadeIn">{{article.title}}</h1>
             <div class="appendInfo animated fadeIn">
                 <time>
-                    <i class="iconfont icon-shijian"></i>{{article.date | toDate}}
+                    <i class="iconfont icon-shijian"></i>{{$filters.toDate(article.date)}}
                 </time>
                 <span>
-                    <i class="iconfont icon-label"></i>{{article.tags | toTag}}
+                    <i class="iconfont icon-label"></i>{{$filters.toTag(article.tags)}}
                 </span>
                 <a class="commentCount" href="#comment">
                     <i class="iconfont icon-huifu"></i>{{article.comment_n}}
@@ -17,24 +17,26 @@
             <div class="content animated fadeIn" v-html="mdHtml"></div>
             <div class="indexes animated fadeIn">
                 <div class="last animated fadeIn">
-                    <router-link :to="{name: 'article', params: {id: articles[prePage].aid, index: prePage, page: $route.params.page}, hash: '#article'}"  v-if="articles[prePage]" tag="p" class="left">
-                        <i class="iconfont icon-left"></i>{{articles[prePage].title}}</router-link>
-                    <router-link :to="{name: 'article', params: {id: articles[nextPage].aid, index: nextPage, page: $route.params.page}, hash: '#article'}" v-if="articles[nextPage]" tag="p" class="right">
-                        {{articles[nextPage].title}}<i class="iconfont icon-right"></i></router-link>
+                    <p v-if="articles[prePage]" class="left" @click="$router.push({name: 'article', params: {id: articles[prePage].aid, index: prePage, page: $route.params.page}, hash: '#article'})">
+                        <i class="iconfont icon-left"></i>{{articles[prePage].title}}</p>
+                    <p v-if="articles[nextPage]" class="right" @click="$router.push({name: 'article', params: {id: articles[nextPage].aid, index: nextPage, page: $route.params.page}, hash: '#article'})">
+                        {{articles[nextPage].title}}<i class="iconfont icon-right"></i></p>
                 </div>
             </div>
             <article-comment class="comment animated fadeIn"></article-comment>
         </div>
-        <router-link :to="{name: 'articles'}" class="iconfont icon-fanhui" tag="i"></router-link>
+        <i class="iconfont icon-fanhui" @click="$router.push({name: 'articles'})"></i>
     </div>
 </template>
 
 <script>
 import marked                                       from 'marked'
 import hljs                                         from 'highlight.js'
-import {mapState, mapActions}                       from 'vuex'
-import ArticleComment                               from './component/ArticleComment'
-import ArticleList                                  from './component/ArticleList'
+import { mapState, mapActions }                     from 'pinia'
+import { useArticleStore }                          from '@/stores/article'
+import { useTagStore }                              from '@/stores/tag'
+import ArticleComment                               from './component/ArticleComment.vue'
+import ArticleList                                  from './component/ArticleList.vue'
 
 marked.setOptions({
     highlight: function (code) {
@@ -83,13 +85,14 @@ export default {
         next()
     },
     computed: {
-        ...mapState(['articles', 'curTag', 'article']),
+        ...mapState(useArticleStore, ['articles', 'article']),
+        ...mapState(useTagStore, ['curTag']),
         mdHtml () {
             return marked(this.article.content || '', { renderer: renderer })
         }
     },
     methods: {
-        ...mapActions(['getArticle', 'getAllArticles']),
+        ...mapActions(useArticleStore, ['getArticle', 'getAllArticles']),
         mark: marked,
         initPage () {
             const index = this.$route.params.index - 0

@@ -9,12 +9,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="article in articles">
-            <router-link :to="{name: 'editor', query: {aid: article.aid}}" tag="td" class="title">{{article.title}}</router-link>
-            <td>{{article.tags | toTag}}</td>
-            <td>{{article.date | toDate}}</td>
+        <tr v-for="article in articles" :key="article.aid">
+            <td class="title" @click="$router.push({name: 'editor', query: {aid: article.aid}})">{{article.title}}</td>
+            <td>{{$filters.toTag(article.tags)}}</td>
+            <td>{{$filters.toDate(article.date)}}</td>
             <td>
-                <router-link :to="{name: 'editor', query: {aid: article.aid}}" class="iconfont icon-biji-copy" tag="i"></router-link>
+                <i class="iconfont icon-biji-copy" @click="$router.push({name: 'editor', query: {aid: article.aid}})"></i>
                 <i class="iconfont icon-shanchu" @click="deleteConfirm(article.aid)"></i>
             </td>
         </tr>
@@ -30,7 +30,10 @@
 </template>
 
 <script>
-import {mapState, mapActions, mapMutations} from 'vuex'
+import { mapState, mapActions } from 'pinia'
+import { useArticleStore } from '@/stores/article'
+import { useUiStore } from '@/stores/ui'
+
 export default {
     data () {
         return {
@@ -38,11 +41,12 @@ export default {
         }
     },
     computed: {
-        ...mapState(['articles', 'dialog'])
+        ...mapState(useArticleStore, ['articles']),
+        ...mapState(useUiStore, ['dialog'])
     },
     methods: {
-        ...mapActions(['delArticle']),
-        ...mapMutations(['set_dialog']),
+        ...mapActions(useArticleStore, ['delArticle']),
+        ...mapActions(useUiStore, ['setDialog']),
         nextPage () {
             this.page++
             this.$emit('addPage')   // 传递给父组件
@@ -56,7 +60,7 @@ export default {
             }
         },
         deleteConfirm (aid) {
-            this.set_dialog({
+            this.setDialog({
                 info: '确认删除(⊙o⊙)？',
                 hasTwoBtn: true,
                 show: true

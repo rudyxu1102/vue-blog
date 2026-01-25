@@ -20,8 +20,9 @@
 </template>
 
 <script>
-import ArticleContent                   from './component/ArticleContent'
-import {mapActions, mapMutations}       from 'vuex'
+import ArticleContent                   from './component/ArticleContent.vue'
+import { mapActions }                   from 'pinia'
+import { useArticleStore }              from '@/stores/article'
 export default {
     data () {
         return {
@@ -31,7 +32,7 @@ export default {
         }
     },
     created () {
-        this.set_all_articles({})
+        this.setAllArticles({})
     },
     computed: {
         tip () {
@@ -41,8 +42,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['searchArticles']),
-        ...mapMutations(['set_all_articles']),
+        ...mapActions(useArticleStore, ['searchArticles', 'setAllArticles']),
         nextPage () {
             this.page++
             this.searchArticles({key: this.picked, value: this.text, page: this.page})

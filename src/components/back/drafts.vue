@@ -2,16 +2,15 @@
     <div class="container">
         <p>所有草稿</p>
         <article-content v-on:addPage="nextPage" v-on:dropPage="prePage"></article-content>
-        <router-link
-                :to="{name: 'editor'}"
-                class="addPost" tag="button"
-        ><span>添加草稿</span></router-link>
+        <button class="addPost" @click="$router.push({name: 'editor'})"><span>添加草稿</span></button>
     </div>
 </template>
 
 <script>
-import {mapActions, mapState}   from 'vuex'
-import ArticleContent           from './component/ArticleContent'
+import { mapState, mapActions } from 'pinia'
+import { useArticleStore }      from '@/stores/article'
+import { useDraftStore }        from '@/stores/draft'
+import ArticleContent           from './component/ArticleContent.vue'
 export default {
     created () {
         this.getAllDrafts({page: this.page, limit: 8})
@@ -22,7 +21,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['getAllDrafts']),
+        ...mapActions(useDraftStore, ['getAllDrafts']),
         nextPage () {
             this.page++
             this.getAllDrafts({page: this.page, limit: 8})
@@ -37,7 +36,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['articles'])
+        ...mapState(useArticleStore, ['articles'])
     },
     components: {
         ArticleContent

@@ -17,7 +17,9 @@
 </template>
 
 <script>
-import {mapActions, mapMutations}       from 'vuex'
+import { mapActions } from 'pinia'
+import { useUserStore } from '@/stores/user'
+
 export default {
     data () {
         return {
@@ -27,12 +29,11 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['login']),
-        ...mapMutations(['set_user']),
+        ...mapActions(useUserStore, ['login', 'setUser']),
         confirm (name, password) {
             this.login({name: name, password: password}).then((res) => {
                 this.info = '正在登录中...'
-                this.set_user(res.data)
+                this.setUser(res.data)
                 this.$router.push({name: 'posts'})
             }).catch((err) => {
                 console.log(err)

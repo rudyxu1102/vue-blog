@@ -11,10 +11,11 @@
 </template>
 
 <script>
-import MyHeader         from './component/MyHeader'
-import MyFooter         from './component/MyFooter'
-import spinner          from '../share/spinner'
-import {mapState}       from 'vuex'
+import MyHeader         from './component/MyHeader.vue'
+import MyFooter         from './component/MyFooter.vue'
+import spinner          from '../share/spinner.vue'
+import { mapState }     from 'pinia'
+import { useUiStore }   from '@/stores/ui'
 
 export default {
     data () {
@@ -26,7 +27,7 @@ export default {
         window.addEventListener('scroll', this.handleScroll)
     },
     computed: {
-        ...mapState(['isLoading'])
+        ...mapState(useUiStore, ['isLoading'])
     },
     methods: {
         handleScroll () {

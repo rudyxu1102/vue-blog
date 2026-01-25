@@ -32,8 +32,11 @@
 <script>
 import marked                                   from 'marked'
 import hljs                                     from 'highlight.js'
-import {mapMutations, mapActions, mapState}     from 'vuex'
-import TagInput                                 from './component/TagInput'
+import { mapState, mapActions }                 from 'pinia'
+import { useArticleStore }                      from '@/stores/article'
+import { useUiStore }                           from '@/stores/ui'
+import { useDraftStore }                        from '@/stores/draft'
+import TagInput                                 from './component/TagInput.vue'
 
 marked.setOptions({
     highlight: function (code) {
@@ -59,18 +62,18 @@ export default {
     },
     directives: {
         focus: {
-            inserted: (el) => {
+            mounted: (el) => {
                 el.focus()
             }
         }
     },
     created () {
         const aid = this.$route.query.aid
-        this.isSaving_toggle(false)
+        this.toggleSaving(false)
         if (aid) {
             return this.getArticle(aid)
         }
-        this.set_article({
+        this.setArticle({
             content: '',
             title: '',
             tags: ['']
@@ -91,25 +94,33 @@ export default {
         this.firstUpdate = false
     },
     computed: {
-        ...mapState(['article', 'isSaving', 'dialog']),
+        ...mapState(useArticleStore, ['article']),
+        ...mapState(useUiStore, ['isSaving', 'dialog']),
         mdContent: {
             get () {
                 this.mdHtml = marked(this.article.content || '', { renderer: renderer })
                 return this.article.content
             },
-            set (value) { this.update_post_content(value) }
+            set (value) {
+                const articleStore = useArticleStore()
+                articleStore.updatePostContent(value)
+            }
         },
         title: {
             get () { return this.article.title || '' },
-            set (value) { this.update_post_title(value) }
+            set (value) {
+                const articleStore = useArticleStore()
+                articleStore.updatePostTitle(value)
+            }
         },
         tags () {
             return this.article.tags
         }
     },
     methods: {
-        ...mapMutations(['set_article', 'update_post_content', 'update_post_title', 'update_post_tags', 'isSaving_toggle', 'set_dialog']),
-        ...mapActions(['saveArticle', 'getArticle', 'saveDraft'])
+        ...mapActions(useArticleStore, ['setArticle', 'saveArticle', 'getArticle']),
+        ...mapActions(useUiStore, ['toggleSaving', 'setDialog']),
+        ...mapActions(useDraftStore, ['saveDraft'])
     },
     components: {
         TagInput
@@ -130,7 +141,7 @@ export default {
     },
     beforeRouteLeave (to, from, next) {
         if (this.isChange && !this.isSaving) {
-            this.set_dialog({
+            this.setDialog({
                 info: '还没保存，确认离开(⊙o⊙)？',
                 hasTwoBtn: true,
                 show: true

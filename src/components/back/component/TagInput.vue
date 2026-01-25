@@ -15,7 +15,9 @@
 </template>
 
 <script>
-import {mapMutations}       from 'vuex'
+import { mapActions } from 'pinia'
+import { useUiStore } from '@/stores/ui'
+
 export default {
     data () {
         return {
@@ -27,7 +29,7 @@ export default {
         index: Number
     },
     methods: {
-        ...mapMutations(['set_dialog']),
+        ...mapActions(useUiStore, ['setDialog']),
         delTag () {
             this.tags.splice(this.index, 1)             // 通过操作数组来删除标签
             console.log(this.tags)
@@ -43,7 +45,7 @@ export default {
             let currentValue = this.tags[currentIndex]
             while (currentIndex) {
                 if (currentValue.toLowerCase() === this.tags[currentIndex - 1].toLowerCase()) {  // 标签去重
-                    this.set_dialog({
+                    this.setDialog({
                         info: '傻了吧，标签不能重复',
                         hasTwoBtn: false,
                         show: true

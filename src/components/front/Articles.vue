@@ -12,15 +12,15 @@
                     </button>
                 </div>
             </div>
-            <div v-for="(article, index) in reducedArticles" id="article" class="animated fadeIn">
+            <div v-for="(article, index) in reducedArticles" id="article" class="animated fadeIn" :key="article.aid">
                 <h2>{{article.title}}</h2>
-                <time><i class="iconfont icon-shijian"></i>{{article.date | toDate}}</time>
-                <span class="articleTag"><i class="iconfont icon-label"></i>{{article.tags | toTag}}</span>
+                <time><i class="iconfont icon-shijian"></i>{{$filters.toDate(article.date)}}</time>
+                <span class="articleTag"><i class="iconfont icon-label"></i>{{$filters.toTag(article.tags)}}</span>
                 <span class="commentNumber"><i class="iconfont icon-huifu"></i>{{article.comment_n}}</span>
                 <p>{{article.content}}</p>
-                <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: page}, hash: '#article'}" tag="button" exact>
+                <button @click="$router.push({name: 'article', params: {id: article.aid, index: index, page: page}, hash: '#article'})">
                     <span>Continue reading</span>
-                </router-link>
+                </button>
             </div>
             <p v-if="!loadMore" v-show="!noMore" class="noMore animated fadeIn">下拉加载更多</p>
             <p v-if="noMore" class="noMore animated fadeIn">已经到底了，别扯了</p>
@@ -30,8 +30,11 @@
 </template>
 
 <script>
-import {mapMutations, mapActions, mapGetters, mapState}     from 'vuex'
-import spinner                                              from '../share/spinner'
+import { mapState, mapActions, mapGetters } from 'pinia'
+import { useArticleStore }                  from '@/stores/article'
+import { useTagStore }                      from '@/stores/tag'
+import { useUiStore }                       from '@/stores/ui'
+import spinner                              from '../share/spinner.vue'
 
 export default {
     data () {
@@ -41,7 +44,7 @@ export default {
         }
     },
     created () {
-        this.set_headline({
+        this.setHeadline({
             content: '文章见解',
             animation: 'animated flipInY'
         })
@@ -49,8 +52,10 @@ export default {
         this.getAllTags()
     },
     computed: {
-        ...mapGetters(['reducedArticles', 'allTags']),
-        ...mapState(['curTag', 'loadMore', 'moreArticle', 'isLoading', 'noMore'])
+        ...mapGetters(useArticleStore, ['reducedArticles']),
+        ...mapGetters(useTagStore, ['allTags']),
+        ...mapState(useTagStore, ['curTag']),
+        ...mapState(useUiStore, ['loadMore', 'moreArticle', 'isLoading', 'noMore'])
     },
     mounted () {
         window.addEventListener('scroll', this.handleScroll)
@@ -60,12 +65,13 @@ export default {
         next()
     },
     methods: {
-        ...mapMutations(['set_headline', 'set_curtag', 'moreArticle_toggle']),
-        ...mapActions(['getAllArticles', 'getAllTags', 'searchArticles']),
+        ...mapActions(useUiStore, ['setHeadline']),
+        ...mapActions(useTagStore, ['setCurTag', 'getAllTags']),
+        ...mapActions(useArticleStore, ['getAllArticles', 'searchArticles']),
         switchTag (payload, index, tag) {
             this.getAllArticles(payload)
             this.selectIndex = index
-            this.set_curtag(tag)
+            this.setCurTag(tag)
         },
         handleScroll () {
             if (!this.isLoading && this.$route.name === 'articles') {

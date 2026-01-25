@@ -1,14 +1,14 @@
 <template>
     <div id="search">
-        <div v-for="(article, index) in reducedArticles" id="article">
+        <div v-for="(article, index) in reducedArticles" id="article" :key="article.aid">
             <h2>{{article.title}}</h2>
-            <time><i class="iconfont icon-shijian"></i>{{article.date | toDate}}</time>
-            <span class="articleTag"><i class="iconfont icon-label"></i>{{article.tags | toTag}}</span>
+            <time><i class="iconfont icon-shijian"></i>{{$filters.toDate(article.date)}}</time>
+            <span class="articleTag"><i class="iconfont icon-label"></i>{{$filters.toTag(article.tags)}}</span>
             <span class="commentNumber"><i class="iconfont icon-huifu"></i>{{article.comment_n}}</span>
             <p>{{article.content}}</p>
-            <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: page}, hash: '#article'}" tag="button" exact>
+            <button @click="$router.push({name: 'article', params: {id: article.aid, index: index, page: page}, hash: '#article'})">
                 <span>Continue reading</span>
-            </router-link>
+            </button>
         </div>
         <spinner v-show="loadMore" class="loading"></spinner>
         <p v-if="!loadMore" v-show="!noMore" class="noMore animated fadeIn">下拉加载更多</p>
@@ -17,8 +17,10 @@
 </template>
 
 <script>
-import {mapState, mapActions, mapMutations, mapGetters}     from 'vuex'
-import spinner                                              from '../share/spinner'
+import { mapState, mapActions, mapGetters } from 'pinia'
+import { useArticleStore }                  from '@/stores/article'
+import { useUiStore }                       from '@/stores/ui'
+import spinner                              from '../share/spinner.vue'
 
 export default {
     data () {
@@ -28,7 +30,7 @@ export default {
     },
     created () {
         this.searchArticles({key: 'title', value: this.$route.params.text})
-        this.set_headline({
+        this.setHeadline({
             content: '搜索结果',
             animation: 'animated rotateIn'
         })
@@ -47,12 +49,12 @@ export default {
         next()
     },
     computed: {
-        ...mapState(['loadMore', 'moreArticle', 'isLoading', 'noMore']),
-        ...mapGetters(['reducedArticles'])
+        ...mapState(useUiStore, ['loadMore', 'moreArticle', 'isLoading', 'noMore']),
+        ...mapGetters(useArticleStore, ['reducedArticles'])
     },
     methods: {
-        ...mapActions(['searchArticles']),
-        ...mapMutations(['set_headline']),
+        ...mapActions(useArticleStore, ['searchArticles']),
+        ...mapActions(useUiStore, ['setHeadline']),
         handleScroll () {
             if (!this.isLoading && this.$route.name === 'SearchResult') {
                 const body = document.body

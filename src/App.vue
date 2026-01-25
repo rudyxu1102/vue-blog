@@ -9,32 +9,34 @@
 </template>
 
 <script>
-import FireCanvas   from './components/share/FireCanvas'
-import spinner      from './components/share/spinner'
-import DialogBox    from './components/share/DialogBox'
-import {mapState}   from 'vuex'
+import FireCanvas from './components/share/FireCanvas.vue'
+import spinner from './components/share/spinner.vue'
+import DialogBox from './components/share/DialogBox.vue'
+import { mapState } from 'pinia'
+import { useUiStore } from './stores/ui'
 
 export default {
-    mounted () {
-        document.addEventListener('visibilitychange', this.changeTitle, false)
-    },
-    components: {
-        FireCanvas,
-        spinner,
-        DialogBox
-    },
-    computed: {
-        ...mapState(['isLoading', 'dialog'])
-    },
-    methods: {
-        changeTitle () {            // 切换标签页后，改变title
-            if (document.hidden) {
-                document.title = '去吧，皮卡丘！'
-            } else {
-                document.title = '欢迎回来'
-            }
-        }
+  mounted() {
+    document.addEventListener('visibilitychange', this.changeTitle, false)
+  },
+  components: {
+    FireCanvas,
+    spinner,
+    DialogBox
+  },
+  computed: {
+    ...mapState(useUiStore, ['isLoading', 'dialog'])
+  },
+  methods: {
+    changeTitle() {
+      // 切换标签页后，改变title
+      if (document.hidden) {
+        document.title = '去吧，皮卡丘！'
+      } else {
+        document.title = '欢迎回来'
+      }
     }
+  }
 }
 </script>
 

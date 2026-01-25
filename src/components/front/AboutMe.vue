@@ -16,15 +16,19 @@
 </template>
 
 <script>
-import {mapMutations} from 'vuex'
+import { mapActions } from 'pinia'
+import { useUiStore } from '@/stores/ui'
+
 export default {
     created () {
-        this.set_headline({
+        this.setHeadline({
             content: '关于我',
             animation: 'animated bounce'
         })
     },
-    methods: mapMutations(['set_headline'])
+    methods: {
+        ...mapActions(useUiStore, ['setHeadline'])
+    }
 }
 
 </script>

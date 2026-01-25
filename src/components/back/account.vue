@@ -19,8 +19,10 @@
 </template>
 
 <script>
-import {_debounce}                  from '../../lib/utils.js'
-import {mapActions, mapState}       from 'vuex'
+import { _debounce }          from '../../lib/utils.js'
+import { mapState, mapActions } from 'pinia'
+import { useUserStore }       from '@/stores/user'
+
 export default {
     data () {
         return {
@@ -32,10 +34,10 @@ export default {
         }
     },
     computed: {
-        ...mapState(['user'])
+        ...mapState(useUserStore, ['user'])
     },
     methods: {
-        ...mapActions(['resetUser']),
+        ...mapActions(useUserStore, ['resetUser']),
         checkName () {
             if (this.name.length > 5) {
                 this.msg = '请输入合适长度的用户名'

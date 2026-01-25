@@ -25,7 +25,7 @@
                     <p class='commentName'>#{{index + 1}} <span>{{comment.name}}</span></p>
                     <p class='text'>{{comment.content}}</p>
                     <div class='options'>
-                        <p class='commentDate'>{{comment.date | to_date}}</p>
+                        <p class='commentDate'>{{$filters.to_date(comment.date)}}</p>
                         <a href='#comment' data-scroll>
                             <span @click='reply(comment.name)'>
                                 <i class='iconfont icon-huifu'></i>回复
@@ -45,7 +45,11 @@
 </template>
 
 <script>
-import {mapActions, mapState, mapMutations} from 'vuex'
+import { mapState, mapActions } from 'pinia'
+import { useCommentStore } from '@/stores/comment'
+import { useUserStore } from '@/stores/user'
+import { useUiStore } from '@/stores/ui'
+
 export default {
     data () {
         return {
@@ -69,7 +73,8 @@ export default {
         }
     },
     computed: {
-        ...mapState(['comments', 'user']),
+        ...mapState(useCommentStore, ['comments']),
+        ...mapState(useUserStore, ['user']),
         likeArr () {                            // 访问者点赞了哪些评论的数组
             if (localStorage.getItem(this.$route.params.id)) {
                 const item = localStorage.getItem(this.$route.params.id)  // 初始化访问者的点赞情况
@@ -79,19 +84,19 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['summitComment', 'getAllComments', 'updateLike']),
-        ...mapMutations(['set_dialog']),
+        ...mapActions(useCommentStore, ['submitComment', 'getAllComments', 'updateLike']),
+        ...mapActions(useUiStore, ['setDialog']),
         summit () {
             const re = /^[\w_-]+@[\w_-]+\.[\w\\.]+$/
             if (!this.name || !this.content) {
-                this.set_dialog({
+                this.setDialog({
                     info: '还有选项没填(⊙o⊙)？',
                     hasTwoBtn: false,
                     show: true
                 })
                 return
             } else if (!re.test(this.address)) {
-                this.set_dialog({
+                this.setDialog({
                     info: '请正确填写邮箱地址',
                     hasTwoBtn: false,
                     show: true
@@ -100,14 +105,14 @@ export default {
             }
             // 限制评论内容
             if (this.content.length > 500) {
-                this.set_dialog({
+                this.setDialog({
                     info: '您的评论内容太长，要言简意赅哦',
                     hasTwoBtn: false,
                     show: true
                 })
                 return false
             } else if (this.content.length < 5) {
-                this.set_dialog({
+                this.setDialog({
                     info: '您的评论内容太短，说多一点嘛',
                     hasTwoBtn: false,
                     show: true
@@ -115,11 +120,11 @@ export default {
                 return false
             } else if (/\d{7,}/i.test(this.content) || // 连续7个以上数字，过滤发Q号和Q群的评论
                 /(\d.*){7,}/i.test(this.content) || // 非连续的7个以上数字，过滤用字符间隔开的Q号和Q群的评论
-                /\u52A0.*\u7FA4/i.test(this.content) || // 包含“加群”两字的通常是发Q群的垃圾评论
-                /(\u9876.*){5,}/i.test(this.content) || // 过滤5个以上“顶”字的评论
+                /\u52A0.*\u7FA4/i.test(this.content) || // 包含"加群"两字的通常是发Q群的垃圾评论
+                /(\u9876.*){5,}/i.test(this.content) || // 过滤5个以上"顶"字的评论
                 /([\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u4E03\u516B\u4E5D\u25CB\u58F9\u8D30\u53C1\u8086\u4F0D\u9646\u67D2\u634C\u7396\u96F6].*){7,}/i.test(this.content) // 过滤用汉字发Q号和Q群的评论
             ) {
-                this.set_dialog({
+                this.setDialog({
                     info: '请不要发表灌水、广告、违法、Q群Q号等信息，感谢您的配合！',
                     hasTwoBtn: false,
                     show: true
@@ -130,7 +135,7 @@ export default {
             // 将评论者的邮箱和用户名存储在浏览器中，在created钩子中赋值, 这样刷新后邮箱和昵称都不用再写一遍
             localStorage.setItem('e-mail', this.address)
             localStorage.setItem('reviewer', this.name)
-            this.summitComment({
+            this.submitComment({
                 imgName: this.imgName,
                 name: this.name,
                 content: this.content,
@@ -142,7 +147,7 @@ export default {
                 this.summitFlag = false
                 this.getAllComments({id: this.$route.params.id})
             }).catch((err) => {
-                this.set_dialog({
+                this.setDialog({
                     info: err.body,
                     hasTwoBtn: false,
                     show: true

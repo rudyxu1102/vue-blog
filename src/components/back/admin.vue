@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="statusLine">
             <p class="left">
-                <router-link :to="{name: 'home'}" class="iconfont icon-zhuye" tag="i"></router-link>
+                <i class="iconfont icon-zhuye" @click="$router.push({name: 'home'})"></i>
                 <span>{{time}}好，{{name}}</span>
             </p>
             <p class="right"  @click="logout">
@@ -12,10 +12,10 @@
         </div>
         <nav>
             <ul>
-                <router-link :to="{name: 'posts'}" tag="li"><i class="iconfont icon-biji-copy"></i>文章</router-link>
-                <router-link :to="{name: 'search'}" tag="li"><i class="iconfont icon-search"></i>搜索</router-link>
-                <router-link :to="{name: 'drafts'}" tag="li"><i class="iconfont icon-draft"></i>草稿</router-link>
-                <router-link :to="{name: 'account'}" tag="li"><i class="iconfont icon-zhanghu"></i>账户</router-link>
+                <li @click="$router.push({name: 'posts'})" :class="{active: $route.name === 'posts'}"><i class="iconfont icon-biji-copy"></i>文章</li>
+                <li @click="$router.push({name: 'search'})" :class="{active: $route.name === 'search'}"><i class="iconfont icon-search"></i>搜索</li>
+                <li @click="$router.push({name: 'drafts'})" :class="{active: $route.name === 'drafts'}"><i class="iconfont icon-draft"></i>草稿</li>
+                <li @click="$router.push({name: 'account'})" :class="{active: $route.name === 'account'}"><i class="iconfont icon-zhanghu"></i>账户</li>
             </ul>
         </nav>
         <transition mode="out-in" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
@@ -25,10 +25,12 @@
 </template>
 
 <script>
-import {mapMutations, mapState}       from 'vuex'
+import { mapState, mapActions } from 'pinia'
+import { useUserStore } from '@/stores/user'
+
 export default {
     computed: {
-        ...mapState(['user']),
+        ...mapState(useUserStore, ['user']),
         time () {
             const hours = new Date().getHours()
             if (hours > 5 && hours < 12) {
@@ -46,10 +48,10 @@ export default {
         }
     },
     methods: {
-        ...mapMutations(['unset_user']),
+        ...mapActions(useUserStore, ['unsetUser']),
         logout () {
-            this.unset_user()
-            this.$router.go({name: 'login'})
+            this.unsetUser()
+            this.$router.push({name: 'login'})
         }
     }
 }
@@ -119,7 +121,7 @@ export default {
                     margin-right: 0.625rem;
                 }
             }
-            li.router-link-active {
+            li.active {
                 border-left: 0.1875rem solid darkturquoise;
                 background: rgba(204, 204, 204, 0.5);
             }

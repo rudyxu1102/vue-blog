@@ -6,14 +6,14 @@
             </a>
             <div class="posts animated fadeIn">
                 <div class="flex">
-                    <div v-for="(article, index) in reducedArticles" class="oneArticle">
+                    <div v-for="(article, index) in reducedArticles" class="oneArticle" :key="article.aid">
                         <div class="option">
-                        <time>{{article.date | toDate}}</time>
+                        <time>{{$filters.toDate(article.date)}}</time>
                         <span class="commentNumber"><i class="iconfont icon-huifu"></i>{{article.comment_n}}</span>
                         </div>
-                        <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'}" tag="p" exact class="title_1">{{article.title}}</router-link>
+                        <p class="title_1" @click="$router.push({name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'})">{{article.title}}</p>
                         <p class="content">{{article.content}}</p>
-                        <router-link :to="{name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'}" tag="button" exact><span>Read More</span></router-link>
+                        <button @click="$router.push({name: 'article', params: {id: article.aid, index: index, page: 1}, hash: '#article'})"><span>Read More</span></button>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,9 @@
 </template>
 
 <script>
-import {mapMutations, mapActions, mapGetters}   from 'vuex'
+import { mapActions, mapGetters } from 'pinia'
+import { useArticleStore }        from '@/stores/article'
+import { useUiStore }             from '@/stores/ui'
 
 export default {
     data () {
@@ -47,29 +49,29 @@ export default {
         }
     },
     created () {
-        this.set_headline({
+        this.setHeadline({
             content: 'Welcome to my blog',
             animation: 'animated bounceIn'
         })
         this.getAllArticles({page: 1, limit: 3})
     },
     computed: {
-        ...mapGetters(['reducedArticles'])
+        ...mapGetters(useArticleStore, ['reducedArticles'])
     },
     methods: {
-        ...mapMutations(['set_headline', 'set_dialog']),
-        ...mapActions(['getAllArticles', 'sendMail']),
+        ...mapActions(useUiStore, ['setHeadline', 'setDialog']),
+        ...mapActions(useArticleStore, ['getAllArticles', 'sendMail']),
         send () {
             const re = /^[\w_-]+@[\w_-]+\.[\w\\.]+$/
             if (!this.subject || !this.content) {
-                this.set_dialog({
+                this.setDialog({
                     info: '还有选项没填(⊙o⊙)？',
                     hasTwoBtn: false,
                     show: true
                 })
                 return
             } else if (!re.test(this.address)) {
-                this.set_dialog({
+                this.setDialog({
                     info: '请正确填写邮箱地址',
                     hasTwoBtn: false,
                     show: true
@@ -88,7 +90,7 @@ export default {
                 this.sendFlag = false
             }).catch(() => {
                 this.sendFlag = false
-                this.set_dialog({
+                this.setDialog({
                     info: 'sorry, 邮件发送失败，请重新发送',
                     hasTwoBtn: false,
                     show: true

@@ -4,7 +4,7 @@
         <a class="iconfont icon-github" href="https://github.com/FatDong1"></a>
         <a href="http://www.facebook.com/fatdong1" class="iconfont icon-cion15"></a>
         <!-- <p>粤ICP备17036548号</p> -->
-        <p>Copyright @ 2017 Powered by Vue. Designed by me | <router-link :to="{name: 'login'}" tag="span" class="login">站长登录</router-link></p>
+        <p>Copyright @ 2017 Powered by Vue. Designed by me | <span class="login" @click="$router.push({name: 'login'})">站长登录</span></p>
     </div>
 </template>
 

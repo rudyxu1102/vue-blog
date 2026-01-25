@@ -12,15 +12,17 @@
 </template>
 
 <script>
-import {mapState, mapMutations}   from 'vuex'
+import { mapState, mapActions } from 'pinia'
+import { useUiStore } from '@/stores/ui'
+
 export default {
     computed: {
-        ...mapState(['dialog'])
+        ...mapState(useUiStore, ['dialog'])
     },
     methods: {
-        ...mapMutations(['set_dialog']),
+        ...mapActions(useUiStore, ['setDialog']),
         close () {
-            this.set_dialog({
+            this.setDialog({
                 info: '',
                 show: false
             })
